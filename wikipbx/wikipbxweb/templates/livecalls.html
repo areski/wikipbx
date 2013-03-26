@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block dashcontent %}
+<h2><img src="{{ MEDIA_URL }}icons/telephone.png"/>{% trans "Channels" %}</h2>
+{% if channels %}
+<table class="list">
+  <thead>
+    <tr>
+      <th>{{ _("caller")|capfirst }}</th>
+      <th>{{ _("dialed extension")|capfirst }}</th>
+      <th>{{ _("inject audio/TTS")|capfirst }}</th>
+      <th>{{ _("caller ID number")|capfirst }}</th>
+      <th>{{ _("caller ID name")|capfirst }}</th>
+      <th>{{ _("creation time")|capfirst }}</th>
+      <th>{{ _("transfer")|capfirst }}</th>
+      <th>{{ _("hangup")|capfirst }}</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for channel in channels %}
+    <tr>
+      <td>{{ channel.name }}</td>
+      <td>{{ channel.dest }}</td>
+      <td align="center">
+	<a href="{% url wikipbxweb:channel-broadcast channel.uuid %}">
+	  <img src="{{ MEDIA_URL }}icons/comment.png"/>
+	</a>
+      </td>
+      <td>{{ channel.cid_num }}</td>
+      <td>{{ channel.cid_name }}</td>
+      <td>{{ channel.created }}</td>
+      <td align="center">
+	<a href="{% url wikipbxweb:channel-transfer channel.uuid %}">
+	  <img src="{{ MEDIA_URL }}icons/brick_go.png"/>
+	</a>
+      </td>
+      <td align="center">
+	<a href="{% url wikipbxweb:channel-hangup channel.uuid %}">
+	  <img src="{{ MEDIA_URL }}icons/cancel.png"/>
+	</a>
+      </td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+<div>
+  <a href="{% url wikipbxweb:channel-hangup-all %}">
+    <img src="{{ MEDIA_URL }}icons/cancel.png"/>
+    {% blocktrans count channels|length as channels_length %}
+    Hangup live channel.
+    {% plural %}
+    Hangup all {{ channels_length }} channels.
+    {% endblocktrans %}
+  </div>
+</p>
+{% else %}
+<div><img src="{{ MEDIA_URL }}icons/tux.png"/>{% trans "No channels" %}</div>
+{% endif %}
+
+{% endblock %}

@@ -1,0 +1,64 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block inlinejavascript %}
+function showExtra(id) {
+    elt2change = document.getElementById(id)
+	if (elt2change.style.display=='block') {
+		elt2change.style.display='none';
+	}
+	else {
+		elt2change.style.display='block';
+	}
+	
+}
+{% endblock %}
+
+{% block dashcontent %}
+<h2>
+  <img src="{{ MEDIA_URL }}icons/tick.png"/>
+  {% blocktrans with calltype|capfirst as call_type %}{{ call_type }} calls.{% endblocktrans %}
+</h2>
+
+{% if unmatched %}
+<div class="urgentmsg">
+  {% blocktrans with unmatched|length as unmatched_len %}Warning: Some CDR's may be missing!  WikiPBX has received {{ unmatched_len }} CDR records from freeswitch which it could not match with an account, please tell your admin about this.{% endblocktrans %}
+</div>
+{% endif %}
+
+{% if object_list %}
+<table class="list">
+  <thead>
+    <tr>
+      <th>{{ _("caller ID")|capfirst }}</th>
+      <th>{{ _("destination number")|capfirst }}</th>
+      <th>{{ _("channel name")|capfirst }}</th>
+      <th>{{ _("answered time")|capfirst }}</th>
+      <th>{{ _("hangup time")|capfirst }}</th>
+      <th>{{ _("CDR XML")|capfirst }}</th>
+    </tr>
+  </thead>  
+  {% for completedcall in object_list %}
+  <tr>
+    <td>{{ completedcall.caller_id_number }}</td>
+    <td>{{ completedcall.destination_number }}</td>
+    <td>{{ completedcall.chan_name }}</td>
+    <td>{{ completedcall.answered_time }}</td>
+    <td>{{ completedcall.hangup_time }}</td>
+    <td colspan="99" id="cdr_xml_{{ completedcall.id }}" class="hidden">
+      <textarea name="actions_xml" rows="30" cols="80">{{ completedcall.cdr_xml }}</textarea>
+    </td>
+    <td>
+      <a href="javascript:doNothing();" onClick="showExtra('cdr_xml_{{ completedcall.id }}')">{% trans "Show XML" %}</a>
+    </td>
+  </tr>
+  {% endfor %}
+</table>
+{% include "paginator.html" %}
+{% else %}
+<div>
+  <img src="{{ MEDIA_URL }}icons/tux.png"/>
+  {% blocktrans %}No {{ calltype }} calls found.{% endblocktrans %}
+</div>
+{% endif %}
+{% endblock %}

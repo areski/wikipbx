@@ -1,0 +1,2337 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2010-12-05 01:51+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: contacts/forms.py:18
+msgid "Contacts export format"
+msgstr ""
+
+#: contacts/models.py:14
+msgid "first name"
+msgstr ""
+
+#: contacts/models.py:15
+#, python-format
+msgid "Created on %s"
+msgstr ""
+
+#: contacts/models.py:16
+msgid "First name of the user/owner of this phone."
+msgstr ""
+
+#: contacts/models.py:18
+msgid "last name"
+msgstr ""
+
+#: contacts/models.py:19
+msgid "Last name of the user/owner of this phone."
+msgstr ""
+
+#: contacts/models.py:21
+msgid "job title"
+msgstr ""
+
+#: contacts/models.py:23
+msgid "organization"
+msgstr ""
+
+#: contacts/models.py:25 contacts/templates/contacts.html:17
+msgid "work number"
+msgstr ""
+
+#: contacts/models.py:27 contacts/models.py:32 contacts/models.py:37
+msgid ""
+"Acceptable forms are: 14081112222 or sip:7471122334@proxy01.sipphone.com"
+msgstr ""
+
+#: contacts/models.py:30 contacts/templates/contacts.html:20
+msgid "home number"
+msgstr ""
+
+#: contacts/models.py:35 contacts/templates/contacts.html:23
+msgid "mobile number"
+msgstr ""
+
+#: contacts/models.py:40 contacts/templates/contacts.html:29
+msgid "notes"
+msgstr ""
+
+#: contacts/models.py:41 contacts/templates/contacts.html:26
+msgid "is blacklisted"
+msgstr ""
+
+#: contacts/models.py:47
+msgid "is explicit"
+msgstr ""
+
+#: contacts/models.py:49 wikipbxweb/models.py:57 wikipbxweb/models.py:286
+#: wikipbxweb/models.py:430 wikipbxweb/models.py:574 wikipbxweb/models.py:659
+#: wikipbxweb/models.py:726 wikipbxweb/models.py:745 wikipbxweb/models.py:790
+#: wikipbxweb/models.py:953 wikipbxweb/models.py:1006
+#: wikipbxweb/templates/accounts.html:11
+msgid "account"
+msgstr ""
+
+#: contacts/models.py:65 contacts/templates/contacts_export.html:19
+msgid "contact"
+msgstr ""
+
+#: contacts/models.py:66
+msgid "contacts"
+msgstr ""
+
+#: contacts/statics.py:6
+msgid "vCard 2.1"
+msgstr ""
+
+#: contacts/statics.py:7
+msgid "vCard 3.0"
+msgstr ""
+
+#: contacts/statics.py:8
+msgid "CSV (Comma-separated values)"
+msgstr ""
+
+#: contacts/statics.py:9
+msgid "CSV with headers"
+msgstr ""
+
+#: contacts/views.py:40
+#, python-format
+msgid "Contact %s saved."
+msgstr ""
+
+#: contacts/views.py:54
+#, python-format
+msgid "Contact %s deleted."
+msgstr ""
+
+#: contacts/templates/contacts.html:6
+msgid "Contacts - This Account"
+msgstr ""
+
+#: contacts/templates/contacts.html:14 wikipbxweb/models.py:206
+#: wikipbxweb/models.py:292 wikipbxweb/models.py:305 wikipbxweb/models.py:653
+#: wikipbxweb/models.py:784 wikipbxweb/models.py:954
+#: wikipbxweb/templates/broadcast2channel.html:41
+#: wikipbxweb/templates/sip_profiles.html:10
+#: wikipbxweb/templates/soundclips.html:13
+msgid "name"
+msgstr ""
+
+#: contacts/templates/contacts.html:32 wikipbxweb/templates/gateways.html:16
+#: wikipbxweb/templates/ivrs.html:19 wikipbxweb/templates/ivrs.html.py:60
+#: wikipbxweb/templates/users.html:34
+msgid "Delete"
+msgstr ""
+
+#: contacts/templates/contacts.html:70
+msgid "No contacts found"
+msgstr ""
+
+#: contacts/templates/contacts_export.html:8
+msgid "Search"
+msgstr ""
+
+#: contacts/templates/contacts_export.html:16
+#: contacts/templates/contacts_export.html:41
+#: wikipbxweb/templates/left_toolbar_base.html:161
+msgid "Export"
+msgstr ""
+
+#: contacts/templates/contacts_export.html:50
+msgid "No contacts defined"
+msgstr ""
+
+#: contacts/templates/edit_contact.html:10
+#: wikipbxweb/templates/edit_ivr.html:20
+msgid "Update"
+msgstr ""
+
+#: wikipbxweb/fields.py:52
+msgid ""
+"This field must be set to a value like: \"<IP address>\", \"autonat:<IP "
+"address>\", \"stun:<Host Name>\", \"host:<Host Name>\", \"auto\" or \"auto-"
+"nat\""
+msgstr ""
+
+#: wikipbxweb/fields.py:63
+msgid "Entered values don't match"
+msgstr ""
+
+#: wikipbxweb/forms.py:51
+msgid "Calling party"
+msgstr ""
+
+#: wikipbxweb/forms.py:52
+msgid "Your phone number."
+msgstr ""
+
+#: wikipbxweb/forms.py:54
+msgid "Called party"
+msgstr ""
+
+#: wikipbxweb/forms.py:55
+msgid "Destination number."
+msgstr ""
+
+#: wikipbxweb/forms.py:57 wikipbxweb/templates/gateways.html:15
+msgid "Gateway"
+msgstr ""
+
+#: wikipbxweb/forms.py:58
+msgid "Which gateway these two calls will be routed through"
+msgstr ""
+
+#: wikipbxweb/forms.py:69
+msgid "Recipient"
+msgstr ""
+
+#: wikipbxweb/forms.py:70
+msgid "Subject"
+msgstr ""
+
+#: wikipbxweb/forms.py:72
+msgid "Message body"
+msgstr ""
+
+#: wikipbxweb/forms.py:78
+msgid "Echo Test"
+msgstr ""
+
+#: wikipbxweb/forms.py:79
+msgid "Remote Endpoint"
+msgstr ""
+
+#: wikipbxweb/forms.py:80
+msgid "Local Endpoint"
+msgstr ""
+
+#: wikipbxweb/forms.py:81
+msgid "Local Endpoint With Fallback To Voicemail"
+msgstr ""
+
+#: wikipbxweb/forms.py:82
+msgid "Gateway Dialout"
+msgstr ""
+
+#: wikipbxweb/forms.py:83
+msgid "Conference Room"
+msgstr ""
+
+#: wikipbxweb/forms.py:84
+msgid "Playback Audio"
+msgstr ""
+
+#: wikipbxweb/forms.py:85
+msgid "Speak Text"
+msgstr ""
+
+#: wikipbxweb/forms.py:86
+msgid "Mod_Voicemail Playback"
+msgstr ""
+
+#: wikipbxweb/forms.py:87
+msgid "Mod_Voicemail Record"
+msgstr ""
+
+#: wikipbxweb/forms.py:88
+msgid "Transfer To Another Extension"
+msgstr ""
+
+#: wikipbxweb/forms.py:89
+msgid "Park Call"
+msgstr ""
+
+#: wikipbxweb/forms.py:90
+msgid "Lua IVR"
+msgstr ""
+
+#: wikipbxweb/forms.py:91
+msgid "Python IVR"
+msgstr ""
+
+#: wikipbxweb/forms.py:92
+msgid "Javascript IVR"
+msgstr ""
+
+#: wikipbxweb/forms.py:96
+msgid "Authenticated"
+msgstr ""
+
+#: wikipbxweb/forms.py:96
+msgid "Public"
+msgstr ""
+
+#: wikipbxweb/forms.py:104
+msgid "Invalid regex"
+msgstr ""
+
+#: wikipbxweb/forms.py:121
+msgid "Malformed XML"
+msgstr ""
+
+#: wikipbxweb/forms.py:320
+msgid "Dialout"
+msgstr ""
+
+#: wikipbxweb/forms.py:320
+msgid "WAV upload"
+msgstr ""
+
+#: wikipbxweb/forms.py:321
+msgid "WAV URL"
+msgstr ""
+
+#: wikipbxweb/forms.py:321
+msgid "Text to speech"
+msgstr ""
+
+#: wikipbxweb/forms.py:323
+msgid "Upload method"
+msgstr ""
+
+#: wikipbxweb/forms.py:331
+msgid "This value is already occupied."
+msgstr ""
+
+#: wikipbxweb/forms.py:341
+msgid "Text to speak"
+msgstr ""
+
+#: wikipbxweb/forms.py:345
+msgid "Voice"
+msgstr ""
+
+#: wikipbxweb/forms.py:350
+msgid "IVR code"
+msgstr ""
+
+#: wikipbxweb/forms.py:374
+msgid "IVR name."
+msgstr ""
+
+#: wikipbxweb/forms.py:404
+msgid "Type password twice."
+msgstr ""
+
+#: wikipbxweb/forms.py:406
+msgid "Is admin"
+msgstr ""
+
+#: wikipbxweb/forms.py:419
+msgid "This email is already occupied"
+msgstr ""
+
+#: wikipbxweb/forms.py:440
+msgid ""
+"WikiPBX has a single root user which acts as the superuser, operating "
+"outside of all accounts (tenants), and has unlimited security access.  Once "
+"these values have been entered they cannot be changed via the GUI, and the "
+"only way to modify them will be to go direct to the database.  Ditto goes "
+"for lost/forgotten root passwords."
+msgstr ""
+
+#: wikipbxweb/forms.py:446
+msgid "Email"
+msgstr ""
+
+#: wikipbxweb/forms.py:448 wikipbxweb/forms.py:615
+msgid "Password"
+msgstr ""
+
+#: wikipbxweb/forms.py:449
+msgid "First name"
+msgstr ""
+
+#: wikipbxweb/forms.py:450
+msgid "Last name"
+msgstr ""
+
+#: wikipbxweb/forms.py:455
+msgid ""
+"FreeSWITCH can listen on multiple ports (e.g. 5060, 5061) and IP addresses.  "
+"Each one of these listening points requires its own SIP profile. Most "
+"installations can get by with a single profile that listens on port 5060 of "
+"the internet-facing IP address. Other typical scenario is to have two "
+"profiles. One for 'internal' calls and another for 'external' calls. In this "
+"case internal profile requires calls to be authenticated. External profile "
+"allows non-authenticated calls handled in public context."
+msgstr ""
+
+#: wikipbxweb/forms.py:483
+msgid ""
+"An account is essentially a Tenant.  WikiPBX is designed in such a way to "
+"minimize data sharing between accounts, so for example each account has its "
+"own set of users, endpoints, gateways, call detail records,  and dialplan "
+"that is not shared with other accounts.  When an account is created you must "
+"specify an initial  account admin, which can later be modified or deleted."
+msgstr ""
+
+#: wikipbxweb/forms.py:490 wikipbxweb/forms.py:529
+msgid "Account name"
+msgstr ""
+
+#: wikipbxweb/forms.py:491 wikipbxweb/forms.py:530
+msgid "Name of account, eg, yourcompany or yourcompany.com"
+msgstr ""
+
+#: wikipbxweb/forms.py:494 wikipbxweb/forms.py:533 wikipbxweb/forms.py:565
+msgid "Domain"
+msgstr ""
+
+#: wikipbxweb/forms.py:495 wikipbxweb/forms.py:534
+msgid ""
+"The domain associated with this account, eg. sip.yourcompany.com. Endpoints "
+"belonging to this account should be configured to register to this domain."
+msgstr ""
+
+#: wikipbxweb/forms.py:499
+msgid "SIP profile for dialout"
+msgstr ""
+
+#: wikipbxweb/forms.py:500
+msgid ""
+"When web dialout is used for this account, which SIP profile should it use?"
+msgstr ""
+
+#: wikipbxweb/forms.py:504 wikipbxweb/forms.py:542
+msgid "Alias this domain to Dialout SIP profile?"
+msgstr ""
+
+#: wikipbxweb/forms.py:506
+msgid ""
+"When checked, this account's domain will become an alias for the dialout SIP "
+"profile."
+msgstr ""
+
+#: wikipbxweb/forms.py:508
+msgid "Admin email"
+msgstr ""
+
+#: wikipbxweb/forms.py:510
+msgid "Admin password"
+msgstr ""
+
+#: wikipbxweb/forms.py:511
+msgid "Admin first name"
+msgstr ""
+
+#: wikipbxweb/forms.py:512
+msgid "Admin last name"
+msgstr ""
+
+#: wikipbxweb/forms.py:513
+msgid "Active"
+msgstr ""
+
+#: wikipbxweb/forms.py:538
+msgid "Dialout SIP Profile"
+msgstr ""
+
+#: wikipbxweb/forms.py:539
+msgid ""
+"When WikiPBX generates dial strings for this domain, which SIP profile "
+"should it use?"
+msgstr ""
+
+#: wikipbxweb/forms.py:567
+msgid ""
+"The domain associated with this account. The endpoint should be configured "
+"to register to this domain."
+msgstr ""
+
+#: wikipbxweb/forms.py:594
+msgid "Create extension"
+msgstr ""
+
+#: wikipbxweb/forms.py:595
+msgid "Create a dialplan entry for this number"
+msgstr ""
+
+#: wikipbxweb/forms.py:605
+msgid "Gateway name"
+msgstr ""
+
+#: wikipbxweb/forms.py:607 wikipbxweb/models.py:190 wikipbxweb/models.py:655
+msgid "SIP profile"
+msgstr ""
+
+#: wikipbxweb/forms.py:609
+msgid "Which SIP Profile communication with this gateway will take place on."
+msgstr ""
+
+#: wikipbxweb/forms.py:612
+msgid "Username"
+msgstr ""
+
+#: wikipbxweb/forms.py:613
+msgid "Username for gateway login authentication."
+msgstr ""
+
+#: wikipbxweb/forms.py:616
+msgid "Password for gateway login authentication."
+msgstr ""
+
+#: wikipbxweb/forms.py:619
+msgid "Proxy"
+msgstr ""
+
+#: wikipbxweb/forms.py:620
+msgid "Proxy host: *optional* same as realm, if blank."
+msgstr ""
+
+#: wikipbxweb/forms.py:622
+msgid "Register"
+msgstr ""
+
+#: wikipbxweb/forms.py:623
+msgid "Register with the gateway?"
+msgstr ""
+
+#: wikipbxweb/forms.py:625
+msgid "Extension"
+msgstr ""
+
+#: wikipbxweb/forms.py:627
+msgid "Extension for inbound calls: *optional* same as username, if blank."
+msgstr ""
+
+#: wikipbxweb/forms.py:630
+msgid "Realm"
+msgstr ""
+
+#: wikipbxweb/forms.py:631
+msgid "Auth realm: *optional* same as gateway name, if blank."
+msgstr ""
+
+#: wikipbxweb/forms.py:633
+msgid "From domain"
+msgstr ""
+
+#: wikipbxweb/forms.py:635
+msgid "Domain to use in From field: *optional* same as realm, if blank."
+msgstr ""
+
+#: wikipbxweb/forms.py:638
+msgid "Expire seconds"
+msgstr ""
+
+#: wikipbxweb/forms.py:639
+msgid "Expire in seconds: *optional* 3600, if blank."
+msgstr ""
+
+#: wikipbxweb/forms.py:642 wikipbxweb/models.py:682
+msgid "How many seconds before a retry when a failure or timeout occurs"
+msgstr ""
+
+#: wikipbxweb/forms.py:645
+msgid "Caller ID in From"
+msgstr ""
+
+#: wikipbxweb/forms.py:647
+msgid ""
+"Use the caller ID of an inbound call in the From field on outbound calls via "
+"this gateway."
+msgstr ""
+
+#: wikipbxweb/forms.py:650
+msgid "Accessible for all accounts"
+msgstr ""
+
+#: wikipbxweb/forms.py:652
+msgid "Are other WikiPBX accounts allowed to dial out of this gateway?"
+msgstr ""
+
+#: wikipbxweb/models.py:55 wikipbxweb/templates/users.html:10
+msgid "user"
+msgstr ""
+
+#: wikipbxweb/models.py:80 wikipbxweb/templates/endpoints.html:16
+msgid "user profile"
+msgstr ""
+
+#: wikipbxweb/models.py:81
+msgid "user profiles"
+msgstr ""
+
+#: wikipbxweb/models.py:90 wikipbxweb/models.py:94
+msgid "False"
+msgstr ""
+
+#: wikipbxweb/models.py:90
+msgid "Passive"
+msgstr ""
+
+#: wikipbxweb/models.py:91 wikipbxweb/models.py:94
+msgid "True"
+msgstr ""
+
+#: wikipbxweb/models.py:93
+msgid "Call-id"
+msgstr ""
+
+#: wikipbxweb/models.py:93
+msgid "Contact"
+msgstr ""
+
+#: wikipbxweb/models.py:96
+msgid "SIP profile name"
+msgstr ""
+
+#: wikipbxweb/models.py:97
+msgid "E.g.: external, internal, etc..."
+msgstr ""
+
+#: wikipbxweb/models.py:99
+msgid "external RTP IP"
+msgstr ""
+
+#: wikipbxweb/models.py:101
+msgid "External/public IP address to bind to for RTP."
+msgstr ""
+
+#: wikipbxweb/models.py:103 wikipbxweb/templates/sip_profiles.html:11
+msgid "external SIP IP"
+msgstr ""
+
+#: wikipbxweb/models.py:105
+msgid "External/public IP address to bind to for SIP."
+msgstr ""
+
+#: wikipbxweb/models.py:107
+msgid "RTP IP"
+msgstr ""
+
+#: wikipbxweb/models.py:108
+msgid "Internal IP address to bind to for RTP."
+msgstr ""
+
+#: wikipbxweb/models.py:110
+msgid "SIP IP"
+msgstr ""
+
+#: wikipbxweb/models.py:111
+msgid "Internal IP address to bind to for SIP."
+msgstr ""
+
+#: wikipbxweb/models.py:112 wikipbxweb/templates/sip_profiles.html:12
+msgid "SIP port"
+msgstr ""
+
+#: wikipbxweb/models.py:114
+msgid "accept blind registration"
+msgstr ""
+
+#: wikipbxweb/models.py:116
+msgid ""
+"If true, anyone can register to server and will not be challenged for "
+"username/password information."
+msgstr ""
+
+#: wikipbxweb/models.py:119 wikipbxweb/models.py:431
+msgid "authenticate calls"
+msgstr ""
+
+#: wikipbxweb/models.py:121
+msgid ""
+"If true, FreeeSWITCH will authorize all calls on this profile, i.e. "
+"challenge the other side for username/password information."
+msgstr ""
+
+#: wikipbxweb/models.py:125
+msgid "manage presence"
+msgstr ""
+
+#: wikipbxweb/models.py:128
+msgid "Set to 'true' to enable presence. Required for MWI."
+msgstr ""
+
+#: wikipbxweb/models.py:130
+msgid "log auth failures"
+msgstr ""
+
+#: wikipbxweb/models.py:132
+msgid "It true, log authentication failures. Required for Fail2ban."
+msgstr ""
+
+#: wikipbxweb/models.py:134
+msgid "multiple registrations"
+msgstr ""
+
+#: wikipbxweb/models.py:137
+msgid "Used to allow to call one extension and ring several phones."
+msgstr ""
+
+#: wikipbxweb/models.py:191
+msgid "SIP profiles"
+msgstr ""
+
+#: wikipbxweb/models.py:208
+msgid "admins"
+msgstr ""
+
+#: wikipbxweb/models.py:209
+msgid "enabled"
+msgstr ""
+
+#: wikipbxweb/models.py:218
+msgid "domain"
+msgstr ""
+
+#: wikipbxweb/models.py:225
+msgid "dialout profile"
+msgstr ""
+
+#: wikipbxweb/models.py:234
+msgid "alias for domain"
+msgstr ""
+
+#: wikipbxweb/models.py:287
+msgid "accounts"
+msgstr ""
+
+#: wikipbxweb/models.py:293 wikipbxweb/models.py:443 wikipbxweb/models.py:956
+#: wikipbxweb/templates/broadcast2channel.html:42
+#: wikipbxweb/templates/dialout.html:51
+#: wikipbxweb/templates/extensions.html:28
+#: wikipbxweb/templates/soundclips.html:14
+#: wikipbxweb/templates/transfer.html:33
+msgid "description"
+msgstr ""
+
+#: wikipbxweb/models.py:294
+msgid "xml template"
+msgstr ""
+
+#: wikipbxweb/models.py:310
+msgid "default value"
+msgstr ""
+
+#: wikipbxweb/models.py:312
+msgid "template tag"
+msgstr ""
+
+#: wikipbxweb/models.py:399 wikipbxweb/models.py:400
+msgid "action data"
+msgstr ""
+
+#: wikipbxweb/models.py:433 wikipbxweb/templates/completedcalls.html:34
+msgid "destination number"
+msgstr ""
+
+#: wikipbxweb/models.py:435
+msgid ""
+"A perl compatible regular expression used to match against the destination "
+"number, eg: ^101$ to match 101,^(\\d{10,11})$ to match all 10 or 11 digit "
+"numbers"
+msgstr ""
+
+#: wikipbxweb/models.py:439 wikipbxweb/models.py:1008
+#: wikipbxweb/templates/extensions.html:26
+#: wikipbxweb/templates/livecalls.html:13
+msgid "caller ID number"
+msgstr ""
+
+#: wikipbxweb/models.py:441
+msgid ""
+"A perl compatible regular expression used to match against the caller ID "
+"number"
+msgstr ""
+
+#: wikipbxweb/models.py:451
+msgid "actions XML"
+msgstr ""
+
+#: wikipbxweb/models.py:452
+msgid "is temporary"
+msgstr ""
+
+#: wikipbxweb/models.py:457 wikipbxweb/models.py:645
+#: wikipbxweb/templates/endpoints.html:14
+msgid "endpoint"
+msgstr ""
+
+#: wikipbxweb/models.py:463
+msgid "priority position"
+msgstr ""
+
+#: wikipbxweb/models.py:507
+#, python-format
+msgid "There is no single expansion for this extension: %s"
+msgstr ""
+
+#: wikipbxweb/models.py:552 wikipbxweb/templates/dialout.html:50
+#: wikipbxweb/templates/extensions.html:25
+#: wikipbxweb/templates/transfer.html:32
+msgid "extension"
+msgstr ""
+
+#: wikipbxweb/models.py:553 wikipbxweb/templates/endpoints.html:15
+#: wikipbxweb/templates/endpoints.html:35
+msgid "extensions"
+msgstr ""
+
+#: wikipbxweb/models.py:565
+msgid "user ID"
+msgstr ""
+
+#: wikipbxweb/models.py:567
+msgid ""
+"The User ID the SIP endpoint logs in with. Normally this should be numeric, "
+"for example: 101. This is only a recommendation and not a hard rule, and "
+"this can be anything, for example my_sip_endpoint_101@foo.com."
+msgstr ""
+
+#: wikipbxweb/models.py:571 wikipbxweb/models.py:661 wikipbxweb/models.py:1044
+msgid "password"
+msgstr ""
+
+#: wikipbxweb/models.py:572
+msgid "It's recomended to use strong passwords for the endpoint."
+msgstr ""
+
+#: wikipbxweb/models.py:576
+msgid "web user"
+msgstr ""
+
+#: wikipbxweb/models.py:578
+msgid "(Optional) Associate this endpoint with an existing User."
+msgstr ""
+
+#: wikipbxweb/models.py:580
+msgid "contact address"
+msgstr ""
+
+#: wikipbxweb/models.py:581
+msgid "voice mail"
+msgstr ""
+
+#: wikipbxweb/models.py:583
+msgid ""
+"Enable voice mail for endpoint. When turned off this endpoint will not have "
+"a voice mail box. This means busy and no answer calls will not forward to a "
+"voice mail box, nor will the user be able to log in to a voice mail box. "
+msgstr ""
+
+#: wikipbxweb/models.py:588
+msgid "voice mail password"
+msgstr ""
+
+#: wikipbxweb/models.py:590
+msgid "Usually numbers only, because it'll be entered form the dial pad."
+msgstr ""
+
+#: wikipbxweb/models.py:593
+msgid "email voice mail message to"
+msgstr ""
+
+#: wikipbxweb/models.py:595
+msgid "Send recorded voice mail message to specified email address."
+msgstr ""
+
+#: wikipbxweb/models.py:597
+msgid "email voice mail notification to"
+msgstr ""
+
+#: wikipbxweb/models.py:599
+msgid "Send notification about received voice mail to specified email address."
+msgstr ""
+
+#: wikipbxweb/models.py:602
+msgid "delete voice mail after email"
+msgstr ""
+
+#: wikipbxweb/models.py:605
+msgid ""
+"Voice mail message will be removed from the local storage after sending via "
+"email."
+msgstr ""
+
+#: wikipbxweb/models.py:608
+msgid "toll allow"
+msgstr ""
+
+#: wikipbxweb/models.py:610
+msgid ""
+"Specifies which types of calls this user can make. Multiple values can be "
+"specified separated with the coma. E.g.: domestic,international,local"
+msgstr ""
+
+#: wikipbxweb/models.py:614
+msgid "effective CallerID name"
+msgstr ""
+
+#: wikipbxweb/models.py:616
+msgid ""
+"Caller ID name displayed on called party's phone when calling another "
+"registered endpoint."
+msgstr ""
+
+#: wikipbxweb/models.py:619
+msgid "effective CallerID number"
+msgstr ""
+
+#: wikipbxweb/models.py:621
+msgid ""
+"Caller ID number displayed on called party's phone when calling another "
+"registered endpoint."
+msgstr ""
+
+#: wikipbxweb/models.py:624
+msgid "outbound CallerID name"
+msgstr ""
+
+#: wikipbxweb/models.py:625
+msgid "Caller ID name sent to provider on outbound calls."
+msgstr ""
+
+#: wikipbxweb/models.py:627
+msgid "outbound CallerID number"
+msgstr ""
+
+#: wikipbxweb/models.py:628
+msgid "Caller ID number sent to provider on outbound calls."
+msgstr ""
+
+#: wikipbxweb/models.py:646
+msgid "endpoints"
+msgstr ""
+
+#: wikipbxweb/models.py:657
+msgid "Which Sip Profile communication with this gateway will take place on."
+msgstr ""
+
+#: wikipbxweb/models.py:660
+msgid "username"
+msgstr ""
+
+#: wikipbxweb/models.py:663
+msgid "proxy"
+msgstr ""
+
+#: wikipbxweb/models.py:664
+msgid "Same as realm, if blank."
+msgstr ""
+
+#: wikipbxweb/models.py:665
+msgid "register"
+msgstr ""
+
+#: wikipbxweb/models.py:667
+msgid "extension number"
+msgstr ""
+
+#: wikipbxweb/models.py:668
+msgid "Extension for inbound calls. Same as username, if blank."
+msgstr ""
+
+#: wikipbxweb/models.py:671
+msgid "realm"
+msgstr ""
+
+#: wikipbxweb/models.py:672
+msgid "Authentication realm. Same as gateway name, if blank."
+msgstr ""
+
+#: wikipbxweb/models.py:674
+msgid "from domain"
+msgstr ""
+
+#: wikipbxweb/models.py:676
+msgid "Domain to use in from from field. Same as realm if blank."
+msgstr ""
+
+#: wikipbxweb/models.py:678
+msgid "expire seconds"
+msgstr ""
+
+#: wikipbxweb/models.py:680
+msgid "retry seconds"
+msgstr ""
+
+#: wikipbxweb/models.py:685
+msgid "caller ID in From field"
+msgstr ""
+
+#: wikipbxweb/models.py:687
+msgid ""
+"Use the callerid of an inbound call in the from field on outbound calls via "
+"this gateway."
+msgstr ""
+
+#: wikipbxweb/models.py:693
+msgid "accessible for all accounts"
+msgstr ""
+
+#: wikipbxweb/models.py:715
+msgid "Sofia gateway"
+msgstr ""
+
+#: wikipbxweb/models.py:716
+msgid "Sofia gateways"
+msgstr ""
+
+#: wikipbxweb/models.py:727
+msgid "log creation time"
+msgstr ""
+
+#: wikipbxweb/models.py:728 wikipbxweb/templates/server_logs.html:16
+msgid "message"
+msgstr ""
+
+#: wikipbxweb/models.py:735
+msgid "server log"
+msgstr ""
+
+#: wikipbxweb/models.py:736
+msgid "server logs"
+msgstr ""
+
+#: wikipbxweb/models.py:747
+msgid "from e-mail"
+msgstr ""
+
+#: wikipbxweb/models.py:749
+msgid "e-mail host"
+msgstr ""
+
+#: wikipbxweb/models.py:751
+msgid "e-mail port"
+msgstr ""
+
+#: wikipbxweb/models.py:753
+msgid "authentication user"
+msgstr ""
+
+#: wikipbxweb/models.py:754 wikipbxweb/models.py:757
+msgid "Enable if your mail server requires login credentials"
+msgstr ""
+
+#: wikipbxweb/models.py:756
+msgid "authentication password"
+msgstr ""
+
+#: wikipbxweb/models.py:759
+msgid "use TLS"
+msgstr ""
+
+#: wikipbxweb/models.py:760
+msgid ""
+"Enable if your mail server requires Transport Layer Security (TLS) encryption"
+msgstr ""
+
+#: wikipbxweb/models.py:768
+msgid "e-mail config"
+msgstr ""
+
+#: wikipbxweb/models.py:769
+msgid "e-mail configs"
+msgstr ""
+
+#: wikipbxweb/models.py:785
+msgid "The filename, without the extension."
+msgstr ""
+
+#: wikipbxweb/models.py:787
+msgid "language extension"
+msgstr ""
+
+#: wikipbxweb/models.py:817
+#, python-format
+msgid "Invalid extension: %s"
+msgstr ""
+
+#: wikipbxweb/models.py:859 wikipbxweb/templates/ivrs.html:57
+#: wikipbxweb/templates/ivrs.html.py:98
+#: wikipbxweb/templates/left_toolbar_base.html:125
+msgid "IVR"
+msgstr ""
+
+#: wikipbxweb/models.py:860
+msgid "IVRs"
+msgstr ""
+
+#: wikipbxweb/models.py:872
+msgid "long greeting"
+msgstr ""
+
+#: wikipbxweb/models.py:875
+msgid "The initial recording that is played when a caller reaches this IVR."
+msgstr ""
+
+#: wikipbxweb/models.py:878
+msgid "short greeting"
+msgstr ""
+
+#: wikipbxweb/models.py:881
+msgid ""
+"The greeting that is re-played when the caller enters invalid information or "
+"no information at all. This is usually the same greeting as 'long greeting', "
+"but without the intro phrase."
+msgstr ""
+
+#: wikipbxweb/models.py:885
+msgid "invalid sound"
+msgstr ""
+
+#: wikipbxweb/models.py:888
+msgid "The greeting played when caller enters a wrong choice."
+msgstr ""
+
+#: wikipbxweb/models.py:890
+msgid "exit sound"
+msgstr ""
+
+#: wikipbxweb/models.py:893
+msgid ""
+"This is played when the caller made too many failed attempts or a timeout "
+"occurs just before it disconnects the call."
+msgstr ""
+
+#: wikipbxweb/models.py:896
+msgid "timeout"
+msgstr ""
+
+#: wikipbxweb/models.py:898
+msgid ""
+"Time to wait for the user to start entering digits after the greeting has "
+"played. Number in milliseconds."
+msgstr ""
+
+#: wikipbxweb/models.py:901
+msgid "inter digit timeout"
+msgstr ""
+
+#: wikipbxweb/models.py:903
+msgid ""
+"The maximum amount of time to wait in-between each digit the caller "
+"presses.  Number in milliseconds."
+msgstr ""
+
+#: wikipbxweb/models.py:906
+msgid "max failures"
+msgstr ""
+
+#: wikipbxweb/models.py:908
+msgid "After how many failures call will be disconnected."
+msgstr ""
+
+#: wikipbxweb/models.py:910
+msgid "max timeouts"
+msgstr ""
+
+#: wikipbxweb/models.py:912
+msgid "Number of allowed timeouts before disconnecting the call."
+msgstr ""
+
+#: wikipbxweb/models.py:914
+msgid "digit length"
+msgstr ""
+
+#: wikipbxweb/models.py:916
+msgid ""
+"Number of digits to accept before determining the entry is complete. Usually "
+"should match extensions numbers length."
+msgstr ""
+
+#: wikipbxweb/models.py:993
+msgid "Sound clip"
+msgstr ""
+
+#: wikipbxweb/models.py:994
+msgid "Sound clips"
+msgstr ""
+
+#: wikipbxweb/models.py:1007
+msgid "UUID"
+msgstr ""
+
+#: wikipbxweb/models.py:1010
+msgid "Destination number"
+msgstr ""
+
+#: wikipbxweb/models.py:1011 wikipbxweb/templates/completedcalls.html:35
+msgid "channel name"
+msgstr ""
+
+#: wikipbxweb/models.py:1012 wikipbxweb/templates/completedcalls.html:36
+msgid "answered time"
+msgstr ""
+
+#: wikipbxweb/models.py:1013 wikipbxweb/templates/completedcalls.html:37
+msgid "hangup time"
+msgstr ""
+
+#: wikipbxweb/models.py:1014 wikipbxweb/templates/completedcalls.html:38
+msgid "CDR XML"
+msgstr ""
+
+#: wikipbxweb/models.py:1023
+msgid "completed call"
+msgstr ""
+
+#: wikipbxweb/models.py:1024
+msgid "completed calls"
+msgstr ""
+
+#: wikipbxweb/models.py:1041
+msgid "listen IP"
+msgstr ""
+
+#: wikipbxweb/models.py:1042
+msgid "listen port"
+msgstr ""
+
+#: wikipbxweb/models.py:1044
+msgid "CHANGE ME"
+msgstr ""
+
+#: wikipbxweb/models.py:1050
+msgid "event socket config"
+msgstr ""
+
+#: wikipbxweb/models.py:1051
+msgid "event socket configs"
+msgstr ""
+
+#: wikipbxweb/views.py:66
+msgid ""
+"Authentication failed.  Please try again, make sure the CAPS-LOCK key is off "
+"and there are no typo's."
+msgstr ""
+
+#: wikipbxweb/views.py:76
+msgid "You have been logged out"
+msgstr ""
+
+#: wikipbxweb/views.py:85
+msgid ""
+"When an incoming call comes into the PBX, extensions are matched in the "
+"order they are shown here, from top to bottom.  Once a match is found it is "
+"executed.  Re-order extensions using the green arrows."
+msgstr ""
+
+#: wikipbxweb/views.py:100
+msgid "Invalid action."
+msgstr ""
+
+#: wikipbxweb/views.py:103
+#, python-format
+msgid "Extension priority set to %s."
+msgstr ""
+
+#: wikipbxweb/views.py:107
+msgid "Extension priority raised."
+msgstr ""
+
+#: wikipbxweb/views.py:108
+msgid "Extension priority lowered."
+msgstr ""
+
+#: wikipbxweb/views.py:144
+#, python-format
+msgid "Extension %s saved."
+msgstr ""
+
+#: wikipbxweb/views.py:149
+msgid ""
+"Dialplan extensions can bridge to locally registered endpoints, remote "
+"endpoints, PSTN numbers via gateways, special applications such as the Echo "
+"Test, or IVR scripts."
+msgstr ""
+
+#: wikipbxweb/views.py:167
+#, python-format
+msgid "Extension %s deleted."
+msgstr ""
+
+#: wikipbxweb/views.py:195 wikipbxweb/views.py:231
+msgid "Action added."
+msgstr ""
+
+#: wikipbxweb/views.py:200
+msgid "Add new action."
+msgstr ""
+
+#: wikipbxweb/views.py:201 wikipbxweb/templates/edit_extension.html:37
+msgid "Action"
+msgstr ""
+
+#: wikipbxweb/views.py:236
+msgid "Add new IVR destination."
+msgstr ""
+
+#: wikipbxweb/views.py:237 wikipbxweb/templates/edit_ivr_menu.html:34
+msgid "IVR destination"
+msgstr ""
+
+#: wikipbxweb/views.py:254 wikipbxweb/views.py:270
+msgid "Action deleted."
+msgstr ""
+
+#: wikipbxweb/views.py:301 wikipbxweb/views.py:391 wikipbxweb/views.py:437
+#, python-format
+msgid "IVR %s saved."
+msgstr ""
+
+#: wikipbxweb/views.py:305
+msgid "Only root can edit system-wide IVRs."
+msgstr ""
+
+#: wikipbxweb/views.py:323
+#, python-format
+msgid "Ivr %s deleted."
+msgstr ""
+
+#: wikipbxweb/views.py:334
+msgid "Account deleted. FreeSWITCH notified."
+msgstr ""
+
+#: wikipbxweb/views.py:336
+#, python-format
+msgid "Account deleted, failed to notify FreeSWITCH: %s."
+msgstr ""
+
+#: wikipbxweb/views.py:345
+#, python-format
+msgid ""
+"There are still %s gateways associated with this SIP profile, fix this first."
+msgstr ""
+
+#: wikipbxweb/views.py:353
+msgid "SIP Profile deleted. FreeSWITCH notified."
+msgstr ""
+
+#: wikipbxweb/views.py:355
+#, python-format
+msgid "SIP Profile deleted, failed to notify FreeSWITCH: %s."
+msgstr ""
+
+#: wikipbxweb/views.py:374
+#, python-format
+msgid "Event_socket config %s updated."
+msgstr ""
+
+#: wikipbxweb/views.py:397
+msgid "IVR script"
+msgstr ""
+
+#: wikipbxweb/views.py:441 wikipbxweb/templates/ivrs.html:16
+msgid "IVR menu"
+msgstr ""
+
+#: wikipbxweb/views.py:469
+msgid "Account updated. FreeSWITCH notified."
+msgstr ""
+
+#: wikipbxweb/views.py:471
+#, python-format
+msgid "Account updated, failed to notify FreeSWITCH: %s"
+msgstr ""
+
+#: wikipbxweb/views.py:489
+msgid "SIP Profile added. FreeSWITCH notified."
+msgstr ""
+
+#: wikipbxweb/views.py:491
+#, python-format
+msgid "SIP Profile added, failed to notify FreeSWITCH: %s."
+msgstr ""
+
+#: wikipbxweb/views.py:513
+msgid "SIP Profile updated. FreeSWITCH notified."
+msgstr ""
+
+#: wikipbxweb/views.py:515
+#, python-format
+msgid "SIP Profile updated, failed to notify FreeSWITCH: %s."
+msgstr ""
+
+#: wikipbxweb/views.py:563
+msgid "Account added. FreeSWITCH notified."
+msgstr ""
+
+#: wikipbxweb/views.py:565
+#, python-format
+msgid "Account added, failed to notify FreeSWITCH: %s."
+msgstr ""
+
+#: wikipbxweb/views.py:574
+#, python-format
+msgid "Error adding account: %s."
+msgstr ""
+
+#: wikipbxweb/views.py:578
+msgid "Error adding account."
+msgstr ""
+
+#: wikipbxweb/views.py:587
+msgid "You must have at least one sip profile to add an account."
+msgstr ""
+
+#: wikipbxweb/views.py:616
+#, python-format
+msgid "User %s added."
+msgstr ""
+
+#: wikipbxweb/views.py:632
+#, python-format
+msgid "User %s deleted."
+msgstr ""
+
+#: wikipbxweb/views.py:646
+#, python-format
+msgid "User %s updated."
+msgstr ""
+
+#: wikipbxweb/views.py:714
+msgid "Gateway updated. FreeSWITCH notified."
+msgstr ""
+
+#: wikipbxweb/views.py:716
+#, python-format
+msgid "Gateway updated, failed to notify FreeSWITCH: %s."
+msgstr ""
+
+#: wikipbxweb/views.py:737
+msgid "Gateway deleted. FreeSWITCH notified."
+msgstr ""
+
+#: wikipbxweb/views.py:739
+#, python-format
+msgid "Gateway deleted, failed to notify FreeSWITCH: %s."
+msgstr ""
+
+#: wikipbxweb/views.py:776
+msgid "Gateway added. FreeSWITCH notified."
+msgstr ""
+
+#: wikipbxweb/views.py:778
+#, python-format
+msgid "Gateway added, failed to notify FreeSWITCH: %s."
+msgstr ""
+
+#: wikipbxweb/views.py:788
+msgid ""
+"SIP gateways are used for peering with another SIP provider, such as a "
+"provider which provides outgoing and/or origination access to the PSTN"
+msgstr ""
+
+#: wikipbxweb/views.py:801 wikipbxweb/views.py:891
+#, python-format
+msgid "Endpoint %s saved."
+msgstr ""
+
+#: wikipbxweb/views.py:817
+#, python-format
+msgid "Extension for %s"
+msgstr ""
+
+#: wikipbxweb/views.py:820
+#, python-format
+msgid "New extension %s created."
+msgstr ""
+
+#: wikipbxweb/views.py:827
+msgid "Define an endpoint to allow it to register on the PBX."
+msgstr ""
+
+#: wikipbxweb/views.py:868
+msgid "Failed to get current registration status from FreeSWITCH."
+msgstr ""
+
+#: wikipbxweb/views.py:908
+#, python-format
+msgid "Endpoint %s deleted."
+msgstr ""
+
+#: wikipbxweb/views.py:918
+#, python-format
+msgid "Soundclip %s deleted."
+msgstr ""
+
+#: wikipbxweb/views.py:957 wikipbxweb/views.py:972
+msgid "Soundclip was uploaded."
+msgstr ""
+
+#: wikipbxweb/views.py:966
+#, python-format
+msgid "Soundclip could not be uploaded: %s."
+msgstr ""
+
+#: wikipbxweb/views.py:984
+msgid "Soundclip was created."
+msgstr ""
+
+#: wikipbxweb/views.py:993
+msgid ""
+"The system will call you and prompt you to record a soundclip, which will be "
+"stored in the library with the soundclip name that you assign to it.  This "
+"soundclip will then be available for IVR's and other PBX features."
+msgstr ""
+
+#: wikipbxweb/views.py:1065 wikipbxweb/views.py:1371 wikipbxweb/views.py:1424
+#, python-format
+msgid "Dialout failed: %s."
+msgstr ""
+
+#: wikipbxweb/views.py:1069 wikipbxweb/views.py:1374 wikipbxweb/views.py:1427
+msgid "Dialout succeeded."
+msgstr ""
+
+#: wikipbxweb/views.py:1075
+msgid "Already have root user."
+msgstr ""
+
+#: wikipbxweb/views.py:1090
+#, python-format
+msgid "Root %s added."
+msgstr ""
+
+#: wikipbxweb/views.py:1130
+#, python-format
+msgid "Could not get live calls: %s."
+msgstr ""
+
+#: wikipbxweb/views.py:1153
+msgid "Call transferred."
+msgstr ""
+
+#: wikipbxweb/views.py:1157
+#, python-format
+msgid "Transfer failed: %s."
+msgstr ""
+
+#: wikipbxweb/views.py:1203
+#, python-format
+msgid "Broadcast failed: %s"
+msgstr ""
+
+#: wikipbxweb/views.py:1208
+msgid "Broadcast succeeded"
+msgstr ""
+
+#: wikipbxweb/views.py:1229
+#, python-format
+msgid "Could not hangup call %(channel)s: %(error)s"
+msgstr ""
+
+#: wikipbxweb/views.py:1231
+#, python-format
+msgid "Could not hangup calls: %s"
+msgstr ""
+
+#: wikipbxweb/views.py:1235
+#, python-format
+msgid "Call %s hangup succeeded."
+msgstr ""
+
+#: wikipbxweb/views.py:1236
+msgid "Calls hangup succeeded."
+msgstr ""
+
+#: wikipbxweb/views.py:1258
+msgid "Email server configuration successful."
+msgstr ""
+
+#: wikipbxweb/views.py:1267
+msgid ""
+"Configure Email server for this account.  At the time of this writing, only "
+"tested with GMail accounts with use_tls set to True"
+msgstr ""
+
+#: wikipbxweb/views.py:1280
+msgid "Sorry, no email servers configured for this account."
+msgstr ""
+
+#: wikipbxweb/views.py:1295
+msgid "Test email was sent"
+msgstr ""
+
+#: wikipbxweb/views.py:1361
+msgid "Nothing to dial. Ignored request."
+msgstr ""
+
+#: wikipbxweb/views.py:1410
+msgid "Gateway not found."
+msgstr ""
+
+#: wikipbxweb/views.py:1455
+#, python-format
+msgid "Fatal error adding cdr xml: %s"
+msgstr ""
+
+#: wikipbxweb/views.py:1498
+msgid "Use this form to view the raw XML returned to FreeSWITCH when requested"
+msgstr ""
+
+#: wikipbxweb/templates/404.html:6
+msgid "Page not found"
+msgstr ""
+
+#: wikipbxweb/templates/404.html:7
+msgid "Sorry, but the requested page could not be found."
+msgstr ""
+
+#: wikipbxweb/templates/500.html:5
+msgid "Page unavailable"
+msgstr ""
+
+#: wikipbxweb/templates/500.html:6
+msgid "Sorry, but the requested page is unavailable due to a server error."
+msgstr ""
+
+#: wikipbxweb/templates/500.html:7
+msgid "Our engineers have been notified, so check back later."
+msgstr ""
+
+#: wikipbxweb/templates/accounts.html:12
+msgid "users"
+msgstr ""
+
+#: wikipbxweb/templates/accounts.html:13
+msgid "add user"
+msgstr ""
+
+#: wikipbxweb/templates/accounts.html:14
+#: wikipbxweb/templates/endpoints.html:19
+#: wikipbxweb/templates/extensions.html:35
+#: wikipbxweb/templates/sip_profiles.html:15
+#: wikipbxweb/templates/soundclips.html:16 wikipbxweb/templates/users.html:12
+msgid "delete"
+msgstr ""
+
+#: wikipbxweb/templates/accounts.html:53
+msgid "No accounts defined"
+msgstr ""
+
+#: wikipbxweb/templates/action.html:55
+#: wikipbxweb/templates/edit_extension.html:75
+#: wikipbxweb/templates/edit_ivr_menu.html:72
+#: wikipbxweb/templates/object_form.html:10
+#: wikipbxweb/templates/xml_dialplan.html:23
+#: wikipbxweb/templates/xml_dialplan.html:40
+#: wikipbxweb/templates/xml_dialplan.html:66
+msgid "Submit"
+msgstr ""
+
+#: wikipbxweb/templates/add_soundclip.html:23
+msgid "Add Soundclip to library"
+msgstr ""
+
+#: wikipbxweb/templates/add_soundclip.html:26
+msgid "Form contains errors"
+msgstr ""
+
+#: wikipbxweb/templates/add_soundclip.html:37
+msgid "You will prompted for dialout number on next screen"
+msgstr ""
+
+#: wikipbxweb/templates/add_soundclip.html:41
+msgid "Choose WAV file:"
+msgstr ""
+
+#: wikipbxweb/templates/add_soundclip.html:44
+msgid "Format: 1-channel, 16-bit, 8KZ, PCM"
+msgstr ""
+
+#: wikipbxweb/templates/add_soundclip.html:49
+msgid "URL to wav file:"
+msgstr ""
+
+#: wikipbxweb/templates/add_soundclip.html:59
+msgid "Continue"
+msgstr ""
+
+#: wikipbxweb/templates/base.html:4
+msgid "Wiki PBX - Open Source Web GUI front-end for FreeSWITCH"
+msgstr ""
+
+#: wikipbxweb/templates/base.html:38
+msgid "Sign out"
+msgstr ""
+
+#: wikipbxweb/templates/base.html:70
+msgid "Root user"
+msgstr ""
+
+#: wikipbxweb/templates/broadcast2channel.html:11
+#, python-format
+msgid ""
+"Convert text to speech and inject into <span title=\"%(chan_uuid)s"
+"\">channel</span>."
+msgstr ""
+
+#: wikipbxweb/templates/broadcast2channel.html:17
+msgid "Text To Speak:"
+msgstr ""
+
+#: wikipbxweb/templates/broadcast2channel.html:35
+#, python-format
+msgid ""
+"Choose Soundclip to inject into <span title=\"%(chan_uuid)s\">channel</span>."
+msgstr ""
+
+#: wikipbxweb/templates/broadcast2channel.html:43
+msgid "play"
+msgstr ""
+
+#: wikipbxweb/templates/broadcast2channel.html:60
+msgid "No soundclips found."
+msgstr ""
+
+#: wikipbxweb/templates/completedcalls.html:20
+#, python-format
+msgid "%(call_type)s calls."
+msgstr ""
+
+#: wikipbxweb/templates/completedcalls.html:25
+#, python-format
+msgid ""
+"Warning: Some CDR's may be missing!  WikiPBX has received %(unmatched_len)s "
+"CDR records from freeswitch which it could not match with an account, please "
+"tell your admin about this."
+msgstr ""
+
+#: wikipbxweb/templates/completedcalls.html:33
+msgid "caller ID"
+msgstr ""
+
+#: wikipbxweb/templates/completedcalls.html:52
+msgid "Show XML"
+msgstr ""
+
+#: wikipbxweb/templates/completedcalls.html:61
+#, python-format
+msgid "No %(calltype)s calls found."
+msgstr ""
+
+#: wikipbxweb/templates/dashboard.html:5
+msgid "Please click a function on the left."
+msgstr ""
+
+#: wikipbxweb/templates/dialout.html:18
+#, python-format
+msgid "Dialout from %(dest_ext_app)s"
+msgstr ""
+
+#: wikipbxweb/templates/dialout.html:20
+#, python-format
+msgid ""
+"Choose the destination(s) that will be dialed out from %(dest_ext_app)s. "
+"Calls will be placed in parallel."
+msgstr ""
+
+#: wikipbxweb/templates/dialout.html:23
+msgid "Additional Extensions and SIP URL's."
+msgstr ""
+
+#: wikipbxweb/templates/dialout.html:25
+msgid ""
+"Raw extensions can be entered (eg, 18005551212) or SIP urls can be entered "
+"(eg, 100@sip.foo.com:5065)."
+msgstr ""
+
+#: wikipbxweb/templates/dialout.html:28
+msgid "Click here to add extra empty form elements."
+msgstr ""
+
+#: wikipbxweb/templates/dialout.html:28
+msgid "Dial more"
+msgstr ""
+
+#: wikipbxweb/templates/dialout.html:39
+msgid "dialplan extensions"
+msgstr ""
+
+#: wikipbxweb/templates/dialout.html:43
+#, python-format
+msgid ""
+"Choose the dialplan extensions that will be dialed out from "
+"%(dest_ext_app)s.  Multiple concurrent outgoing calls can be specified by "
+"the pull-down to the right of the checkbox."
+msgstr ""
+
+#: wikipbxweb/templates/dialout.html:48 wikipbxweb/templates/transfer.html:31
+msgid "select"
+msgstr ""
+
+#: wikipbxweb/templates/dialout.html:49
+msgid "number of concurrent calls"
+msgstr ""
+
+#: wikipbxweb/templates/dialout.html:52
+#: wikipbxweb/templates/extensions.html:29
+#: wikipbxweb/templates/transfer.html:34
+msgid "dialplan"
+msgstr ""
+
+#: wikipbxweb/templates/dialout.html:90
+#: wikipbxweb/templates/extensions.html:30
+msgid "dialout"
+msgstr ""
+
+#: wikipbxweb/templates/dialout.html:95
+msgid "No dialplan extensions found."
+msgstr ""
+
+#: wikipbxweb/templates/edit_extension.html:67
+msgid "Add new action"
+msgstr ""
+
+#: wikipbxweb/templates/edit_ivr.html:9
+msgid "Action XML"
+msgstr ""
+
+#: wikipbxweb/templates/edit_ivr_menu.html:63
+msgid "Add new IVR destination"
+msgstr ""
+
+#: wikipbxweb/templates/endpoints.html:7
+msgid "SIP endpoints"
+msgstr ""
+
+#: wikipbxweb/templates/endpoints.html:17
+msgid "make test call"
+msgstr ""
+
+#: wikipbxweb/templates/endpoints.html:18
+msgid "is registered"
+msgstr ""
+
+#: wikipbxweb/templates/endpoints.html:26
+msgid "Edit endpoint settings."
+msgstr ""
+
+#: wikipbxweb/templates/endpoints.html:33
+msgid "Modify Extension associated with this Endpoint."
+msgstr ""
+
+#: wikipbxweb/templates/endpoints.html:38
+msgid "No Extension associated with this Endpoint."
+msgstr ""
+
+#: wikipbxweb/templates/endpoints.html:40
+msgid "Extsensions"
+msgstr ""
+
+#: wikipbxweb/templates/endpoints.html:48
+msgid "No user."
+msgstr ""
+
+#: wikipbxweb/templates/endpoints.html:52
+msgid "Place an echo test call."
+msgstr ""
+
+#: wikipbxweb/templates/endpoints.html:60
+msgid "Endpoint is online."
+msgstr ""
+
+#: wikipbxweb/templates/endpoints.html:62
+msgid "Online"
+msgstr ""
+
+#: wikipbxweb/templates/endpoints.html:65
+msgid "Endpoint is offline (unregistered)."
+msgstr ""
+
+#: wikipbxweb/templates/endpoints.html:67
+msgid "Offline"
+msgstr ""
+
+#: wikipbxweb/templates/endpoints.html:72
+msgid "Delete this endpoint."
+msgstr ""
+
+#: wikipbxweb/templates/endpoints.html:85
+msgid "No endpoints defined."
+msgstr ""
+
+#: wikipbxweb/templates/extensions.html:15
+msgid "Extensions associated with SIP Endpoint"
+msgstr ""
+
+#: wikipbxweb/templates/extensions.html:17
+msgid "Extensions (Dialplan)"
+msgstr ""
+
+#: wikipbxweb/templates/extensions.html:27
+msgid "authenticated"
+msgstr ""
+
+#: wikipbxweb/templates/extensions.html:31
+msgid "top"
+msgstr ""
+
+#: wikipbxweb/templates/extensions.html:32
+msgid "bottom"
+msgstr ""
+
+#: wikipbxweb/templates/extensions.html:33
+msgid "up"
+msgstr ""
+
+#: wikipbxweb/templates/extensions.html:34
+msgid "down"
+msgstr ""
+
+#: wikipbxweb/templates/extensions.html:50
+msgid "Only authenticated endpoints / parties may dial this extension."
+msgstr ""
+
+#: wikipbxweb/templates/extensions.html:54
+msgid ""
+"This is a public extension and no extra auth checking will be done (beyond "
+"what the SIP profile mandates)."
+msgstr ""
+
+#: wikipbxweb/templates/extensions.html:67
+msgid "Dialout from this extension to another extension or endpoint."
+msgstr ""
+
+#: wikipbxweb/templates/extensions.html:108
+msgid "No extensions defined."
+msgstr ""
+
+#: wikipbxweb/templates/gateways.html:7
+#: wikipbxweb/templates/left_toolbar_base.html:74
+msgid "Gateways"
+msgstr ""
+
+#: wikipbxweb/templates/gateways.html:38
+msgid "No gateways defined"
+msgstr ""
+
+#: wikipbxweb/templates/index.html:6
+msgid "Welcome to WikiPBX!"
+msgstr ""
+
+#: wikipbxweb/templates/index.html:10
+msgid "Web GUI for FreeSWITCH providing SIP PBX functionality."
+msgstr ""
+
+#: wikipbxweb/templates/index.html:11
+msgid ""
+"WikiPBX allows you to store SIP endpoints and dialplan extensions in a "
+"database and update them over a web GUI."
+msgstr ""
+
+#: wikipbxweb/templates/index.html:19
+msgid "Sign in to your account"
+msgstr ""
+
+#: wikipbxweb/templates/index.html:23
+msgid "Email:"
+msgstr ""
+
+#: wikipbxweb/templates/index.html:39
+msgid "Password:"
+msgstr ""
+
+#: wikipbxweb/templates/index.html:57
+msgid "Remember me on this computer"
+msgstr ""
+
+#: wikipbxweb/templates/index.html:68
+msgid "Sign In"
+msgstr ""
+
+#: wikipbxweb/templates/index.html:78
+msgid "Add Root user"
+msgstr ""
+
+#: wikipbxweb/templates/ivrs.html:8
+msgid "Interactive Voice Response (IVR) menus - This Account"
+msgstr ""
+
+#: wikipbxweb/templates/ivrs.html:42 wikipbxweb/templates/ivrs.html.py:83
+#: wikipbxweb/templates/ivrs.html:116
+msgid "No ivrs defined"
+msgstr ""
+
+#: wikipbxweb/templates/ivrs.html:49
+msgid "Interactive Voice Response (IVR) scripts - This Account"
+msgstr ""
+
+#: wikipbxweb/templates/ivrs.html:90
+msgid "Interactive Voice Response (IVR) scripts - System Wide"
+msgstr ""
+
+#: wikipbxweb/templates/left_toolbar_base.html:5
+msgid "Dashboard"
+msgstr ""
+
+#: wikipbxweb/templates/left_toolbar_base.html:13
+msgid "SIP Profiles"
+msgstr ""
+
+#: wikipbxweb/templates/left_toolbar_base.html:16
+#: wikipbxweb/templates/left_toolbar_base.html:27
+msgid "New"
+msgstr ""
+
+#: wikipbxweb/templates/left_toolbar_base.html:19
+#: wikipbxweb/templates/left_toolbar_base.html:30
+#: wikipbxweb/templates/left_toolbar_base.html:60
+#: wikipbxweb/templates/left_toolbar_base.html:80
+#: wikipbxweb/templates/left_toolbar_base.html:92
+#: wikipbxweb/templates/left_toolbar_base.html:134
+#: wikipbxweb/templates/left_toolbar_base.html:146
+#: wikipbxweb/templates/left_toolbar_base.html:158
+msgid "Manage"
+msgstr ""
+
+#: wikipbxweb/templates/left_toolbar_base.html:24
+msgid "Accounts"
+msgstr ""
+
+#: wikipbxweb/templates/left_toolbar_base.html:34
+msgid "Server"
+msgstr ""
+
+#: wikipbxweb/templates/left_toolbar_base.html:37
+msgid "XML Config"
+msgstr ""
+
+#: wikipbxweb/templates/left_toolbar_base.html:40
+msgid "Event Socket"
+msgstr ""
+
+#: wikipbxweb/templates/left_toolbar_base.html:43
+msgid "Logs"
+msgstr ""
+
+#: wikipbxweb/templates/left_toolbar_base.html:46
+msgid "CDRs"
+msgstr ""
+
+#: wikipbxweb/templates/left_toolbar_base.html:54
+msgid "Endpoints"
+msgstr ""
+
+#: wikipbxweb/templates/left_toolbar_base.html:57
+#: wikipbxweb/templates/left_toolbar_base.html:67
+#: wikipbxweb/templates/left_toolbar_base.html:77
+#: wikipbxweb/templates/left_toolbar_base.html:87
+#: wikipbxweb/templates/left_toolbar_base.html:128
+#: wikipbxweb/templates/left_toolbar_base.html:143
+#: wikipbxweb/templates/left_toolbar_base.html:155
+msgid "Add"
+msgstr ""
+
+#: wikipbxweb/templates/left_toolbar_base.html:64
+msgid "Extensions"
+msgstr ""
+
+#: wikipbxweb/templates/left_toolbar_base.html:70
+msgid "Dialplan"
+msgstr ""
+
+#: wikipbxweb/templates/left_toolbar_base.html:84
+msgid "Web Users"
+msgstr ""
+
+#: wikipbxweb/templates/left_toolbar_base.html:96
+msgid "Calls"
+msgstr ""
+
+#: wikipbxweb/templates/left_toolbar_base.html:99
+msgid "Live"
+msgstr ""
+
+#: wikipbxweb/templates/left_toolbar_base.html:104
+msgid "Completed"
+msgstr ""
+
+#: wikipbxweb/templates/left_toolbar_base.html:109
+msgid "Click-to-Call"
+msgstr ""
+
+#: wikipbxweb/templates/left_toolbar_base.html:114
+msgid "Mail Server"
+msgstr ""
+
+#: wikipbxweb/templates/left_toolbar_base.html:117
+msgid "Configure"
+msgstr ""
+
+#: wikipbxweb/templates/left_toolbar_base.html:120
+msgid "Test"
+msgstr ""
+
+#: wikipbxweb/templates/left_toolbar_base.html:131
+msgid "Add menu"
+msgstr ""
+
+#: wikipbxweb/templates/left_toolbar_base.html:140
+msgid "Sound Clips"
+msgstr ""
+
+#: wikipbxweb/templates/left_toolbar_base.html:152
+msgid "Contacts"
+msgstr ""
+
+#: wikipbxweb/templates/left_toolbar_base.html:168
+msgid "Help"
+msgstr ""
+
+#: wikipbxweb/templates/left_toolbar_base.html:171
+msgid "User Guide"
+msgstr ""
+
+#: wikipbxweb/templates/livecalls.html:5
+msgid "Channels"
+msgstr ""
+
+#: wikipbxweb/templates/livecalls.html:10
+msgid "caller"
+msgstr ""
+
+#: wikipbxweb/templates/livecalls.html:11
+msgid "dialed extension"
+msgstr ""
+
+#: wikipbxweb/templates/livecalls.html:12
+msgid "inject audio/TTS"
+msgstr ""
+
+#: wikipbxweb/templates/livecalls.html:14
+msgid "caller ID name"
+msgstr ""
+
+#: wikipbxweb/templates/livecalls.html:15
+msgid "creation time"
+msgstr ""
+
+#: wikipbxweb/templates/livecalls.html:16
+msgid "transfer"
+msgstr ""
+
+#: wikipbxweb/templates/livecalls.html:17
+msgid "hangup"
+msgstr ""
+
+#: wikipbxweb/templates/livecalls.html:51
+#, python-format
+msgid ""
+"\n"
+"    Hangup live channel.\n"
+"    "
+msgid_plural ""
+"\n"
+"    Hangup all %(channels_length)s channels.\n"
+"    "
+msgstr[0] ""
+msgstr[1] ""
+
+#: wikipbxweb/templates/livecalls.html:59
+msgid "No channels"
+msgstr ""
+
+#: wikipbxweb/templates/paginator.html:5 wikipbxweb/templates/paginator.html:7
+msgid "First page"
+msgstr ""
+
+#: wikipbxweb/templates/paginator.html:11
+#: wikipbxweb/templates/paginator.html:13
+msgid "Back"
+msgstr ""
+
+#: wikipbxweb/templates/paginator.html:25
+#: wikipbxweb/templates/paginator.html:27
+msgid "Forward"
+msgstr ""
+
+#: wikipbxweb/templates/paginator.html:31
+#: wikipbxweb/templates/paginator.html:33
+msgid "Last page"
+msgstr ""
+
+#: wikipbxweb/templates/product_features.html:4
+msgid "Open Source under Mozilla Public License"
+msgstr ""
+
+#: wikipbxweb/templates/product_features.html:4
+msgid "(download source code)"
+msgstr ""
+
+#: wikipbxweb/templates/product_features.html:5
+msgid "Manage dialplan extensions"
+msgstr ""
+
+#: wikipbxweb/templates/product_features.html:6
+msgid "Manage SIP endpoints"
+msgstr ""
+
+#: wikipbxweb/templates/product_features.html:7
+msgid "Manage incoming and outgoing gateways"
+msgstr ""
+
+#: wikipbxweb/templates/product_features.html:8
+msgid "Web Dialout"
+msgstr ""
+
+#: wikipbxweb/templates/product_features.html:9
+msgid "Call history"
+msgstr ""
+
+#: wikipbxweb/templates/product_features.html:10
+msgid "View/Hangup live calls"
+msgstr ""
+
+#: wikipbxweb/templates/product_features.html:11
+msgid "Manage soundclips"
+msgstr ""
+
+#: wikipbxweb/templates/product_features.html:12
+msgid "IVR Management"
+msgstr ""
+
+#: wikipbxweb/templates/product_features.html:13
+msgid "Configuration managed by Web UI is stored in database"
+msgstr ""
+
+#: wikipbxweb/templates/product_features.html:14
+msgid "Configuration from database layered on top of what is in XML files"
+msgstr ""
+
+#: wikipbxweb/templates/server_logs.html:10
+msgid "error ID"
+msgstr ""
+
+#: wikipbxweb/templates/server_logs.html:13
+msgid "log time"
+msgstr ""
+
+#: wikipbxweb/templates/server_logs.html:36
+msgid "No server logs found"
+msgstr ""
+
+#: wikipbxweb/templates/sip_profiles.html:13
+msgid "accept blind reg"
+msgstr ""
+
+#: wikipbxweb/templates/sip_profiles.html:14
+msgid "auth calls"
+msgstr ""
+
+#: wikipbxweb/templates/sip_profiles.html:33
+#: wikipbxweb/templates/sip_profiles.html:40
+msgid "Disabled"
+msgstr ""
+
+#: wikipbxweb/templates/sip_profiles.html:35
+#: wikipbxweb/templates/sip_profiles.html:42
+msgid "Enabled"
+msgstr ""
+
+#: wikipbxweb/templates/sip_profiles.html:57
+msgid "No SIP Profiles defined"
+msgstr ""
+
+#: wikipbxweb/templates/soundclips.html:6
+msgid "Soundclips"
+msgstr ""
+
+#: wikipbxweb/templates/soundclips.html:15
+msgid "listen"
+msgstr ""
+
+#: wikipbxweb/templates/soundclips.html:41
+msgid "No soundclips found"
+msgstr ""
+
+#: wikipbxweb/templates/test_mailserver.html:6
+msgid "Test Mail"
+msgstr ""
+
+#: wikipbxweb/templates/test_mailserver.html:10
+msgid ""
+"Send an outgoing test mail to see if email server settings are correctly "
+"configured."
+msgstr ""
+
+#: wikipbxweb/templates/test_mailserver.html:18
+msgid "Send Test Mail"
+msgstr ""
+
+#: wikipbxweb/templates/transfer.html:21
+msgid "Transfer live channel"
+msgstr ""
+
+#: wikipbxweb/templates/transfer.html:25
+msgid "Choose the dialplan extension to transfer selected channel."
+msgstr ""
+
+#: wikipbxweb/templates/transfer.html:56
+msgid "Transfer"
+msgstr ""
+
+#: wikipbxweb/templates/transfer.html:64
+msgid "No dialplan extensions found"
+msgstr ""
+
+#: wikipbxweb/templates/users.html:6
+#, python-format
+msgid "Users for account: %(account)s"
+msgstr ""
+
+#: wikipbxweb/templates/users.html:11
+msgid "administrator priveleges"
+msgstr ""
+
+#: wikipbxweb/templates/users.html:24
+msgid "Account Administrator"
+msgstr ""
+
+#: wikipbxweb/templates/users.html:28
+msgid "End-user (no admin privileges)"
+msgstr ""
+
+#: wikipbxweb/templates/users.html:45
+msgid "No users found"
+msgstr ""
+
+#: wikipbxweb/templates/xml_dialplan.html:5
+msgid "Configuration"
+msgstr ""
+
+#: wikipbxweb/templates/xml_dialplan.html:10
+msgid "Key Value"
+msgstr ""
+
+#: wikipbxweb/templates/xml_dialplan.html:13
+msgid "(unused)"
+msgstr ""
+
+#: wikipbxweb/templates/xml_dialplan.html:36
+msgid "SIP port:"
+msgstr ""
+
+#: wikipbxweb/templates/xml_dialplan.html:38
+msgid "Destination:"
+msgstr ""
+
+#: wikipbxweb/templates/xml_dialplan.html:55
+msgid "Domain:"
+msgstr ""
+
+#: wikipbxweb/templates/xml_dialplan.html:59
+msgid "User:"
+msgstr ""

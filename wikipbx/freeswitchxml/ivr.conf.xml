@@ -1,0 +1,28 @@
+<document type="freeswitch/xml">
+<section name="configuration" description="Various Configuration">
+<configuration name="ivr.conf" description="IVR menus">
+
+<menus>
+  <!-- IVR XML scripts -->
+  {{ ivr_menu_xml }}
+  <!-- IVR configured using forms -->
+  {% for menu in ivr_menus %}
+  <menu name="{{ menu.ivr.name }}"
+      greet-long="{{ menu.greet_long.path }}"
+      greet-short="{{ menu.greet_short.path }}"
+      invalid-sound="{{ menu.invalid_sound.path }}"
+      exit-sound="{{ menu.exit_sound.path }}"
+      timeout="{{ menu.timeout }}"
+      inter-digit-timeout="{{ menu.inter_digit_timeout }}"
+      max-failures="{{ menu.max_failures }}"
+      max-timeouts="{{ menu.max_timeouts }}"
+      digit-len="{{ menu.digit_len }}">
+      
+      {{ menu.dest }}
+  </menu>
+  {% endfor %}
+</menus>
+
+</configuration>
+</section>
+</document>

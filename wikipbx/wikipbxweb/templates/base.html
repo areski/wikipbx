@@ -1,0 +1,140 @@
+{% load i18n %} 
+<html>
+<head>
+    <title>{% block title %}{% trans "Wiki PBX - Open Source Web GUI front-end for FreeSWITCH" %}{% endblock %}</title>
+    <STYLE TYPE="text/css">
+    {% block inlinestyles %}
+    {% endblock %}
+    </STYLE>
+    {% block cssincludes %}
+    {% endblock %}
+    {% include "header.html" %}
+	<script type="text/javascript" src="{{ MEDIA_URL }}javascript/wikipbx.js"></script>
+    {% block javascriptincludes %}
+    {% endblock %}
+    <script type="text/javascript">
+    {% block inlinejavascript %}
+    {% endblock %}
+    </script>
+</head>
+
+{% block bodytag %}
+<body onload="load()">
+{% endblock %}
+<div id="wrapper">
+<table cellpadding="0" width="100%" cellspacing="0" border="0">
+<tr> 
+  <!-- top left logo -->
+  <td width="160" rowspan="1" valign="top" style="padding-bottom: 1em"> 
+    <a href="{% url wikipbxweb:index %}">      
+      <img src="{{ MEDIA_URL }}images/wikipbxlogo4_sm.gif" align="left" vspace="0" alt="WikiPBX Logo" border="0" height="68"/>
+    </a>
+  </td> 
+
+<td valign="middle" style="padding-left: 1.8em;">
+{% include "info_urgent_msgs.html" %}
+</td>   
+
+<td align="right" nowrap valign="top"><b>{{ user.username }}</b> |  <a href="{% url wikipbxweb:member-logout %}">{% trans "Sign out" %}</a></td>
+</tr> 
+
+</table>   
+
+
+<table cellpadding="0" width="100%" cellspacing="0" border="0"> 
+<tr> <td nowrap valign="top">       
+     
+{% include "left_toolbar.html" %}
+
+</td> 
+
+<!-- ugly crap to make border around main content -->
+<td width="100%" valign="top"> 
+<table cellpadding="0" width="100%" cellspacing="0" border="0"> 
+<tr> 
+<td width="4" nowrap rowspan="3" bgcolor="#C3D9FF"></td> 
+<td>                
+<table cellpadding="0" width="100%" cellspacing="0" border="0"> 
+<tr>
+<td bgcolor="#C3D9FF"> 
+<table cellpadding="2" width="100%" cellspacing="0" border="0">
+<tr><td nowrap height="5"> </td>
+<td align="right" nowrap> </td>
+</tr></table> 
+</td></tr> 
+
+<tr><td> <div class="d2_bluebar">  
+{% block bluebar %}
+{% if user.is_superuser %}
+<span class="smallTitle">
+{% trans "Root user" %}
+</span>
+{% else %}
+<span class="smallTitle">
+Account: {{ user.get_profile.account.name }}
+</span>
+<div style="padding-top: .5em">
+<!-- <b>Server SIP URI: {{ user.get_profile.account.domain }}:{{ user.get_profile.account.sip_profile.sip_port }}</b> -->
+</div>
+{% endif %}
+{% endblock %}
+
+</div> 
+
+<div class="dash">
+{% block blurb %}
+{% if blurb %}
+<div class="blurb">
+  <img src="{{ MEDIA_URL }}icons/tux.png"/>
+  {{ blurb }}
+</div>
+{% endif %}
+{% endblock %}
+
+{% block dashcontent %}
+{% endblock %}
+</div> 
+
+<!-- close up tables used for adding border around content -->
+</td></tr> <tr><td bgcolor="#C3D9FF"> <table cellpadding="2" width="100%" cellspacing="0" border="0">
+<tr><td nowrap> </td><td align="right" nowrap> </td></tr>
+</table> 
+</td></tr> </table>      
+</td> </tr> </table> 
+</td> </tr>  <tr> <td colspan="2" height="20"></td> </tr> 
+
+<tr><td></td><td align="center" class="f"> 
+
+</td></tr>
+</table>
+</div>
+<!-- placeholder for footer -->
+{% include "footer_outer.html" %} 
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

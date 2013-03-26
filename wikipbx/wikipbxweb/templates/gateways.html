@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block dashcontent %}
+
+<h2>
+  <img src="{{ MEDIA_URL }}icons/world.png"/>{% trans "Gateways" %}
+</h2>
+
+{% if gateways %}
+
+<table>
+  <thead>
+    <tr>
+      <th>{% trans "Gateway" %}</th>
+      <th>{% trans "Delete" %}</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for gateway in gateways %}
+    <tr>
+      <td>
+	<img src="{{ MEDIA_URL }}icons/world_edit.png">
+	<a href="{% url wikipbxweb:gateway-edit gateway.id %}">{{ gateway.name }}</a>
+      </td>
+      <td>
+	<a href="{% url wikipbxweb:gateway-delete gateway.id %}">
+	  <img src="{{ MEDIA_URL }}icons/delete.png"/>
+	</a>
+      </td>
+    </tr>
+    {% endfor %}
+  <tbody>
+</table>
+
+{% else %}
+
+<div><img src="{{ MEDIA_URL }}icons/tux.png"/>{% trans "No gateways defined" %}</div>
+
+{% endif %}
+
+{% endblock %}

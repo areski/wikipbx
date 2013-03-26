@@ -1,0 +1,69 @@
+
+<document type="freeswitch/xml">
+<section name="configuration" description="Various Configuration">
+
+<configuration name='sofia.conf' description='sofia endpoint'>
+  <profiles>
+  {% for sipprofile in sipprofiles %}
+    <profile name='{{sipprofile.name}}'>
+
+      {% if sipprofile.get_aliased_domains %}
+      <domains>
+         {% for account in sipprofile.get_aliased_domains %}
+	 <domain name="{{ account.domain }}" alias="true" parse="true"/>
+         {% endfor %}
+      </domains>
+      {% endif %}
+
+      <settings>
+        <param name='dialplan' value='XML,enum'/>
+        <param name='ext-sip-ip' value='{{ sipprofile.ext_sip_ip }}'/>
+        <param name='ext-rtp-ip' value='{{ sipprofile.ext_rtp_ip }}'/>
+        <param name='rtp-ip' value='{{ sipprofile.rtp_ip }}'/>
+        <param name='sip-ip' value='{{ sipprofile.sip_ip }}'/>
+        <param name='sip-port' value='{{sipprofile.sip_port}}'/>
+        <param name='nonce-ttl' value='60'/>
+        <param name='use-rtp-timer' value='true'/>{# NOTE: FS docs call this setting obsolete #}
+        <param name='rtp-timer-name' value='soft'/>
+        <param name='codec-prefs' value='PCMU@20i'/>
+        <param name='debug' value='1'/>
+        <param name='rfc2833-pt' value='101'/>
+        <param name='dtmf-duration' value='100'/>
+        <param name='codec-ms' value='20'/>
+        <param name='accept-blind-reg' value='{{ sipprofile.accept_blind_reg_str }}'/>
+        <param name='auth-calls' value='{{ sipprofile.auth_calls }}'/>
+        <param name='log-auth-failures' value='{{ sipprofile.log_auth_failures }}'/>
+        <param name='context' value='{{ sipprofile.context }}'/>
+        <param name='manage-presence' value='{{ sipprofile.manage_presence }}'/>
+        <param name='multiple-registrations' value='{{ sipprofile.multiple_registrations }}'/>
+      </settings>
+      
+     {% if sipprofile.get_gateways %}
+      <gateways>
+       {% for gateway in sipprofile.get_gateways %}
+        <gateway name='{{ gateway.name }}'>
+          <param name='username' value='{{ gateway.username }}'/>
+          <param name='realm' value='{{ gateway.realm }}'/>
+          <param name='from-domain' value='{{ gateway.from_domain }}'/>
+          <param name='password' value='{{ gateway.password }}'/>
+          <param name='caller-id-in-from' value='{{ gateway.caller_id_in_from}}'/>
+          <param name='extension' value='{{ gateway.extension }}'/>
+          <param name='proxy' value='{{ gateway.proxy }}'/>
+          <param name='register' value='{{ gateway.register }}'/>
+          <param name='expire-seconds' value='{{ gateway.expire_seconds }}'/>
+          <param name='retry-seconds' value='{{ gateway.retry_seconds }}'/>
+	  {% if not gateway.accessible_all_accts %}
+	      <param name="contact-params" value="domain={{ gateway.account.domain }}" />
+	      <param name='context' value='{{ gateway.account.context }}'/>
+	  {% endif %}
+        </gateway>
+       {% endfor %}
+      </gateways>
+     {% endif %}
+    </profile>
+  {% endfor %}
+  </profiles>
+</configuration>
+
+</section>
+</document>

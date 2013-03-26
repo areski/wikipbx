@@ -1,0 +1,32 @@
+
+{% if  user.is_superuser %}
+
+{% include "left_toolbar_superuser.html" %}
+
+{% else %}
+
+
+  {% if user.get_profile.is_acct_admin %}
+
+  {% include "left_toolbar_acct_admin.html" %}
+
+  {% else %}
+
+    {% if user.is_authenticated %}
+
+    {% include "left_toolbar_enduser.html" %}
+
+    {% else %}
+
+    {% endif %}
+
+  {% endif %}
+
+{% endif %}
+
+
+
+
+
+
+

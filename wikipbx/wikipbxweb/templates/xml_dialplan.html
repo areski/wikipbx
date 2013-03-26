@@ -1,0 +1,71 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block dashcontent %}
+<h2>{% trans "Configuration" %}</h2>
+<form method="post">
+<input type="hidden" NAME="section" value="configuration">
+<table>
+  <tr>
+    <th>{% trans "Key Value" %}</th>
+    <td>
+      <select name="key_value">
+	<option value="conference.conf">conference.conf {% trans "(unused)" %}</option>
+	<option value="event_socket.conf">event_socket.conf</option>
+	<option value="ivr.conf">ivr.conf</option>
+	<option value="sofia.conf">sofia.conf</option>
+	<option value="xml_cdr.conf">xml_cdr.conf</option>
+      </select>
+    </td>
+  </tr>
+  <tr>
+    <td></td>
+    <td><input type="submit" class="button" value="{% trans "Submit" %}"/></td>
+  </tr>
+</table>
+</form>
+
+
+<!-- broken since 0.8 changes 
+<h2>Dialplan</h2>
+
+<form method="POST" action="/xml_dialplan/">
+
+<input type="hidden" NAME="section" value="dialplan">
+
+<p>{% trans "SIP port:" %}<input type="text" name="sip_to_port" value="5060">
+
+<p>{% trans "Destination:" %}<input type="text" name="destination_number">
+
+<input type="submit" value="{% trans "Submit" %}">
+
+</form>
+-->
+
+
+
+<h2>Directory</h2>
+
+<form method="post">
+
+<input type="hidden" NAME="section" value="directory">
+<!-- todo: should be pull down with all accounts -->
+<table>
+  <tr>
+    <th>{% trans "Domain:" %}</th>
+    <td><input type="text" name="domain" value="account domain"/></td>
+  </tr>
+  <tr>
+    <th>{% trans "User:" %}</th>
+    <td><input type="text" name="user" value="4761"/></td>
+  </tr>
+
+  <tr>
+    <th></th>
+    <td>
+      <input type="submit" class="button" value="{% trans "Submit" %}"/>
+    </td>
+</table>
+</form>
+
+{% endblock %}

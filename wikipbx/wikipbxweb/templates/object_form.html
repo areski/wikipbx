@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block dashcontent %}
+<form method="post">
+<table>
+{{ form }}
+<tr>
+<th></th>
+<td><input type="submit" class="button" value="{% trans "Submit" %}"></td>
+</tr>
+</table>
+
+</form>
+{% endblock %}

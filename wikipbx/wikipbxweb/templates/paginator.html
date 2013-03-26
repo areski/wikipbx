@@ -1,0 +1,40 @@
+{% load i18n %}
+{% if page_obj.has_other_pages %}
+
+{% ifnotequal page_obj.number 1 %}
+<a class="pagination" href="?page=1">{% trans "First page" %}</a>
+{% else %}
+<span class="pagination disabled">{% trans "First page" %}</a>
+{% endifnotequal %}
+
+{% if page_obj.has_previous %}
+<a class="pagination" href="?page={{ page_obj.previous_page_number }}">{% trans "Back" %}</a>
+{% else %}
+<span class="pagination disabled">{% trans "Back" %}</a>
+{% endif %}
+
+{% for page_num in paginator.page_range %}
+{% ifequal page_obj.number page_num %}
+<span class="pagination current">{{ page_num }}</span>
+{% else %}
+<a href="?page={{ page_num }}">{{ page_num }}</a>
+{% endifequal %}
+{% endfor %}
+
+{% if page_obj.has_next %}
+<a class="pagination" href="?page={{ page_obj.next_page_number }}">{% trans "Forward" %}</a>
+{% else %}
+<span class="pagination disabled">{% trans "Forward" %}</a>
+{% endif %}
+
+{% ifnotequal page_obj.number paginator.num_pages %}
+<a class="pagination" href="?page={{ paginator.num_pages }}">{% trans "Last page" %}</a>
+{% else %}
+<span class="pagination disabled">{% trans "Last page" %}</a>
+{% endifnotequal %}
+
+	<br>
+{% endif %}
+<!--
+Matched: {{ paginator.hits }}
+-->

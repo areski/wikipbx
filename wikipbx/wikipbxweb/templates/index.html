@@ -1,0 +1,97 @@
+{% extends "base_outer.html" %}
+{% load i18n %} 
+
+{% block title %}WikiPBX{% endblock %}
+
+{% block doc_name %}{% trans "Welcome to WikiPBX!" %}{% endblock %}
+
+{% block header_area %}
+<div id="header">
+  <h2>{% trans "Web GUI for FreeSWITCH providing SIP PBX functionality." %}</h2> 
+  <h4>{% trans "WikiPBX allows you to store SIP endpoints and dialplan extensions in a database and update them over a web GUI." %}</h4>
+</div>
+{% endblock %}
+
+{% block main_content %}
+<table> 
+  <tr>
+    <td valign="top"> 
+      <div class="x">{% trans "Sign in to your account" %}
+	<form action="{% url wikipbxweb:member-login %}" method="post" name="login"> 
+	  <table cellpadding="0" cellspacing="0" style="margin:15 0 0 0" border="0"> 
+	    <tr>
+	      <td align="right" nowrap>{% trans "Email:" %}</td>
+	      <td> <input type="text" name="username" size="18" value="{{ username }}"> </td>
+	    </tr> 	    
+	    <tr>
+	      <td></td>
+	      <td style="color: #444444; font-size: 75%; overflow: hidden;" align="right" dir="ltr"></td>
+	      <td>
+	      </td>
+	    </tr> 	    
+	    <tr>
+	      <td colspan="3" height="8"></td>
+	    </tr> 
+	    <tr>
+	      <td colspan="2" height="8"><font color="red"></font></td>
+	    </tr> 
+	    <tr>
+	      <td align="right">{% trans "Password:" %}</td>
+	      <td> <input type="password" name="password" size="18"></td>
+	    </tr>
+
+	    {% comment %}
+	    <!-- doesnt work
+	    <tr>
+	      <td colspan="2" height="8"></td>
+	    </tr>
+    	    <tr>
+	      <td colspan="2" height="8"></td>
+	      <td></td>
+	    </tr>
+	    <tr>
+	      <td align="right" valign="top">
+		<input type="checkbox" name="persistent" value="true" id="rem">
+	      </td>
+	      <td colspan="2">
+		<label for="rem">{% trans "Remember me on this computer" %}</label>
+	      </td>
+	    </tr>
+	    -->  
+	    {% endcomment %}
+
+	    <tr>
+	      <td colspan="3" height="8"></td>
+	    </tr>
+	    <tr>
+	      <td></td>
+	      <td><input type="submit" value="{% trans "Sign In" %}"></td>
+	      <td></td>
+	    </tr> 
+	    <tr>
+	      <td colspan="3" align="center">
+	      </td>
+	    </tr> 
+	    {% if nousers %}
+	    <tr>
+	      <td colspan="3" align="center">
+		[ <a href="{% url wikipbxweb:root-add %}">{% trans "Add Root user" %}</a> ]
+	      </td>
+	    </tr> 
+	    {% endif %}
+	  </table>  
+	</form> 
+      </div> 
+    </td> 
+    <td width="100%" valign="top">    
+      {% include "product_features.html" %}
+    </td>
+  </tr> 
+
+  <tr>
+    <td colspan="99">
+  </td>
+  </tr>
+</table> 
+
+{% endblock %}

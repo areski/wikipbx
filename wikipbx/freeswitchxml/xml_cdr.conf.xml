@@ -1,0 +1,17 @@
+<document type="freeswitch/xml">
+<section name="configuration" description="Various Configuration">
+
+<configuration name='xml_cdr.conf' description='XML CDR CURL logger'>
+  <settings>
+    <param name='retries' value='1'/>
+    <param name='url' value='{{ url }}'/>
+    <param name='delay' value='30'/>
+    <param name='log-dir' value='{{ log_dir }}'/>
+    <param name='encode' value='True'/>
+    <param name='cred' value='user:pass'/>
+    <param name='err-log-dir' value='{{ err_log_dir}}'/>
+  </settings>
+</configuration>
+
+</section>
+</document>

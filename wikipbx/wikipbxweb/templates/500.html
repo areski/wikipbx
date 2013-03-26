@@ -1,0 +1,8 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block dashcontent %}
+<h1>{% trans "Page unavailable" %}</h1>
+<p>{% trans "Sorry, but the requested page is unavailable due to a server error." %}</p>
+<p>{% trans "Our engineers have been notified, so check back later." %}</p>
+{% endblock %}

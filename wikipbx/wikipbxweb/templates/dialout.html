@@ -1,0 +1,99 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block bodytag %}
+<body>
+{% endblock %}
+
+{% block javascriptincludes %}
+<script type="text/javascript" src="{{ MEDIA_URL }}MochiKit/MochiKit.js"></script>
+{% endblock %}
+
+{% block inlinejavascript %}
+MochiKit.DOM.addLoadEvent(joinMorePeople);
+{% endblock %}
+
+{% block dashcontent %}
+<form method="post">
+<h2><u>{% blocktrans %}Dialout from {{ dest_ext_app }}{% endblocktrans %}</u></h2>
+
+<p><img src="{{ MEDIA_URL }}icons/tux.png" border="0">{% blocktrans %}Choose the destination(s) that will be dialed out from {{ dest_ext_app }}. Calls will be placed in parallel.{% endblocktrans %}
+
+<!-- addtl extensions and sip urls -->
+<h2 style="padding-top: .7em;"><img src="{{ MEDIA_URL }}icons/brick.png" border="0">{% trans "Additional Extensions and SIP URL's." %}</h2>
+
+<p><img src="{{ MEDIA_URL }}icons/tux.png" border="0">{% trans "Raw extensions can be entered (eg, 18005551212) or SIP urls can be entered (eg, 100@sip.foo.com:5065)." %}</p>
+
+<div style="padding-bottom: .5em">
+  <a href="javascript: void(0);" onclick="javascript: joinMorePeople();" title="{% trans "Click here to add extra empty form elements." %}"><img src="{{ MEDIA_URL }}icons/add.png" style="padding-right: .5em" align="bottom" border="0">{% trans "Dial more" %}</a>
+</div>
+
+<div id="form_fields">
+<!-- dynamically created form fields go here -->
+</div>
+
+
+<!-- dialplan extensions -->
+<h2 style="padding-top: .7em;">
+  <img src="{{ MEDIA_URL }}icons/brick.png"/>
+  {{ _("dialplan extensions")|capfirst }}
+</h2>
+{% if extensions %}
+
+<p><img src="{{ MEDIA_URL }}icons/tux.png"/>{% blocktrans %}Choose the dialplan extensions that will be dialed out from {{ dest_ext_app }}.  Multiple concurrent outgoing calls can be specified by the pull-down to the right of the checkbox.{% endblocktrans %}</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>{{ _("select")|capfirst }}</th>
+      <th>{{ _("number of concurrent calls")|capfirst }}</th>
+      <th>{{ _("extension")|capfirst }}</th>
+      <th>{{ _("description")|capfirst }}</th>
+      <th>{{ _("dialplan")|capfirst }}</th>
+    </tr>
+  </thead>
+  {% for ext in extensions %}
+  <tr>
+    <td>
+      <input type="checkbox" name="checked_dialplan_extensions" value="{{ ext.id }}"/>
+    </td>    
+    <td>
+      <select name="concurrent_dpext_{{ ext.id }}">
+	<option value="1">1</option>
+	<option value="2">2</option>
+	<option value="3">3</option>
+	<option value="4">4</option>
+	<option value="5">5</option>
+	<option value="10">10</option>
+	<option value="25">25</option>
+	<option value="50">50</option>
+	<option value="100">100</option>
+	<option value="250">250</option>
+	<option value="500">500</option>
+	<option value="2000">2000</option>
+	<option value="10000">10000</option>
+      </select>
+    </td>
+    <td>
+      <a href="{% url wikipbxweb:extension-edit ext.id %}">{{ ext.get_single_expansion }}</a>
+    </td>
+    <td>
+      <small>{{ ext.desc }}</small>
+    </td>
+    <td>
+      {{ ext.get_xml_preview|escape }}
+    </td>
+  </tr>
+  {% endfor %}
+  <tr>
+    <td colspan="5">
+      <input type="submit" class="button" value="{{ _("dialout")|capfirst }}"/>
+    </td>
+  </tr>
+</table>
+{% else %}
+<p><img src="{{ MEDIA_URL }}icons/tux.png"/>{% trans "No dialplan extensions found." %}
+{% endif %}
+</form>
+
+{% endblock %}

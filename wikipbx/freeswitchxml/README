@@ -1,0 +1,1 @@
+These django templates are combined with info in the db to render the final resulting configuration xml returned to freeswitch.  Usually on the web these kinds of django templates are used to render html, but in our case we use them to render xml.

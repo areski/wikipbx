@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block dashcontent %}
+
+<h2><img src="{{ MEDIA_URL }}icons/sound.png"/>{% trans "Soundclips" %}</h2>
+
+{% if soundclips %}
+
+<table class="list">
+  <thead>
+    <tr>
+      <th>{{ _("name")|capfirst }}</th>
+      <th>{{ _("description")|capfirst }}</th>
+      <th>{{ _("listen")|capfirst }}</th>
+      <th>{{ _("delete")|capfirst }}</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for soundclip in soundclips %}
+    <tr>
+      <td>{{ soundclip.name }}</td>
+      <td>{{ soundclip.desc }}</td>
+      <td>
+	<a href="{{ SOUNDCLIPS_MEDIA_URL }}{{account.name }}/{{ soundclip.pk }}.wav">
+	  <img src="{{ MEDIA_URL }}icons/sound.png"/>
+	</a>
+      </td>
+      <td>
+	<a href="{% url wikipbxweb:soundclip-delete soundclip.id %}">
+	  <img src="{{ MEDIA_URL }}icons/delete.png">
+	</a>
+      </td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+{% else %}
+
+<div><img src="{{ MEDIA_URL }}icons/tux.png">{% trans "No soundclips found" %}</div>
+
+{% endif %}
+
+
+{% endblock %}

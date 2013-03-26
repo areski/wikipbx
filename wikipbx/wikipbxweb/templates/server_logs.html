@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block dashcontent %}
+{% if object_list %}
+<table class="list">
+  <thead>
+    <tr>
+      <th>
+	{{ _("error ID")|capfirst }}
+      </th>
+      <th>
+	{{ _("log time")|capfirst }}
+      </th>
+      <th>
+	{{ _("message")|capfirst }}
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for serverlog in object_list %}
+    <tr>
+      <td>{{ serverlog.id }}</td>
+      <td>{{ serverlog.logtime }}</td>
+      <td>{{ serverlog.message }}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+<div>
+  {% include "paginator.html" %}
+</div>
+
+{% else %}
+
+<div><img src="{{ MEDIA_URL }}/icons/tux.png"/>{% trans "No server logs found" %}</div>
+
+{% endif %}
+{% endblock %}

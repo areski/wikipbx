@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block dashcontent %}
+<form action="." method="POST">
+  <div class="search">
+    <input type="text" name="search_data"{% if search_data %} value="{{ search_data }}"{% endif %}/>
+    <input class="button" type="submit" name="search" value="{% trans "Search" %}"/>
+  </div>
+
+  {% if contacts %}
+  <table>
+    <thead>
+      <tr>
+	<th>
+	  {% trans "Export" %}
+	</th>
+	<th>
+	  {{ _("contact")|capfirst }}
+	</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for contact in contacts %}
+      <tr>
+	<td>
+	  <input type="checkbox" name="contact-id" value="{{ contact.pk }}" checked="checked"/>
+	</td>
+	<td>
+	  {{ contact }}
+	  {# TODO: I plan to use hCard microformat here, so this is just a stub #}
+	</td>
+      </tr>
+      {% endfor %}
+      <tr>
+	<td>
+	  {{ export_form.export_type.label }}<br/>
+	  {{ export_form.export_type }}
+	</td>
+	<td>
+	  <input class="button" type="submit" name="export" value="{% trans "Export" %}"/>
+	</td>
+      </tr>
+    </tbody>
+  </table>
+
+  {% else %}
+
+  <div>
+    <img src="{{ MEDIA_URL }}icons/tux.png"/>{% trans "No contacts defined" %}
+  </div>
+
+  {% endif %}
+</form>
+{% endblock %}
+
+

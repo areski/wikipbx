@@ -1,0 +1,14 @@
+<document type="freeswitch/xml">
+<section name="configuration" description="Various Configuration">
+
+<configuration name='event_socket.conf' description='Socket Client'>
+  <settings>
+    <param name='listen-ip' value='{{ listen_ip }}'/>
+    <param name='password' value='{{ password }}'/>
+    <!-- <param name='password' value='$${default_event_socket_password}'/> -->
+    <param name='listen-port' value='{{ listen_port }}'/>
+  </settings>
+</configuration>
+
+</section>
+</document>

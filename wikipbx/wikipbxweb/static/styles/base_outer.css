@@ -1,0 +1,22 @@
+body {margin: 5px 15px 0px 15px; font-family:arial,sans-serif; background-color: #ffffff; }
+body, td { font-size: 80%}
+a:link, a:active, a:visited{color:#0000CC}
+form{ margin:0 }
+
+li {margin-bottom: 1em;}
+
+h1 {font-weight: bold; font-size: 150%; }
+
+.header h1 {border-bottom: solid 1px #bbbbbb; padding-bottom: 5px; margin:
+0 0 0 15px;}
+
+h2 {margin: 0 0 0 0; font-weight: bold; font-size: 120%;}
+
+.x {background-color: #a9c2e5; border: solid 1px #7094cc; padding: 15px; margin: 0 15px 0 0; text-align: center;}
+.x table {margin: 0px auto; text-align: left;}
+
+
+.f {border-top: solid 1px #bbbbbb; color: #676767; font-size: 110%; padding-top: 5px; margin-top:15px}
+.f span {position: relative; bottom: 7px}
+
+.errormsg {color: #cc0000}

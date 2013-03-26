@@ -1,0 +1,17 @@
+<document type="freeswitch/xml">
+<section name="dialplan" description="Various Dialplan">
+
+<context name='{{ call_context }}'>
+  <extension name='dynamic_wikipbx_extension'>
+    <condition field='destination_number'>
+      <action application='set' data='account_id={{ extension.account.id }}'/>
+      <action application='set' data='extension_id={{ extension.id }}'/>
+      <action application="set" data="dialed_extension={{ dialed_extension }}"/>
+      <action application="export" data="dialed_extension={{ dialed_extension }}"/>
+      {{ processed_actions_xml|safe }}
+    </condition>
+  </extension>
+</context>
+
+</section>
+</document>

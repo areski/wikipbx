@@ -1,0 +1,120 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block dashcontent %}
+
+<!-- this account IVR menus -->
+<h2>
+  <img src="{{ MEDIA_URL }}icons/script.png"/>{% trans "Interactive Voice Response (IVR) menus - This Account" %}
+</h2>
+
+{% if account_ivr_menus %}
+<table>
+  <thead>
+    <tr>
+      <th>
+	{% trans "IVR menu" %}
+      </th>
+      <th>
+	{% trans "Delete" %}
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for account_ivr in account_ivr_menus %}
+    <tr>
+      <td>
+	<img src="{{ MEDIA_URL }}icons/script_edit.png"/>
+	<a href="{% url wikipbxweb:ivr-xml-edit account_ivr.id %}">{{ account_ivr.name }}</a>
+      </td>
+      <td>
+	<a href="{% url wikipbxweb:ivr-delete account_ivr.id %}">
+	  <img src="{{ MEDIA_URL }}icons/delete.png"/>
+	</a>
+      </td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+{% else %}
+
+<div><img src="{{ MEDIA_URL }}icons/tux.png"/>{% trans "No ivrs defined" %}</div>
+
+{% endif %}
+
+
+<!-- this account IVR scripts -->
+<h2>
+  <img src="{{ MEDIA_URL }}icons/script.png"/>{% trans "Interactive Voice Response (IVR) scripts - This Account" %}
+</h2>
+
+{% if account_ivrs %}
+<table>
+  <thead>
+    <tr>
+      <th>
+	{% trans "IVR" %}
+      </th>
+      <th>
+	{% trans "Delete" %}
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for account_ivr in account_ivrs %}
+    <tr>
+      <td>
+	<img src="{{ MEDIA_URL }}icons/script_edit.png"/>
+	<a href="{% url wikipbxweb:ivr-edit account_ivr.id %}">{{ account_ivr.name }}.{{ account_ivr.language_ext }}</a>
+      </td>
+      <td>
+	<a href="{% url wikipbxweb:ivr-delete account_ivr.id %}">
+	  <img src="{{ MEDIA_URL }}icons/delete.png"/>
+	</a>
+      </td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+{% else %}
+
+<div><img src="{{ MEDIA_URL }}icons/tux.png"/>{% trans "No ivrs defined" %}</div>
+
+{% endif %}
+
+<!-- system IVR scripts -->
+
+<h2>
+  <img src="{{ MEDIA_URL }}icons/script.png"/>{% trans "Interactive Voice Response (IVR) scripts - System Wide" %}
+</h2>
+
+{% if system_ivrs %}
+<table>
+  <thead>
+    <tr>
+      <th>
+	{% trans "IVR" %}
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for system_ivr in system_ivrs %}
+    <tr>
+      <td>
+	<img src="{{ MEDIA_URL }}icons/script_edit.png"/>
+	<a href="{% url wikipbxweb:ivr-edit system_ivr.id %}">{{ system_ivr.name }}.{{ system_ivr.language_ext }}</a>
+      </td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+{% else %}
+
+<div><img src="{{ MEDIA_URL }}icons/tux.png">{% trans "No ivrs defined" %}</div>
+
+{% endif %}
+
+{% endblock %}

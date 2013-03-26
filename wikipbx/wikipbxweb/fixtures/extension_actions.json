@@ -1,0 +1,476 @@
+[
+  {
+    "pk": 1, 
+    "model": "wikipbxweb.actiontemplate", 
+    "fields": {
+      "xml_template": "<action application=\"conference\" data=\"CONF_NAME\"/>\r\n", 
+      "name": "Conference room", 
+      "description": "Conferencing service"
+    }
+  }, 
+  {
+    "pk": 2, 
+    "model": "wikipbxweb.actiontemplate", 
+    "fields": {
+      "xml_template": "<action application=\"transfer\" data=\"EXTESION\"/>\r\n", 
+      "name": "Transfer", 
+      "description": "Transfer to another extension"
+    }
+  }, 
+  {
+    "pk": 3, 
+    "model": "wikipbxweb.actiontemplate", 
+    "fields": {
+      "xml_template": "<action application=\"speak\" data=\"cepstral|TTS_VOICE|TTS_TEXT\"/>\r\n", 
+      "name": "Speak text", 
+      "description": "Speak entered text"
+    }
+  }, 
+  {
+    "pk": 4, 
+    "model": "wikipbxweb.actiontemplate", 
+    "fields": {
+      "xml_template": "<action application=\"answer\"/>\r\n<action application=\"playback\" data=\"ECHO_AUDIO\"/>\r\n<action application=\"echo\"/>\r\n", 
+      "name": "Echo test", 
+      "description": ""
+    }
+  }, 
+  {
+    "pk": 5, 
+    "model": "wikipbxweb.actiontemplate", 
+    "fields": {
+      "xml_template": "<action application=\"bridge\" data=\"sofia/SIPPROFILE/ENDPOINT\"/>\r\n", 
+      "name": "Remote endpoint", 
+      "description": ""
+    }
+  }, 
+  {
+    "pk": 6, 
+    "model": "wikipbxweb.actiontemplate", 
+    "fields": {
+      "xml_template": "<action application=\"bridge\" data=\"sofia/SIPPROFILE/ENDPOINT%DOMAIN\"/>\r\n", 
+      "name": "Local endpoint", 
+      "description": ""
+    }
+  }, 
+  {
+    "pk": 7, 
+    "model": "wikipbxweb.actiontemplate", 
+    "fields": {
+      "xml_template": "<action application=\"bridge\" data=\"sofia/gateway/GATEWAY/$1\"/>\r\n", 
+      "name": "Gateway dialout", 
+      "description": ""
+    }
+  }, 
+  {
+    "pk": 8, 
+    "model": "wikipbxweb.actiontemplate", 
+    "fields": {
+      "xml_template": "<action application=\"playback\" data=\"PLAYBACK\"/>\r\n", 
+      "name": "Playback audio", 
+      "description": ""
+    }
+  }, 
+  {
+    "pk": 9, 
+    "model": "wikipbxweb.actiontemplate", 
+    "fields": {
+      "xml_template": "<action application=\"set\" data=\"call_timeout=30\"/>\r\n<action application=\"set\" data=\"continue_on_fail=true\"/>\r\n<action application=\"set\" data=\"hangup_after_bridge=true\"/>\r\n<action application=\"bridge\" data=\"sofia/SIPPROFILE/ENDPOINT%DOMAIN\"/>\r\n<action application=\"voicemail\" data=\"default ${domain_name} ${dialed_extension}\"/>\r\n", 
+      "name": "Local endpoint with fallback to VM", 
+      "description": ""
+    }
+  }, 
+  {
+    "pk": 10, 
+    "model": "wikipbxweb.actiontemplate", 
+    "fields": {
+      "xml_template": "<action application=\"answer\"/>\r\n<action application=\"sleep\" data=\"1000\"/>\r\n<action application=\"voicemail\" data=\"check default ${domain_name}\"/>\r\n", 
+      "name": "Mod voicemail playback", 
+      "description": ""
+    }
+  }, 
+  {
+    "pk": 11, 
+    "model": "wikipbxweb.actiontemplate", 
+    "fields": {
+      "xml_template": "<action application=\"answer\"/>\r\n<action application=\"sleep\" data=\"1000\"/>\r\n<action application=\"voicemail\" data=\"default ${domain_name} ${dialed_extension}\"/>\r\n", 
+      "name": "Mod voicemail record", 
+      "description": ""
+    }
+  }, 
+  {
+    "pk": 12, 
+    "model": "wikipbxweb.actiontemplate", 
+    "fields": {
+      "xml_template": "<action application=\"park\"/>\r\n", 
+      "name": "Park call", 
+      "description": ""
+    }
+  }, 
+  {
+    "pk": 13, 
+    "model": "wikipbxweb.actiontemplate", 
+    "fields": {
+      "xml_template": "<action application=\"lua\" data=\"LUA_IVR\"/>\r\n", 
+      "name": "IVR Script - Lua", 
+      "description": ""
+    }
+  }, 
+  {
+    "pk": 14, 
+    "model": "wikipbxweb.actiontemplate", 
+    "fields": {
+      "xml_template": "<action application=\"python\" data=\"PYTHON_IVR\"/>\r\n", 
+      "name": "IVR Script - Python", 
+      "description": ""
+    }
+  }, 
+  {
+    "pk": 15, 
+    "model": "wikipbxweb.actiontemplate", 
+    "fields": {
+      "xml_template": "<action application=\"javascript\" data=\"JS_IVR\"/>\r\n", 
+      "name": "IVR Script - JavaScript", 
+      "description": ""
+    }
+  }, 
+  {
+    "pk": 16, 
+    "model": "wikipbxweb.actiontemplate", 
+    "fields": {
+      "xml_template": "RAW_XML", 
+      "name": "Raw XML", 
+      "description": ""
+    }
+  }, 
+  {
+    "pk": 20,
+    "model": "wikipbxweb.actiontemplate",
+    "fields": {
+      "xml_template": "<action application=\"ivr\" data=\"XML_IVR\"/>",
+      "name": "IVR Script - XML",
+      "description": ""
+    }
+  },
+  {
+    "pk": 21,
+    "model": "wikipbxweb.actiontemplate",
+    "fields": {
+      "xml_template": " <entry action=\"menu-top\" digits=\"DIGITS\"/>",
+      "name": "IVR destination. Sub menu return",
+      "description": "Return to the previous menu"
+    }
+  },
+  {
+    "pk": 22,
+    "model": "wikipbxweb.actiontemplate",
+    "fields": {
+      "xml_template": "<entry action=\"menu-sub\" digits=\"DIGITS\" param=\"IVR_SUB_MENU\"/>",
+      "name": "IVR destination. Sub menu",
+      "description": "Call IVR sub menu"
+    }
+  },
+  {
+    "pk": 23,
+    "model": "wikipbxweb.actiontemplate",
+    "fields": {
+      "xml_template": "<entry action=\"menu-exec-app\" digits=\"DIGITS\" param=\"transfer EXTENSION XML\"/>",
+      "name": "IVR destination. Transfer call",
+      "description": "Transfer call to specified extension"
+    }
+  },
+  {
+    "pk": 24,
+    "model": "wikipbxweb.actiontemplate",
+    "fields": {
+      "xml_template": "<action application='ivr' data='IVR_MENU_NAME'/>",
+      "name": "IVR menu",
+      "description": ""
+    }
+  },
+  {
+    "pk": 25,
+    "model": "wikipbxweb.actiontemplate",
+    "fields": {
+      "xml_template": "<entry action=\"menu-play-sound\" digits=\"DIGITS\" param=\"IVR_RECORDING\"/>",
+      "name": "IVR destination. Play sound",
+      "description": "Play recording"
+    }
+  },
+  {
+    "pk": 1, 
+    "model": "wikipbxweb.actionvariable", 
+    "fields": {
+      "kind": 0, 
+      "name": "Conference name", 
+      "default": "", 
+      "tag": "CONF_NAME", 
+      "template": 1, 
+      "variable_type": 1
+    }
+  }, 
+  {
+    "pk": 2, 
+    "model": "wikipbxweb.actionvariable", 
+    "fields": {
+      "kind": 1, 
+      "name": "Extension", 
+      "default": "", 
+      "tag": "EXTESION", 
+      "template": 2, 
+      "variable_type": 0
+    }
+  }, 
+  {
+    "pk": 3, 
+    "model": "wikipbxweb.actionvariable", 
+    "fields": {
+      "kind": 5, 
+      "name": "Voice", 
+      "default": "", 
+      "tag": "TTS_VOICE", 
+      "template": 3, 
+      "variable_type": 0
+    }
+  }, 
+  {
+    "pk": 4, 
+    "model": "wikipbxweb.actionvariable", 
+    "fields": {
+      "kind": 0, 
+      "name": "Text to speak", 
+      "default": "", 
+      "tag": "TTS_TEXT", 
+      "template": 3, 
+      "variable_type": 1
+    }
+  }, 
+  {
+    "pk": 5, 
+    "model": "wikipbxweb.actionvariable", 
+    "fields": {
+      "kind": 0, 
+      "name": "Invitation audio", 
+      "default": "soundclips/welcome_echo.wav", 
+      "tag": "ECHO_AUDIO", 
+      "template": 4, 
+      "variable_type": 0
+    }
+  }, 
+  {
+    "pk": 6, 
+    "model": "wikipbxweb.actionvariable", 
+    "fields": {
+      "kind": 0, 
+      "name": "Remote endpoint", 
+      "default": "", 
+      "tag": "ENDPOINT", 
+      "template": 5, 
+      "variable_type": 1
+    }
+  }, 
+  {
+    "pk": 7, 
+    "model": "wikipbxweb.actionvariable", 
+    "fields": {
+      "kind": 4, 
+      "name": "Endpoint", 
+      "default": "", 
+      "tag": "ENDPOINT", 
+      "template": 6, 
+      "variable_type": 0
+    }
+  }, 
+  {
+    "pk": 8, 
+    "model": "wikipbxweb.actionvariable", 
+    "fields": {
+      "kind": 4, 
+      "name": "Endpoint", 
+      "default": "", 
+      "tag": "ENDPOINT", 
+      "template": 9, 
+      "variable_type": 0
+    }
+  }, 
+  {
+    "pk": 9, 
+    "model": "wikipbxweb.actionvariable", 
+    "fields": {
+      "kind": 2, 
+      "name": "Remote gateway", 
+      "default": "", 
+      "tag": "GATEWAY", 
+      "template": 7, 
+      "variable_type": 0
+    }
+  }, 
+  {
+    "pk": 10, 
+    "model": "wikipbxweb.actionvariable", 
+    "fields": {
+      "kind": 0, 
+      "name": "Audio file", 
+      "default": "", 
+      "tag": "PLAYBACK", 
+      "template": 8, 
+      "variable_type": 0
+    }
+  }, 
+  {
+    "pk": 11, 
+    "model": "wikipbxweb.actionvariable", 
+    "fields": {
+      "kind": 3, 
+      "name": "LUA script", 
+      "default": "", 
+      "tag": "LUA_IVR", 
+      "template": 13, 
+      "variable_type": 0
+    }
+  }, 
+  {
+    "pk": 12, 
+    "model": "wikipbxweb.actionvariable", 
+    "fields": {
+      "kind": 3, 
+      "name": "Python script", 
+      "default": "", 
+      "tag": "PYTHON_IVR", 
+      "template": 14, 
+      "variable_type": 0
+    }
+  }, 
+  {
+    "pk": 13, 
+    "model": "wikipbxweb.actionvariable", 
+    "fields": {
+      "kind": 3, 
+      "name": "JavaScript script", 
+      "default": "", 
+      "tag": "JS_IVR", 
+      "template": 15, 
+      "variable_type": 0
+    }
+  }, 
+  {
+    "pk": 14, 
+    "model": "wikipbxweb.actionvariable", 
+    "fields": {
+      "kind": null, 
+      "name": "XML code", 
+      "default": "", 
+      "tag": "RAW_XML", 
+      "template": 16, 
+      "variable_type": 2
+    }
+  },
+  {
+    "pk": 21,
+    "model": "wikipbxweb.actionvariable",
+    "fields": {
+      "kind": 3,
+      "name": "XML script",
+      "default": "",
+      "tag": "XML_IVR",
+      "template": 20,
+      "variable_type": 0
+    }
+  },
+  {
+    "pk": 22,
+    "model": "wikipbxweb.actionvariable",
+    "fields": {
+      "kind": null,
+      "name": "Digits",
+      "default": "",
+      "tag": "DIGITS",
+      "template": 22,
+      "variable_type": 1
+    }
+  },
+  {
+    "pk": 23,
+    "model": "wikipbxweb.actionvariable",
+    "fields": {
+      "kind": 6,
+      "name": "IVR sub menu",
+      "default": "",
+      "tag": "IVR_SUB_MENU",
+      "template": 22,
+      "variable_type": 0
+    }
+  },
+  {
+    "pk": 24,
+    "model": "wikipbxweb.actionvariable",
+    "fields": {
+      "kind": null,
+      "name": "Digits",
+      "default": "",
+      "tag": "DIGITS",
+      "template": 21,
+      "variable_type": 1
+    }
+  },
+  {
+    "pk": 25,
+    "model": "wikipbxweb.actionvariable",
+    "fields": {
+      "kind": null,
+      "name": "Digits",
+      "default": "",
+      "tag": "DIGITS",
+      "template": 23,
+      "variable_type": 1
+    }
+  },
+  {
+    "pk": 26,
+    "model": "wikipbxweb.actionvariable",
+    "fields": {
+      "kind": null,
+      "name": "Extension ",
+      "default": "",
+      "tag": "EXTENSION",
+      "template": 23,
+      "variable_type": 1
+    }
+  },
+  {
+    "pk": 27,
+    "model": "wikipbxweb.actionvariable",
+    "fields": {
+      "kind": 6,
+      "name": "IVR menu",
+      "default": "",
+      "tag": "IVR_MENU_NAME",
+      "template": 24,
+      "variable_type": 0
+    }
+  },
+  {
+    "pk": 28,
+    "model": "wikipbxweb.actionvariable",
+    "fields": {
+      "kind": null,
+      "name": "Digits",
+      "default": "",
+      "tag": "DIGITS",
+      "template": 25,
+      "variable_type": 1
+    }
+  },
+  {
+    "pk": 29,
+    "model": "wikipbxweb.actionvariable",
+    "fields": {
+      "kind": 0,
+      "name": "Audio file",
+      "default": "",
+      "tag": "IVR_RECORDING",
+      "template": 25,
+      "variable_type": 0
+    }
+  }
+]

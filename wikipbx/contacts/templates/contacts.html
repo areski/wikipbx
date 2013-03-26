@@ -1,0 +1,74 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block dashcontent %}
+<h2>
+  <img src="{{ MEDIA_URL }}icons/folder_user.png"/>{% trans "Contacts - This Account" %}
+</h2>
+
+{% if contacts %}
+<table>
+  <thead>
+    <tr>
+      <th>
+	{{ _("name")|capfirst }}
+      </th>
+      <th>
+	{{ _("work number")|capfirst }}
+      </th>
+      <th>
+	{{ _("home number")|capfirst }}
+      </th>
+      <th>
+	{{ _("mobile number")|capfirst }}
+      </th>
+      <th>
+	{{ _("is blacklisted")|capfirst }}
+      </th>
+      <th>
+	{{ _("notes")|capfirst }}
+      </th>
+      <th>
+	{% trans "Delete" %}
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for contact in contacts %}
+    <tr>
+      <td>
+	<img src="{{ MEDIA_URL }}icons/folder_user.png"/>
+	<a href="{% url contacts:edit contact.id %}">{{ contact }}</a>
+      </td>
+      <td>
+        {{ contact.work|default:"&nbsp;" }}
+      </td>
+      <td>
+        {{ contact.home|default:"&nbsp;" }}
+      </td>
+      <td>
+        {{ contact.mobile|default:"&nbsp;" }}
+      </td>
+      <td>
+        {{ contact.is_blacklisted }}{# TODO: add an icon here #}
+      </td>
+      <td>
+        {{ contact.notes|default:"&nbsp;" }}
+      </td>
+      <td>
+	<a href="{% url contacts:delete contact.id %}">
+	  <img src="{{ MEDIA_URL }}icons/delete.png"/>
+	</a>
+      </td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+{% else %}
+
+<div><img src="{{ MEDIA_URL }}icons/tux.png"/>{% trans "No contacts found" %}</div>
+
+{% endif %}
+
+{% endblock %}

@@ -1,0 +1,69 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block bodytag %}
+<body>
+{% endblock %}
+
+{% block javascriptincludes %}
+<script type="text/javascript" src="{{ MEDIA_URL }}MochiKit/MochiKit.js"></script>
+{% endblock %}
+
+
+{% block inlinejavascript %}
+MochiKit.DOM.addLoadEvent(joinMorePeople);
+{% endblock %}
+
+
+{% block dashcontent %}
+
+<form method="post">
+  <h2><u>{% trans "Transfer live channel" %}</u></h2>
+  {% if extensions %}
+  <div>
+    <img src="{{ MEDIA_URL }}icons/tux.png"/>
+    {% trans "Choose the dialplan extension to transfer selected channel." %}
+  </div>
+
+<table class="list">
+  <thead>
+    <tr>
+      <th>{{ _("select")|capfirst }}</th>
+      <th>{{ _("extension")|capfirst }}</th>
+      <th>{{ _("description")|capfirst }}</th>
+      <th>{{ _("dialplan")|capfirst }}</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for extension in extensions %}
+    <tr>
+      <td>
+	<input type="radio" name="dialplan_extension" value="{{ extension.pk }}"{% if forloop.first %} checked="checked"{% endif %}/>
+      </td>
+      <td>
+	<a href="{% url wikipbxweb:extension-edit extension.id %}">{{ extension.get_single_expansion }}</a>
+      </td>
+      <td>
+	<small>{{ extension.desc }}</small>
+      </td>
+      <td>
+	{{ extension.get_xml_preview|escape }}
+      </td>
+    </tr>
+    {% endfor %}
+    <tr>
+      <td colspan="4">
+	<input type="submit" class="button" value="{% trans "Transfer" %}">
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+{% else %}
+
+<div><img src="{{ MEDIA_URL }}icons/tux.png">{% trans "No dialplan extensions found" %}</div>
+
+{% endif %}
+</form>
+
+{% endblock %}

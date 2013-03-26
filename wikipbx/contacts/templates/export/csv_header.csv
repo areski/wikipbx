@@ -1,0 +1,3 @@
+{% extends "export/csv.csv" %}
+{% block contents %}last name,first name,work number,home number,mobile number,organisation,title,is blacklisted,notes
+{{ block.super }}{% endblock %}

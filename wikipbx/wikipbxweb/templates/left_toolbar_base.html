@@ -1,0 +1,177 @@
+{% load wikipbx i18n %}
+<div class="ln2">           
+
+<div class="selected">
+  <a href="{% url wikipbxweb:dashboard %}">{% trans "Dashboard" %}</a>
+</div>
+
+{% block extra %}
+{% endblock %}
+
+{% block server %}
+
+<div class="header">{% trans "SIP Profiles" %}</div> 
+<div class="indent">           
+  <div class="menu-entry">
+    <img src="{{ MEDIA_URL }}icons/transmit_add.png"/><a href="{% url wikipbxweb:profile-add %}">{% trans "New" %}</a>
+  </div>
+  <div class="menu-entry">
+    <img src="{{ MEDIA_URL }}icons/transmit.png"/><a href="{% url wikipbxweb:profile-list %}">{% trans "Manage" %}</a>
+  </div>
+</div> 
+
+
+<div class="header">{% trans "Accounts" %}</div> 
+<div class="indent">           
+  <div class="menu-entry">
+    <img src="{{ MEDIA_URL }}icons/group_add.png"/><a href="{% url wikipbxweb:account-add %}">{% trans "New" %}</a>
+  </div>
+  <div class="menu-entry">
+    <img src="{{ MEDIA_URL }}icons/group.png"/><a href="{% url wikipbxweb:account-list %}">{% trans "Manage" %}</a>
+  </div>
+</div> 
+
+<div class="header">{% trans "Server" %}</div> 
+<div class="indent">           
+  <div class="menu-entry">
+    <img src="{{ MEDIA_URL }}icons/page_white_excel.png"/><a href="{% url wikipbxweb:xml-dialplan %}">{% trans "XML Config" %}</a>
+  </div>
+  <div class="menu-entry">
+    <img src="{{ MEDIA_URL }}icons/cog.png"/><a href="{% url wikipbxweb:event-socket %}">{% trans "Event Socket" %}</a>
+  </div>
+  <div class="menu-entry">
+    <img src="{{ MEDIA_URL }}icons/table.png"/><a href="{% url wikipbxweb:log-list %}">{% trans "Logs" %}</a>
+  </div>
+<div class="menu-entry">
+  <img src="{{ MEDIA_URL }}icons/table.png"><a href="{% url wikipbxweb:calls-unmatched %}">{% trans "CDRs" %}</a>
+</div>
+  {% admin_link %}
+</div> 
+{% endblock %}
+
+
+{% block account %}
+<div class="header">{% trans "Endpoints" %}</div> 
+<div class="indent">            
+  <div class="menu-entry">
+    <img src="{{ MEDIA_URL }}icons/telephone_add.png"/><a href="{% url wikipbxweb:endpoint-add %}">{% trans "Add" %}</a>
+  </div>
+  <div class="menu-entry">
+    <img src="{{ MEDIA_URL }}icons/telephone.png"/><a href="{% url wikipbxweb:endpoint-list %}">{% trans "Manage" %}</a>
+  </div>
+</div> 
+
+<div class="header">{% trans "Extensions" %}</div>
+<div class="indent">
+  <div class="menu-entry">
+    <img src="{{ MEDIA_URL }}icons/brick_add.png"/><a href="{% url wikipbxweb:extension-add %}">{% trans "Add" %}</a>
+  </div>
+  <div class="menu-entry">
+    <img src="{{ MEDIA_URL }}icons/brick.png"/><a href="{% url wikipbxweb:extension-list %}">{% trans "Dialplan" %}</a>
+  </div>
+</div> 
+
+<div class="header">{% trans "Gateways" %}</div> 
+<div class="indent">            
+  <div class="menu-entry">
+    <img src="{{ MEDIA_URL }}icons/world_add.png"/><a href="{% url wikipbxweb:gateway-add %}">{% trans "Add" %}</a>
+  </div>
+  <div class="menu-entry">
+    <img src="{{ MEDIA_URL }}icons/world.png"/><a href="{% url wikipbxweb:gateway-list %}">{% trans "Manage" %}</a>
+  </div>
+</div> 
+
+<div class="header">{% trans "Web Users" %}</div> 
+<div class="indent">            
+  <div class="menu-entry">
+    <img src="{{ MEDIA_URL }}icons/user_add.png"/><a href="{% url wikipbxweb:user-add account.id %}">{% trans "Add" %}</a>
+   </div>
+</div> 
+<div class="indent">            
+  <div class="menu-entry">
+    <img src="{{ MEDIA_URL }}icons/group.png"/><a href="{% url wikipbxweb:user-account account.id %}">{% trans "Manage" %}</a>
+  </div>
+</div> 
+
+<div class="header">{% trans "Calls" %}</div> 
+<div class="indent">            
+  <div class="menu-entry">
+    <img src="{{ MEDIA_URL }}icons/comments.png"/><a href="{% url wikipbxweb:calls-live %}">{% trans "Live" %}</a>
+  </div>
+</div>
+<div class="indent">
+  <div class="menu-entry">
+    <img src="{{ MEDIA_URL }}icons/tick.png"/><a href="{% url wikipbxweb:calls-matched %}">{% trans "Completed" %}</a>
+  </div>
+</div>
+<div class="indent">            
+<div class="menu-entry">
+  <img src="{{ MEDIA_URL }}icons/phone.png"><a href="{% url wikipbxweb:click-to-call %}">{% trans "Click-to-Call" %}</a>
+</div>
+</div> 
+
+{% comment %}}
+<div class="header">{% trans "Mail Server" %}</div> 
+<div class="indent">            
+  <div class="menu-entry">
+    <img src="{{ MEDIA_URL }}icons/email_edit.png"/><a href="{% url wikipbxweb:mail-configure %}">{% trans "Configure" %}</a>
+  </div>
+  <div class="menu-entry">
+    <img src="{{ MEDIA_URL }}icons/email_go.png"/><a href="{% url wikipbxweb:mail-test %}">{% trans "Test" %}</a>
+  </div>
+</div> 
+{% endcomment %}
+
+<div class="header">{% trans "IVR" %}</div> 
+<div class="indent">            
+  <div class="menu-entry">
+    <img src="{{ MEDIA_URL }}icons/script_add.png"><a href="{% url wikipbxweb:ivr-add %}">{% trans "Add" %}</a>
+  </div>
+  <div class="menu-entry">
+    <img src="{{ MEDIA_URL }}icons/script_add.png"><a href="{% url wikipbxweb:ivr-xml-add %}">{% trans "Add menu" %}</a>
+  </div>
+  <div class="menu-entry">
+    <img src="{{ MEDIA_URL }}icons/script.png"><a href="{% url wikipbxweb:ivr-list %}">{% trans "Manage" %}</a>
+  </div>
+</div> 
+{% endblock %}
+
+{% block enduser %}
+<div class="header">{% trans "Sound Clips" %}</div> 
+<div class="indent">            
+  <div class="menu-entry">
+    <img src="{{ MEDIA_URL }}icons/sound_add.png"><a href="{% url wikipbxweb:soundclip-add %}">{% trans "Add" %}</a>
+  </div>            
+  <div class="menu-entry">
+    <img src="{{ MEDIA_URL }}icons/sound.png"/><a href="{% url wikipbxweb:soundclip-list %}">{% trans "Manage" %}</a>
+  </div>
+</div> 
+
+{% url contacts:list as contacts_url %}
+{% if contacts_url %}
+<div class="header">{% trans "Contacts" %}</div> 
+<div class="indent">            
+  <div class="menu-entry">
+    <img src="{{ MEDIA_URL }}icons/phone.png"><a href="{% url contacts:add %}">{% trans "Add" %}</a>
+  </div>            
+  <div class="menu-entry">
+    <img src="{{ MEDIA_URL }}icons/folder_user.png"/><a href="{{ contacts_url }}">{% trans "Manage" %}</a>
+  </div>
+  <div class="menu-entry">
+    <img src="{{ MEDIA_URL }}icons/folder_user.png"/><a href="{% url contacts:export %}">{% trans "Export" %}</a>
+  </div>
+</div>
+{% endif %}
+{% endblock %}
+
+{% block help %}
+<div class="header">{% trans "Help" %}</div> 
+<div class="indent">            
+  <div class="menu-entry">
+    <img src="{{ MEDIA_URL }}icons/help.png"><a href="http://wikipbx.subwiki.com" target="_BLANK">{% trans "User Guide" %}</a>
+  </div>
+</div>
+</div> 
+{% endblock %}
+
+

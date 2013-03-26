@@ -1,0 +1,2 @@
+{% block contents %}{% for contact in contacts %}"{{ contact.last_name }}","{{ contact.first_name }}","{{ contact.work }}","{{ contact.home }}","{{ contact.mobile }}","{{ contact.organization }}","{{ contact.title }}",{{ contact.is_blacklisted }},"{{ contact.notes }}"
+{% endfor %}{% endblock %}

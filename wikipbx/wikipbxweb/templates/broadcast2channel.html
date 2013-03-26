@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block bodytag %}
+<body onload="document.speakform.text2speak.focus()"> 
+{% endblock %}
+
+{% block dashcontent %}
+<h2>
+  <img src="{{ MEDIA_URL }}icons/comment.png"/>
+  {% blocktrans %}Convert text to speech and inject into <span title="{{ chan_uuid }}">channel</span>.{% endblocktrans %}
+</h2>
+<form id="speakform" name="speakform" method="POST">
+<table>
+  <tr>
+    <th>
+      {% trans "Text To Speak:" %}
+    </th>
+    <td>
+      <input type="hidden" name="action" value="tts"/>
+      <input type="text" name="text2speak" size="100"/>
+    </td>
+  </tr>
+  <tr>
+    <th></th>
+    <td>
+      <input type="submit" class="button" value="submit"/>
+    </td>
+  </tr>
+</table>
+</form>
+
+<h2>
+  <img src="{{ MEDIA_URL }}icons/sound.png"/>
+  {% blocktrans %}Choose Soundclip to inject into <span title="{{ chan_uuid }}">channel</span>.{% endblocktrans %}
+</h2>
+{% if soundclips %}
+<table class="list">
+  <thead>
+    <tr>
+      <th>{{ _("name")|capfirst }}</th>
+      <th>{{ _("description")|capfirst }}</th>
+      <th>{{ _("play")|capfirst }}</th>
+</tr>
+{% for soundclip in soundclips %}
+<tr>
+  <td>{{ soundclip.name }}</td>
+  <td>{{ soundclip.desc }}</td>
+  <td>
+    <a href="{% url wikipbxweb:channel-broadcast chan_uuid %}?action=soundclip&soundclip_id={{ soundclip.id }}">
+      <img src="{{ MEDIA_URL }}icons/sound.png"/>
+    </a>
+  </td>
+</tr>
+{% endfor %}
+</table>
+
+{% else %}
+<p>
+  <img src="{{ MEDIA_URL }}icons/tux.png"/>{% trans "No soundclips found." %}
+</p>
+{% endif %}
+{% endblock %}

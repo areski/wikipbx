@@ -1,0 +1,18 @@
+<document type="freeswitch/xml">
+<section name="dialplan" description="Various Dialplan">
+
+<context name='{{ call_context }}'>
+    <extension continue="true" name="check_auth">
+      <condition break="never" field="${sip_authorized}" expression="^true$">
+        <anti-action application="respond" data="407" />
+      </condition>
+    </extension>
+    <extension name="transfer_to_extension">
+      <condition>
+        <action application="transfer" data="{{ dialed_extension }} XML {{ extension.account.context }}" />
+      </condition>
+    </extension>
+</context>
+
+</section>
+</document>

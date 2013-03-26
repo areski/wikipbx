@@ -1,0 +1,48 @@
+<document type="freeswitch/xml">
+
+<section name="directory">
+
+<domain name='{{ account.domain }}'>
+
+  {% if endpoint %}
+  <user id='{{ endpoint.userid }}' mailbox='{{ endpoint.userprofile.mailbox }}'>
+    <params>
+      <param name='password' value='{{ endpoint.password }}'/>
+
+      {% if endpoint.vm_enabled %}
+        <param name='vm-enabled' value='true'/>
+        <param name='vm-password' value='{{ endpoint.vm_password }}'/>
+        {% if endpoint.vm_mailto %}
+          <param name="vm-mailto" value="{{ endpoint.vm_mailto }}"/>
+          <param name="vm-email-all-messages" value="true" />
+          <param name="vm-attach-file" value="true" />
+          {% if endpoint.vm_remove_local_after_email %}
+            <param name="vm-keep-local-after-email" value="false"/>
+          {% endif %}
+        {% endif %}
+
+        {% if endpoint.vm_notify_mailto %}
+          <param name="vm-notify-mailto" value="{{ endpoint.vm_notify_mailto }}"/>
+          <param name="vm-notify-email-all-messages" value="true"/>
+        {% endif %}
+      {% else %}
+        <param name='vm-enabled' value='false'/>
+      {% endif %}
+    </params>
+    <variables>
+      <variable name='sip-force-contact' value='nat-connectile-dysfunction'/>
+      <variable name="user_context" value="{{ account.context }}"/>
+      <variable name="toll_allow" value="{{ endpoint.toll_allow }}"/>
+      <variable name="effective_caller_id_name" value="{{ endpoint.effective_caller_id_name }}"/>
+      <variable name="effective_caller_id_number" value="{{ endpoint.effective_caller_id_number }}"/>
+      <variable name="outbound_caller_id_name" value="{{ endpoint.outbound_caller_id_name }}"/>
+      <variable name="outbound_caller_id_number" value="{{ endpoint.outbound_caller_id_number }}"/>
+    </variables>
+  </user>
+  {% endif %}
+
+</domain>
+
+</section>
+
+</document>

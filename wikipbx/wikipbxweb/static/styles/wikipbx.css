@@ -1,0 +1,54 @@
+html, body { height: 100%; }
+.headerbg { background: #6599FF; }
+.menubarbg { background: #FF9900; color: white; font-family: sans-serif; padding-bottom: 2px; }
+.menubaritem { padding-left: 2em; padding-right: 2em; font-size: x-small;}
+.menubarcrumb { padding-left: .5em; padding-right: .5em; font-size: x-small;}
+.menu-entry { border: 0 }
+.sidebar { background: #cccccc; padding-bottom: 500px; }
+.maincontent { background: white; }
+.sidebar_section_title { color: #ff3822; font-family: Verdana, serif; text-transform: uppercase; font-weight: bolder; font-size: small; padding-bottom: 1em;}
+.sidebar_label { color: #4a8cbc; font-family: Verdana, serif; text-transform: uppercase; font-weight: bolder; font-size: x-small; padding-right: 1em; float: right; padding-top: 5px; }   
+.login_field {  font-size: x-small; width: 8em; font-weight: bold; } 
+.login_field:focus {  background: #9db8d3; color: black; font-weight: bold } 
+.login_button { float: right;  color: #4a8cbc; font-weight: bold; }
+.login_button:hover { color: black; }
+.sidebar_text { padding-left: 5px; padding-right: 5px; color: #7b7b7b; font-family: Verdana, serif; font-weight: bolder; font-size: x-small; }
+.sidebar_date { color: #4a8cbc; font-family: Verdana, serif; font-weight: bolder; font-size: x-small; }   
+.amt { color: white; background: #8fbf47; padding: .3em; font-family: Verdana, serif;  font-weight: bold; font-size: xx-large; border: 1px solid black; }
+.neg_amt { color: white; background: red; padding: .3em; font-family: Verdana, serif;  font-weight: bold; font-size: xx-large; border: 1px solid black; }
+.amt_sm { color: white; background: #8fbf47; font-family: Verdana, serif;  font-weight: bold; }
+.neg_amt_sm { color: white; background: red; padding: .3em; font-family: Verdana, serif;  font-weight: bold; border: 1px solid black; }
+.atrail_label { font-family: Verdana, serif;  font-weight: bold; }
+.atrail_item { font-family: Verdana, serif; font-size: x-small; }
+.urgentmsg { font-weight: bold; color: black; font-family: Verdana, serif; font-size: normal;  border: 0px solid black; padding: 2em; text-decoration: underline; background: #D87373}
+.infomsg { color: black; font-family: Verdana, serif;  font-style: italic; font-size: normal;  border: 0px solid gray; padding: 2em; background: #ddf8cc; text-decoration: underline}
+.blurb {font-size: 120%; padding-top: 1em; padding-bottom: 2em; max-width: 60%; color: #888; }
+.screenshot {padding-left: 1em; padding-right: 1em; padding-top: 1em; }
+form ul li { list-style: none; }
+a img { border: 0; }
+.dash table { border: 1px solid #C3D9FF; border-spacing: 0px; }
+.dash td, .dash th { border: 1px solid #C3D9FF; padding: .5em 1em; }
+.dash tbody th { text-align: right; }
+.dash table.list tbody tr:nth-child(odd) { background-color: white; }
+.dash table.list tbody tr:nth-child(even) { background-color: #E8EEF7; }
+.dash thead tr { background-color: #E8EEF7; text-align: left; }
+.button { background: url('/site_media/images/button.png') no-repeat top left; width: 120px; height: 30px; margin: 0; padding: 0; border: 0; font-size: 120%; }
+input.button:active { background-image: url('/site_media/images/button_clicked.png'); }
+.top_padded { padding: 2em 0; }
+.hidden { display: none; }
+.smalltext { padding-top: 0.5em; font-size: x-small; font-style: italic; }
+.dashedborder { border: 1px dashed black; padding: .5em; }
+div.left { float: left; }
+div.right { float: right; }
+#footer { height: 5em; position: relative; color: #888; border-top: 2px solid #C3D9FF; }
+#footer > .left  { width: 40%; }
+#footer > .block { padding: 1em; }
+#footer .copyright { float: left; padding-top: 0.5em; width: 40%; }
+.header { padding-top: 1em; padding-left: 2em; }
+div#products { width: 75%; font-weight: bold; }
+div#wrapper { min-height: 100%; margin-bottom: 0em; position: relative; }
+ul.errorlist { margin: 0; padding: 0; }
+.errorlist li { font-weight: bold; color: balck; font-family: Verdana, serif; font-size: normal; text-decoration: underline; background-color: #D87373;  display: block; margin: 0 0 3px; padding: 4px 5px; }
+div.menu-entry img { padding-right: 0.5em; }
+.search { background-color: #E8EEF7; text-align: left; padding: 0.5em; margin-bottom: 1em; border: 1px solid #C3D9FF; }
+

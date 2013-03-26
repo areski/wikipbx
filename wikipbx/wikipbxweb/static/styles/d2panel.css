@@ -1,0 +1,299 @@
+body, th, td {font-family:arial,sans-serif; font-size: 80% }
+textarea {font-family:arial,sans-serif; font-size: 100%; padding: .5em}
+body {background-color: #ffffff; margin:5; background-color: #ffffff;}
+a:link, a:active, a:visited{color:#0000CC}
+form{margin:0}
+.formtext {background-color: #ffffff ! important}
+
+/* titles */
+.t {font-weight: bold; font-size: 150%;}
+
+
+/* footer */
+.f {font-size:70%; color: #676767; line-height: 150%;}
+
+/* data lists for content what wraps out of the cell */
+.l {table-layout:fixed; text-align: left;}
+.l td {
+    white-space: nowrap;
+	vertical-align: top;
+	border-bottom: solid;
+	border-width: 1px; border-color: #dddddd;
+ } 
+.l div {overflow: hidden;}
+.l .e {padding-right: 2em;}
+.l tbody {cursor: pointer} 
+.l thead {background-color: #E8EEF7;}
+.l thead th {font-weight: normal; white-space: nowrap; border-bottom: solid; border-width: 1px; border-color: #dddddd;}
+
+/* data lists for solid contents, where text holds out the cell */
+.ls { text-align: left;}
+.ls td {
+    white-space: nowrap;
+	vertical-align: top;
+	border-bottom: solid;
+	border-width: 1px; border-color: #dddddd;
+ } 
+.ls tbody {cursor: pointer} 
+.ls thead {background-color: #E8EEF7;}
+.ls thead th {font-weight: normal; white-space: nowrap; border-bottom: solid; border-width: 1px; border-color: #dddddd;}
+
+.hr { border-top: 1px solid #dddddd;}
+
+/* left nav */
+.ln td {white-space: nowrap; padding-right: 6;}
+.ln {width: 140px; margin-left: 10}
+
+
+/* Unimportatn text */
+.u {font-size:100%; color: #676767}
+.u a:link, .u a:active, .u a:visited {color: #7777CC}
+.u2 {font-size:90%; color: #676767}
+.u2 a:link, .u2 a:active, .u2 a:visited {color: #7777CC}
+
+
+/* text styles: new, admin, suspended, error*/
+.new {font-size:90%; color: #008000}
+.adm {font-size:90%; color: #cc5500}
+.sus {font-size:90%; color: #cc0000}
+.err {color: #cc0000}
+.errormsg {color: #cc0000}
+
+/* yellow dialog cards */
+.d {padding: 10px; background-color:#FFF4c2; border: solid 1px #FFcc33; line-height:120%; white-space: nowrap}
+
+/* gray sign-in card */
+.si td {border: solid 1px #aaaaaa; background-color:#eeeeee; padding:10px; line-height:140%; white-space: nowrap;}
+
+/* notification banner */
+.nb { margin: 5px;}
+.nb span {background-color: #fad163; padding: 1px 15px; -moz-border-radius: 5px;}
+
+
+/* style for the user page */
+.up {line-height:130%;}
+
+/* user page sections */
+.ups { margin: 0 0 15px 15px; border-collapse: collapse; white-space: nowrap;}
+.ups .n { width: 8em; padding-right: 25px; text-align: right;}
+.ups .s td {padding-top: 20px;}
+.ups .vl { border-bottom: solid 1px #dddddd;}
+.ups td {padding: 3px 0px;}
+
+
+
+/* settings pages */
+
+.so { border-collapse: collapse; table-layout: fixed; }
+.so .n { width: 12em;  vertical-align: top; white-space: nowrap; font-weight: bold; }
+.so td { padding-top: 18px; }
+.so .b { white-space: nowrap; border: solid 1px #dddddd;  padding: 5px; overflow: hidden; text-overflow: ellipsis;}
+.so .inner td {padding: 0}
+.so .colors td {padding: 0 0 9 0}
+.so textarea {margin-top: 0.5em; padding: 0 0 0 0.5em}
+
+
+.soi { border-collapse: collapse; margin-top: 10px;}
+.soi td { padding-top: 10px; width: 200px;}
+
+.imgbox { border: solid 1px #dddddd;  padding: 5px; margin: 0px;}
+
+.addrnamecol { width: 17em }
+.addrtypecol { width: 7em }
+
+
+/* ---------------- NEW styles for D2 ---------- */
+
+/* new left nav styling (ln2 = left-nav-2)
+ * we can remove the other .ln styles now.
+ */
+
+div.ln2 {
+    padding-left: 2;
+    width: 160;
+    display: table;
+}
+
+div.ln2 div {
+    padding: 3 5 3 3;
+    white-space: nowrap;
+}
+
+div.ln2 div.header {
+    font-weight: bold;
+    font-size: 100%;
+    margin-top: 1.3em;
+}
+
+div.ln2.spacer {
+    height: 10;
+}
+
+div.ln2 div.selected {
+    background-color: #C3D9FF;
+    font-weight: bold;
+}
+div.ln2 div.selected a { color: black; text-decoration: none }
+
+
+div.ln2 div.indent {
+    margin: 0 0 0 15;
+    padding: 0;
+    
+}
+
+/* --- Some new general styles ---*/
+
+a.greenlink {
+    color: #008000;
+    text-decoration: none;
+}
+
+.smallTitle {
+    font-size: 130%;
+    font-weight: bold;
+}
+
+
+img.tearoff {
+    position: relative;
+    bottom: -3;
+}
+
+div.d2_bluebar {
+    background-color: #E8EEF7;
+    padding: 16px;
+    border-bottom: 1px solid #C3D9FF;
+    border-top: 1px solid #C3D9FF;
+}
+
+div.d2_blueline {
+    padding: 16px;
+    border-top: 1px solid #C3D9FF;
+}
+
+
+div.d2_bluebar p {
+    margin: 8 0 0 0;
+}
+
+input.d2_bigbutton {
+    font-weight: bold;
+}
+
+/* ---- dashboard promo ----- */
+
+
+div.d2_promo em {
+    color: #ff0000;
+    font-style: normal;
+}
+
+
+/* --- little status icons --- */
+
+div.d2_status_icons img {
+    position: relative;
+    top: 5;
+}
+
+div.d2_status_icons {
+    line-height: 2em;
+}
+
+/* Add - remove services tables */
+
+
+table.d2_addservices {
+    border-collapse: collapse;
+}
+
+table.d2_addservices td {
+    padding: 0 0 16 0;
+}
+
+table.d2_addservices table.check td {
+    padding: 0 16 0 0;
+}
+
+
+
+
+/* setup steps */
+
+
+
+div.d2_setup div.step {
+    margin: 16 16 32 16;
+    padding: 2 0 0 0;
+}
+
+
+
+div.d2_setup a {
+    white-space: nowrap;
+}
+
+
+div.d2_setup p {
+    margin: 0;
+    max-width: 50em;
+}
+
+div.d2_setup div.step {
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    padding-left: 26;
+    min-height: 18;
+}
+
+
+div.d2_setup p {
+    color: #333;
+}
+
+div.d2_setup div.updating {
+    background-image: url(/accounts/hosted/setup_updating.gif);
+}
+
+div.d2_setup div.error {
+    background-image: url(/accounts/hosted/setup_error.gif);
+}
+
+div.d2_setup div.updating p {
+    color: #676767;
+}
+div.d2_setup div.updating a {
+    color: #7777cc;
+}
+
+div.d2_setup div.done {
+    margin: 16 16;
+    background-image: url(/accounts/hosted/setup_done.gif);
+    color: #008000;
+    padding-top: 3px;
+}
+
+
+/* instruction steps */
+
+table.d2_instructions {
+    border-collapse: collapse;
+}
+
+table.d2_instructions td { padding-bottom: 1.5em; }
+table.d2_instructions td.num { font-weight: bold; float: left; width: 2em; color: #666; vertical-align: top; }
+div.dash { padding: 16; }
+div.dash table.mx {border-collapse: collapse; margin-top: 10; margin-left: 2em; font-family: fixed-width;}
+div.dash table.mx th {text-align: left; border-bottom: 1px solid #676767}
+div.dash table.mx th, .dash .mx td { padding: .3em 2em .3em .5em; white-space: nowrap}
+div.dash table.mx td {border-bottom: 1px solid #cccccc}
+div.d2_hr {
+    border-bottom: 1px solid #c3d9ff;
+}
+.verifybox {padding: 5px; border: 1px solid #b0b0b0; white-space:normal; overflow:auto;}
+.lse { text-align: left;}
+.lse td {white-space: nowrap; vertical-align: top; border-bottom: solid; border-width: 1px; border-color: #dddddd; } 
+.lse thead {background-color: #E8EEF7;}
+.lse thead th {font-weight: normal; white-space: nowrap; border-bottom: solid; border-width: 1px; border-color: #dddddd;}
+

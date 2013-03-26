@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block dashcontent %}
+
+{% if accounts %}
+
+<table class="list">
+  <thead>
+    <tr>
+      <th>{{ _("account")|capfirst }}</th>
+      <th>{{ _("users")|capfirst }}</th>
+      <th>{{ _("add user")|capfirst }}</th>
+      <th>{{ _("delete")|capfirst }}</th>
+    </tr>
+  </thead>
+  <tbody>
+{% for account in accounts %}
+
+<tr>
+  <td>
+    <a href="{% url wikipbxweb:account-edit account.id %}">
+      <img src="{{ MEDIA_URL }}icons/group_edit.png"/>{{ account.name }}</a>
+  </td>
+
+  <td>
+    <a href="{% url wikipbxweb:user-account account.id %}">
+      <img src="{{ MEDIA_URL }}icons/group.png"/>
+    </a>
+  </td>
+
+  <td>
+    <a href="{% url wikipbxweb:user-add account.id %}">
+      <img src="{{ MEDIA_URL }}icons/user_add.png"/>
+    </a>
+</td>
+
+  <td>
+    <a href="{% url wikipbxweb:account-delete account.id %}">
+      <img src="{{ MEDIA_URL }}icons/delete.png"/>
+    </a>
+</td>
+</tr>
+
+{% endfor %}
+  </tbody>
+</table>
+
+{% else %}
+
+<p>
+  <img src="{{ MEDIA_URL }}icons/tux.png">
+  {% trans "No accounts defined" %}
+</p>
+
+{% endif %}
+
+
+{% endblock %}

@@ -1,0 +1,12 @@
+{% for contact in contacts %}BEGIN:VCARD
+VERSION:3.0
+FN:{{ contact.last_name }};{{ contact.first_name }}
+N:{{ contact }}
+{% if contact.work %}TEL;TYPE=WORK:{{ contact.work }}
+{% endif %}{% if contact.home %}TEL;TYPE=HOME:{{ contact.home }}
+{% endif %}{% if contact.mobile %}TEL;TYPE=CELL:{{ contact.mobile }}
+{% endif %}{% if contact.organization %}ORG:{{ contact.organization }}
+{% endif %}{% if contact.title %}TITLE:{{ contact.title }}
+{% endif %}REV:{{ contact.get_vcard_rev }}
+END:VCARD
+{% endfor %}

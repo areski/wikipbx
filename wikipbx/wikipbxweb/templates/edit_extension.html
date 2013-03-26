@@ -1,0 +1,90 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+
+
+{% block inlinejavascript %}
+
+{% for af in form_actions %}
+var prev_activ_template_{{ af.prefix }} = '';
+
+function choose_ext_type_{{ af.prefix }}() {
+    var template_element = document.getElementById("id_{{ af.prefix }}-template");
+
+    if (template_element.value) {
+      document.getElementById('act_{{ af.prefix }}_' + template_element.value).style.display='block'
+    }  
+    if (prev_activ_template_{{ af.prefix }}) {
+        document.getElementById('act_{{ af.prefix }}_' + prev_activ_template_{{ af.prefix }}).style.display='none'
+    }
+    prev_activ_template_{{ af.prefix }}=template_element.value
+}
+{% endfor %}
+
+{% endblock %}
+
+
+
+{% block dashcontent %}
+
+<form method="post">
+<table>
+{{ form }}
+
+
+{% for af in form_actions %}
+<tr>
+<th>{% trans "Action" %} {{ forloop.counter }}:</th>
+<td>
+{{ af.template }}
+
+{% if af.action_obj.action.id %}
+<a href="{% url wikipbxweb:extension-action-delete af.action_obj.action.id %}">
+<img src="{{ MEDIA_URL }}icons/delete.png"/>
+</a>
+{% endif %}
+
+{{ af.order }}
+
+  {% for fm in af.asf %}
+  <div id="act_{{ af.prefix }}_{{ fm.template.id }}" style="display:none; padding-top: 0.3em;">
+  {{ fm.template.description }}
+  <table>
+    {{ fm }}
+  </table>
+  </div>
+  {% endfor %}
+</td>
+</tr>
+{% endfor %}
+
+
+{% if form.instance.id %}
+<tr>
+<th></th>
+<td>
+<a href="{% url wikipbxweb:extension-action-add form.instance.id %}">
+<img src="{{ MEDIA_URL }}icons/add.png"/>{% trans "Add new action" %}
+</a>
+</td>
+</tr>
+{% endif %}
+
+<tr>
+<th></th>
+<td><input type="submit" class="button" value="{% trans "Submit" %}"></td>
+</tr>
+</table>
+</form>
+
+<script type="text/javascript">
+{% for af in form_actions %}
+obj = document.getElementById("id_{{ af.prefix }}-template");
+if (obj) {
+  obj.onchange = choose_ext_type_{{ af.prefix }}
+  obj.onchange()
+}
+{% endfor %}
+</script>
+
+{% endblock %}

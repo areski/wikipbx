@@ -1,0 +1,1 @@
+ALTER TABLE wikipbxweb_account ADD COLUMN domain varchar(100);
