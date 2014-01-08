@@ -1,8 +1,9 @@
 {% extends "base.html" %}
-{% load i18n %}
+{% load i18n csrf_token %}
 
 {% block dashcontent %}
 <form method="post">
+{% csrf_token %}
 <table>
 {{ form }}
 <tr>
