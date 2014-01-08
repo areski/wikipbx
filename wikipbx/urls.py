@@ -26,7 +26,7 @@ Stas Shtin <antisvin@gmail.com>
 """
 import os
 from django.conf import settings
-from django.conf.urls.defaults import *
+from django.conf.urls import *
 from django.contrib import admin
 
 urlpatterns = patterns(
