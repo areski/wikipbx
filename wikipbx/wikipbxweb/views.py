@@ -1092,9 +1092,8 @@ def add_root(request):
     else:
         form = forms.RootUserForm()
 
-    return simple.direct_to_template(
-        request, 'object_form.html', {'form':form})
-
+    return render(request, 'object_form.html', {'form':form})
+    
 @decorators.require_root_or_admin
 def livecalls(request):
     account = request.user.get_profile().account
