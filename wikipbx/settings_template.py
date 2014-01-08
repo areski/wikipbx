@@ -103,7 +103,7 @@ INSTALLED_APPS = (
 )
 
 TEMPLATE_CONTEXT_PROCESSORS = (
-    'django.core.context_processors.auth',
+    'django.contrib.auth.context_processors.auth',
     'django.core.context_processors.media',
     'wikipbx.wikipbxweb.context_processors.soundclips_media_processor',
     'wikipbx.wikipbxweb.context_processors.global_processor',
