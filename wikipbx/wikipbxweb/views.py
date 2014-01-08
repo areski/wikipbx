@@ -35,7 +35,7 @@ from django.contrib.auth import authenticate, login, logout, models as djmodels
 from django.core.urlresolvers import reverse
 from django.db import transaction
 from django.db.models import Q
-from django.shortcuts import get_object_or_404
+from django.shortcuts import get_object_or_404, render
 from django.utils.translation import ugettext as _
 from django.views.generic import simple, list_detail
 from pprint import pformat
@@ -45,8 +45,7 @@ from wikipbx.wikipbxweb import decorators, forms, models
 
 
 def index(request):
-    return simple.direct_to_template(
-        request, 'index.html', {'nousers': not djmodels.User.objects.all()})
+    return render(request, 'index.html', {'nousers': not djmodels.User.objects.all()})
 
 @decorators.require_login
 def dashboard(request):
