@@ -17,7 +17,7 @@
   <tr>
     <td valign="top"> 
       <div class="x">{% trans "Sign in to your account" %}
-	<form action="{% url wikipbxweb:member-login %}" method="post" name="login"> 
+	<form action="{% url 'wikipbxweb:member-login' %}" method="post" name="login"> 
 	  <table cellpadding="0" cellspacing="0" style="margin:15 0 0 0" border="0"> 
 	    <tr>
 	      <td align="right" nowrap>{% trans "Email:" %}</td>
@@ -75,7 +75,7 @@
 	    {% if nousers %}
 	    <tr>
 	      <td colspan="3" align="center">
-		[ <a href="{% url wikipbxweb:root-add %}">{% trans "Add Root user" %}</a> ]
+		[ <a href="{% url 'wikipbxweb:root-add' %}">{% trans "Add Root user" %}</a> ]
 	      </td>
 	    </tr> 
 	    {% endif %}
