@@ -147,7 +147,7 @@
   </div>
 </div> 
 
-{% url contacts:list as contacts_url %}
+{% url 'contacts:list' as contacts_url %}
 {% if contacts_url %}
 <div class="header">{% trans "Contacts" %}</div> 
 <div class="indent">            
