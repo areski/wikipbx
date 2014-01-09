@@ -49,7 +49,7 @@ def index(request):
 
 @decorators.require_login
 def dashboard(request):
-    return simple.direct_to_template(request, 'dashboard.html')
+    return render(request, 'dashboard.html')
 
 def memberlogin(request):
     if request.method == 'POST':
@@ -85,7 +85,7 @@ def extensions(request):
         "the order they are shown here, from top to bottom.  Once a match is "
         "found it is executed.  Re-order extensions using the green arrows.")
     return simple.direct_to_template(
-        request, 'extensions.html', {'exts': exts, 'blurb': blurb})
+        return render(request, 'extension.html', {'exts': exts, 'blurb': blurb})
 
 @decorators.require_admin
 def ext_priority(request, extension_id, action):
