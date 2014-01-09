@@ -13,7 +13,7 @@
 <div class="header">{% trans "SIP Profiles" %}</div> 
 <div class="indent">           
   <div class="menu-entry">
-    <img src="{{ MEDIA_URL }}icons/transmit_add.png"/><a href="{% url wikipbxweb:profile-add %}">{% trans "New" %}</a>
+    <img src="{{ MEDIA_URL }}icons/transmit_add.png"/><a href="{% url 'wikipbxweb:profile-add' %}">{% trans "New" %}</a>
   </div>
   <div class="menu-entry">
     <img src="{{ MEDIA_URL }}icons/transmit.png"/><a href="{% url wikipbxweb:profile-list %}">{% trans "Manage" %}</a>
