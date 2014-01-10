@@ -231,8 +231,7 @@ def add_ivr_action(request, ivr_id):
                         
     blurb = _(u"Add new IVR destination.")
     action_name = _(u"IVR destination")
-    return render(
-        request, 'action.html', 
+    return render(request, 'action.html', 
         {'form_actions': form_actions, 'blurb': blurb, 
         'action_name':action_name})
 
@@ -372,8 +371,7 @@ def event_socket(request):
     else:
         form = forms.EventSocketConfigForm(instance=eventsocket)
         
-    return render(
-        request, 'object_form.html', {'form':form})
+    return render(request, 'object_form.html', {'form':form})
 
 @decorators.require_admin
 def add_ivr(request):
@@ -469,8 +467,7 @@ def edit_account(request, account_id):
     else:
         form = forms.AccountForm(sip_profiles, account.form_dict())
         
-    return simple.direct_to_template(
-        request, 'object_form.html', {'form':form})    
+    return render(request, 'object_form.html', {'form':form})    
 
 @decorators.require_root
 def add_sip_profile(request):
@@ -489,8 +486,8 @@ def add_sip_profile(request):
     else:
         form = forms.SipProfileForm()
 
-    return simple.direct_to_template(
-        request, 'object_form.html', {'form':form, 'blurb':form.blurb})
+    return render(request, 'object_form.html', 
+        {'form':form, 'blurb':form.blurb})
 
 @decorators.require_root
 def edit_sip_profile(request, profile_id):
@@ -513,8 +510,8 @@ def edit_sip_profile(request, profile_id):
     else:
         form = forms.SipProfileForm(instance=sipprofile)
 
-    return simple.direct_to_template(
-        request, 'object_form.html', {'form':form, 'blurb':form.blurb})
+    return render(request, 'object_form.html', 
+        {'form':form, 'blurb':form.blurb})
 
 @decorators.require_root
 def add_account(request):
@@ -582,15 +579,15 @@ def add_account(request):
             return http.HttpResponseRedirect(
                 reverse('wikipbxweb:dashboard') + "?urgentmsg=%s" % msg)
         
-    return simple.direct_to_template(
-        request, 'object_form.html', {'form':form, 'blurb':form.blurb})
+    return render(request, 'object_form.html', 
+        {'form':form, 'blurb':form.blurb})
 
 @decorators.require_root_or_admin
 def users(request, account_id):
     account = get_object_or_404(models.Account, pk=account_id)
     userprofs = models.UserProfile.objects.filter(account=account)
-    return simple.direct_to_template(
-        request, 'users.html', {'userprofs':userprofs, 'account':account})
+    return render(request, 'users.html', 
+        {'userprofs':userprofs, 'account':account})
 
 @decorators.require_root_or_admin
 def add_user(request, account_id):
@@ -614,8 +611,7 @@ def add_user(request, account_id):
     else:
         form = forms.UserProfileForm(instance=userprofile)
 
-    return simple.direct_to_template(
-        request, 'object_form.html', {'form': form})
+    return render(request, 'object_form.html', {'form': form})
 
 @decorators.require_root_or_admin
 def del_user(request, account_id, user_id):
@@ -644,27 +640,26 @@ def edit_user(request, account_id, user_id):
     else:
         form = forms.UserProfileEditForm(instance=userprofile)
 
-    return simple.direct_to_template(
-        request, 'object_form.html', {'form': form})
+    return render(request, 'object_form.html', {'form': form})
 
 @decorators.require_root
 def sip_profiles(request):
     sip_profiles = models.SipProfile.objects.all()
-    return simple.direct_to_template(
-        request, 'sip_profiles.html', {'sip_profiles': sip_profiles})
+    return render(request, 'sip_profiles.html', 
+        {'sip_profiles': sip_profiles})
 
 @decorators.require_root
 def accounts(request):
     accounts = models.Account.objects.all()
-    return simple.direct_to_template(
-        request, 'accounts.html', {'accounts':accounts})
+    return render(request, 'accounts.html', 
+        {'accounts':accounts})
     
 @decorators.require_admin
 def gateways(request):
     account = request.user.get_profile().account    
     gateways = models.SofiaGateway.objects.filter(account=account)
-    return simple.direct_to_template(
-        request, 'gateways.html', {'gateways':gateways})    
+    return render(request, 'gateways.html', 
+        {'gateways':gateways})    
 
 @decorators.require_admin
 def edit_gateway(request, gateway_id):
@@ -715,8 +710,8 @@ def edit_gateway(request, gateway_id):
         form = forms.SofiaGatewayForm(
             models.SipProfile.objects.all(), False, gw.form_dict())
 
-    return simple.direct_to_template(
-        request, 'object_form.html', {'form':form, 'gateway':gw})
+    return render(request, 'object_form.html', 
+        {'form':form, 'gateway':gw})
 
 @decorators.require_admin
 def del_gateway(request, gateway_id):
@@ -776,8 +771,7 @@ def add_gateway(request):
     else:
         form = forms.SofiaGatewayForm(models.SipProfile.objects.all(), False)
 
-    return simple.direct_to_template(
-        request, 'object_form.html',
+    return render(request, 'object_form.html',
         {'form': form,
          'blurb': _(u'SIP gateways are used for peering with another SIP '
                     'provider, such as a provider which provides outgoing '
@@ -819,8 +813,8 @@ def add_endpoint(request):
             initial={'password': utils.generate_passwd()},
             instance=endpoint)
     blurb = _(u"Define an endpoint to allow it to register on the PBX.")
-    return simple.direct_to_template(
-        request, 'object_form.html', {'form':form, 'blurb': blurb})
+    return render(request, 'object_form.html', 
+        {'form':form, 'blurb': blurb})
 
 @decorators.require_admin
 def endpoints(request):
@@ -860,8 +854,7 @@ def endpoints(request):
     if errorconnecting2fs:
         extra_context['urgentmsg'] = _(
             u"Failed to get current registration status from FreeSWITCH.")
-    return simple.direct_to_template(
-        request, 'endpoints.html', extra_context)
+    return render(request, 'endpoints.html', extra_context)
 
 @decorators.require_admin
 def exts4endpoint(request, endpoint_id):
@@ -869,8 +862,8 @@ def exts4endpoint(request, endpoint_id):
     endpoint = get_object_or_404(
         models.Endpoint, account=account, pk=endpoint_id)
     exts = endpoint.extension_set.all()
-    return simple.direct_to_template(
-        request, 'extensions.html', {'exts': exts, 'endpoint':endpoint})
+    return render(request, 'extensions.html', 
+        {'exts': exts, 'endpoint':endpoint})
 
 @decorators.require_admin
 def edit_endpoint(request, endpoint_id):
@@ -888,8 +881,7 @@ def edit_endpoint(request, endpoint_id):
     else:
         form = forms.EndpointEditForm(instance=endpoint)
 
-    return simple.direct_to_template(
-        request, 'object_form.html',
+    return render(request, 'object_form.html',
         {'form': form, 'endpoint': endpoint,
          'userprofs': models.UserProfile.objects.filter(account=account)})
 
@@ -988,16 +980,14 @@ def add_soundclip(request):
         " will be stored in the library with the soundclip name that you assign"
         " to it.  This soundclip will then be available for IVR's and other"
         " PBX features.")
-    return simple.direct_to_template(
-        request, 'add_soundclip.html', 
+    return render(request, 'add_soundclip.html', 
         {'form': form, 'blurb': blurb, 'tts_form': tts_form})
 
 @decorators.require_login
 def soundclips(request):
     account = request.user.get_profile().account        
     soundclips = models.Soundclip.objects.filter(account=account)
-    return simple.direct_to_template(
-        request, 'soundclips.html',
+    return render(request, 'soundclips.html',
         {'soundclips':soundclips, 'account':account})
 
 @decorators.require_admin
@@ -1124,8 +1114,8 @@ def livecalls(request):
             return http.HttpResponseRedirect(
                 reverse('wikipbxweb:dashboard') + "?urgentmsg=%s" % msg)
 
-    return simple.direct_to_template(
-        request, 'livecalls.html', {'channels':channels})
+    return render(request, 'livecalls.html', 
+        {'channels':channels})
 
 @decorators.require_root_or_admin
 def transfer(request, chan_uuid):
@@ -1155,8 +1145,7 @@ def transfer(request, chan_uuid):
             x for x in list(models.Extension.objects.filter(
                 account=account, is_temporary=False))
             if x.get_single_expansion()]
-        return simple.direct_to_template(
-            request, 'transfer.html',
+        return render(request, 'transfer.html',
             {'chan_uuid': chan_uuid, 'extensions': extensions})
 
 @decorators.require_root_or_admin
@@ -1169,8 +1158,7 @@ def broadcast2channel(request, chan_uuid):
     if not request.REQUEST.has_key('action'):
         # show form that asks them to pick soundclip
         soundclips = models.Soundclip.objects.filter(account=account)
-        return simple.direct_to_template(
-            request, 'broadcast2channel.html',
+        return render(request, 'broadcast2channel.html',
             {'soundclips': soundclips, 'account': account,
              'chan_uuid': chan_uuid})
     else:
@@ -1254,8 +1242,7 @@ def config_mailserver(request):
     else:
         form = forms.EmailConfigForm(instance=emailconfig)
 
-    return simple.direct_to_template(
-        request, 'object_form.html',
+    return render(request, 'object_form.html',
         {'form': form,
          'blurb': _(u'Configure Email server for this account.  At the time of'
                     ' this writing, only tested with GMail accounts with'
@@ -1291,8 +1278,7 @@ def test_mailserver(request):
     else:
         form = forms.TestMailserverForm()
 
-    return simple.direct_to_template(
-        request, 'test_mailserver.html', {'form': form})
+    return render(request, 'test_mailserver.html', {'form': form})
 
 @decorators.require_root_or_admin
 def dialout(request, dest_ext_app):
@@ -1379,8 +1365,7 @@ def dialout(request, dest_ext_app):
             account=account, is_temporary=False)
         if x.get_single_expansion()]
 
-    return simple.direct_to_template(
-        request, 'dialout.html',
+    return render(request, 'dialout.html',
         {'endpoints': endpoints, 'extensions': extensions,
          'dest_ext_app': dest_ext_app})
 
@@ -1424,8 +1409,7 @@ def click2call(request):
         form = forms.Click2CallForm()
         form.fields['gateway'].choices = account.get_gateway_choices()
 
-    return simple.direct_to_template(
-        request, 'object_form.html', {'form':form})
+    return render(request, 'object_form.html', {'form':form})
 
 def add_cdr(request):
     """
