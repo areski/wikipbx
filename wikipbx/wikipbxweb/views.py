@@ -999,13 +999,29 @@ def completedcalls(request):
         request, queryset, paginate_by=50, template_name="completedcalls.html",
         extra_context={'calltype': 'completed'})
 
-@decorators.require_root
-def unmatched_completedcalls(request, page=1):
+#@decorators.require_root
+#def unmatched_completedcalls(request, page=1):
+#    queryset = models.CompletedCall.objects.filter(
+#        account__isnull=True).order_by("-hangup_time")
+#    return list_detail.object_list(
+#        request, queryset, paginate_by=50, template_name='completedcalls.html',
+#        extra_context={'calltype': 'unmatched'})
+
+class UnmatchedCompletedCalls(ListView):
+    extra_context = {'calltype': 'unmatched'}
     queryset = models.CompletedCall.objects.filter(
         account__isnull=True).order_by("-hangup_time")
-    return list_detail.object_list(
-        request, queryset, paginate_by=50, template_name='completedcalls.html',
-        extra_context={'calltype': 'unmatched'})
+    paginate_by=50
+    template_name="completedcalls.html"
+
+    def get_context_data(self, **kwargs):
+        context = super(UnmatchedCompletedCalls, self).get_context_data(**kwargs)
+        context.update(self.extra_context)
+        return context
+
+    @method_decorator(decorators.require_root)
+    def dispatch(self, request, *args, **kwargs):
+        return super(UnmatchedCompletedCalls, self).dispatch(request, *args, **kwargs)
 
 @decorators.require_login
 def outgoing2endpoint(request, endpoint_id):
@@ -1219,11 +1235,20 @@ def hangup_channels(request, chan_uuid=None):
         url = reverse('wikipbxweb:calls-live') + "?infomsg=%s" % msg
     return http.HttpResponseRedirect(url)
 
-@decorators.require_root
-def server_logs(request):
+#@decorators.require_root
+#def server_logs(request):
+#    queryset = models.ServerLog.objects.all().order_by("-logtime")
+#    return list_detail.object_list(
+#        request, queryset, paginate_by=15, template_name="server_logs.html")
+
+class ServerLogsView(ListView):
     queryset = models.ServerLog.objects.all().order_by("-logtime")
-    return list_detail.object_list(
-        request, queryset, paginate_by=15, template_name="server_logs.html")
+    paginate_by=15
+    template_name="server_logs.html"
+
+    @method_decorator(decorators.require_root)
+    def dispatch(self, request, *args, **kwargs):
+        return super(ServerLogsView, self).dispatch(request, *args, **kwargs)
 
 @decorators.require_root_or_admin
 def config_mailserver(request):
