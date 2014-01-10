@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% load i18n %}
+{% load i18n staticfiles %}
 
 {% block inlinejavascript %}
 function choose_upload_method() {
@@ -20,7 +20,7 @@ function load() {
 {% block dashcontent %}
 
 <h2>
-  <img src="{{ MEDIA_URL }}icons/sound_add.png"/>{% trans "Add Soundclip to library" %}</h2>
+  <img src="{% static "icons/sound_add.png" %}/>{% trans "Add Soundclip to library" %}</h2>
 {% if invalid %}
 <div class="urgentmsg" style="padding-top: 0.5em; padding-bottom: 0.5em;">
   {% trans "Form contains errors" %}
