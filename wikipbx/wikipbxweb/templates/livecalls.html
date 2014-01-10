@@ -1,8 +1,8 @@
 {% extends "base.html" %}
-{% load i18n %}
+{% load i18n staticfiles %}
 
 {% block dashcontent %}
-<h2><img src="{{ MEDIA_URL }}icons/telephone.png"/>{% trans "Channels" %}</h2>
+<h2><img src="{% static "icons/telephone.png" %}"/>{% trans "Channels" %}</h2>
 {% if channels %}
 <table class="list">
   <thead>
@@ -23,21 +23,21 @@
       <td>{{ channel.name }}</td>
       <td>{{ channel.dest }}</td>
       <td align="center">
-	<a href="{% url wikipbxweb:channel-broadcast channel.uuid %}">
-	  <img src="{{ MEDIA_URL }}icons/comment.png"/>
+	<a href="{% url 'wikipbxweb:channel-broadcast' channel.uuid %}">
+	  <img src="{% static "icons/comment.png" %}"/>
 	</a>
       </td>
       <td>{{ channel.cid_num }}</td>
       <td>{{ channel.cid_name }}</td>
       <td>{{ channel.created }}</td>
       <td align="center">
-	<a href="{% url wikipbxweb:channel-transfer channel.uuid %}">
-	  <img src="{{ MEDIA_URL }}icons/brick_go.png"/>
+	<a href="{% url 'wikipbxweb:channel-transfer' channel.uuid %}">
+	  <img src="{% static "icons/brick_go.png" %}"/>
 	</a>
       </td>
       <td align="center">
-	<a href="{% url wikipbxweb:channel-hangup channel.uuid %}">
-	  <img src="{{ MEDIA_URL }}icons/cancel.png"/>
+	<a href="{% url 'wikipbxweb:channel-hangup' channel.uuid %}">
+	  <img src="{% static "icons/cancel.png" %}"/>
 	</a>
       </td>
     </tr>
@@ -46,8 +46,8 @@
 </table>
 
 <div>
-  <a href="{% url wikipbxweb:channel-hangup-all %}">
-    <img src="{{ MEDIA_URL }}icons/cancel.png"/>
+  <a href="{% url 'wikipbxweb:channel-hangup-all' %}">
+    <img src="{% static "icons/cancel.png" %}"/>
     {% blocktrans count channels|length as channels_length %}
     Hangup live channel.
     {% plural %}
@@ -56,7 +56,7 @@
   </div>
 </p>
 {% else %}
-<div><img src="{{ MEDIA_URL }}icons/tux.png"/>{% trans "No channels" %}</div>
+<div><img src="{% static "icons/tux.png" %}"/>{% trans "No channels" %}</div>
 {% endif %}
 
 {% endblock %}
