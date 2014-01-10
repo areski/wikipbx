@@ -93,7 +93,7 @@ urlpatterns = patterns(
 
     # CDRs
     url(r'^calls/records/add/$', 'add_cdr', name='cdr-add'),
-    url(r'^calls/unmatched/$', 'unmatched_completedcalls',
+    url(r'^calls/unmatched/$', UnmatchedCompletedCalls.as_view(),
         name='calls-unmatched'),
     url(r'^calls/matched/$', 'completedcalls', name='calls-matched'),
 
@@ -102,7 +102,7 @@ urlpatterns = patterns(
     url(r'^root/add/$', 'add_root', name='root-add'),
 
     # Freeswitch control
-    url(r'^channels/$', 'livecalls', name='calls-live'),
+    url(r'^channels/$', ServerLogsView.as_view(), name='calls-live'),
     url(r'^channels/hangup/(?P<chan_uuid>\S+)/$', 'hangup_channels',
         name='channel-hangup'),
     url(r'^channels/hangup/$', 'hangup_channels', name='channel-hangup-all'),
