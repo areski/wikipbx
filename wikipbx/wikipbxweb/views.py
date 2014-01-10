@@ -84,7 +84,6 @@ def extensions(request):
         u"When an incoming call comes into the PBX, extensions are matched in "
         "the order they are shown here, from top to bottom.  Once a match is "
         "found it is executed.  Re-order extensions using the green arrows.")
-    return simple.direct_to_template(
         return render(request, 'extension.html', {'exts': exts, 'blurb': blurb})
 
 @decorators.require_admin
@@ -148,8 +147,7 @@ def edit_extension(request, extension_id):
         u"Dialplan extensions can bridge to locally registered endpoints,"
         " remote endpoints, PSTN numbers via gateways, special applications"
         " such as the Echo Test, or IVR scripts.")
-    return simple.direct_to_template(
-        request, 'edit_extension.html',
+    return render(request, 'edit_extension.html',
         {'form': form, 'form_actions': form_actions, 'blurb':blurb})
 
 @decorators.require_admin
@@ -198,8 +196,7 @@ def add_ext_action(request, extension_id):
 
     blurb = _(u"Add new action.")
     action_name = _(u"Action")
-    return simple.direct_to_template(
-        request, 'action.html', 
+    return render(request, 'action.html', 
         {'form_actions': form_actions, 'blurb': blurb,
         'action_name':action_name})
 
@@ -234,7 +231,7 @@ def add_ivr_action(request, ivr_id):
                         
     blurb = _(u"Add new IVR destination.")
     action_name = _(u"IVR destination")
-    return simple.direct_to_template(
+    return render(
         request, 'action.html', 
         {'form_actions': form_actions, 'blurb': blurb, 
         'action_name':action_name})
@@ -280,8 +277,7 @@ def ivrs(request):
     account_ivr_menus = models.Ivr.objects.filter(
         account=account, language_ext='ivr_form')
     system_ivrs = models.Ivr.objects.filter(account__isnull=True)
-    return simple.direct_to_template(
-        request, 'ivrs.html',
+    return render(request, 'ivrs.html',
         {'account_ivrs':account_ivrs,
         'account_ivr_menus':account_ivr_menus,
         'system_ivrs':system_ivrs})
@@ -307,7 +303,7 @@ def edit_ivr(request, ivr_id):
     else:
         form = forms.IvrForm(instance=ivr)
         
-    return simple.direct_to_template(request, 'edit_ivr.html', {'form': form})
+    return render(request, 'edit_ivr.html', {'form': form})
 
 @decorators.require_admin
 def del_ivr(request, ivr_id):
@@ -376,7 +372,7 @@ def event_socket(request):
     else:
         form = forms.EventSocketConfigForm(instance=eventsocket)
         
-    return simple.direct_to_template(
+    return render(
         request, 'object_form.html', {'form':form})
 
 @decorators.require_admin
@@ -394,8 +390,8 @@ def add_ivr(request):
         form = forms.IvrForm(instance=ivr)
     
     blurb = _(u"IVR script")    
-    return simple.direct_to_template(
-        request, 'object_form.html', {'form':form, 'blurb':blurb})
+    return render(request, 'object_form.html',
+        {'form':form, 'blurb':blurb})
 
 @decorators.require_admin
 def edit_ivr_xml(request, ivr_id=None):
@@ -438,8 +434,7 @@ def edit_ivr_xml(request, ivr_id=None):
             reverse('wikipbxweb:ivr-list') + "?infomsg=%s" % msg)
 
     blurb = _(u"IVR menu")
-    return simple.direct_to_template(
-        request, 'edit_ivr_menu.html', 
+    return render(request, 'edit_ivr_menu.html', 
         {'form_ivr_name':form_ivr_name, 'form_ivr_menu':form_ivr_menu, 
          'form_actions': form_actions, 'blurb':blurb}) 
 
