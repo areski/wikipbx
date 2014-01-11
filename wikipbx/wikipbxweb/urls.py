@@ -1,5 +1,5 @@
 from django.conf.urls import *
-
+from wikipbx.wikipbxweb.views import ServerLogsView, UnmatchedCompletedCalls
 
 urlpatterns = patterns(
     'wikipbx.wikipbxweb.views',
