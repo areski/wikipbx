@@ -85,7 +85,7 @@ def extensions(request):
         u"When an incoming call comes into the PBX, extensions are matched in "
         "the order they are shown here, from top to bottom.  Once a match is "
         "found it is executed.  Re-order extensions using the green arrows.")
-    return render(request, 'extension.html', {'exts': exts, 'blurb': blurb})
+    return render(request, 'extensions.html', {'exts': exts, 'blurb': blurb})
 
 @decorators.require_admin
 def ext_priority(request, extension_id, action):
