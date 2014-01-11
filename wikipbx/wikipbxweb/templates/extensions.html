@@ -74,22 +74,22 @@ function showExtra(id) {
 	{% endif %}
       </td>
       <td>
-	<a href="{% url 'wikipbxweb:extension-priority' ext.id,"highest" %}">
+	<a href="{% url 'wikipbxweb:extension-priority' ext.id "highest" %}">
 	  <img src="{% static "icons/dbl_arrow_up.png" %}"/>
 	</a>
       </td>
       <td>
-	<a href="{% url 'wikipbxweb:extension-priority' ext.id,"lowest" %}">
+	<a href="{% url 'wikipbxweb:extension-priority' ext.id "lowest" %}">
 	  <img src="{% static "icons/dbl_arrow_down.png" %}"/>
 	</a>
       </td>
       <td>
-	<a href="{% url 'wikipbxweb:extension-priority' ext.id,"raise" %}">
+	<a href="{% url 'wikipbxweb:extension-priority' ext.id "raise" %}">
 	  <img src="{% static "icons/arrow_up.png" %}"/>
 	</a>
       </td>
       <td>
-	<a href="{% url 'wikipbxweb:extension-priority' ext.id,"lower" %}">
+	<a href="{% url 'wikipbxweb:extension-priority' ext.id "lower" %}">
 	  <img src="{% static "icons/arrow_down.png" %}"/>
 	</a>
       </td>
