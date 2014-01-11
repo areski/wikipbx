@@ -1,10 +1,10 @@
-{% load i18n %} 
+{% load i18n staticfiles %} 
 
 <head>
 <title>{% block title %} Wiki PBX {% endblock %}</title>
 
 {% block cssincludes %}
-<link rel="stylesheet" type="text/css" href="{{ MEDIA_URL }}styles/base_outer.css"/>
+<link rel="stylesheet" type="text/css" href="{% static "styles/base_outer.css" %}"/>
 {% endblock %}
 <style TYPE="text/css">
 {% block inlinestyles %}
@@ -24,7 +24,7 @@
   <tr>
     <td width="94" valign="bottom"> 
       <a href="{% url 'wikipbxweb:index' %}">
-	<img  alt="WikiPBX Logo" src="{{ MEDIA_URL }}images/wikipbxlogo4.gif">
+	<img  alt="WikiPBX Logo" src="{% static "images/wikipbxlogo4.gif" %}">
       </a>
     </td> 
     <td valign="center">      
