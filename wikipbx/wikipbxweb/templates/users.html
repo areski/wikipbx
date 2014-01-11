@@ -17,7 +17,7 @@
     <tr>
       <td>
 	<img src="{% static "icons/user_edit.png" %}"/>
-	<a href="{% url wikipbxweb:user-edit account.id, userprof.user.id %}">{{ userprof.user.email }}</a>
+	<a href="{% url 'wikipbxweb:user-edit' account.id userprof.user.id %}">{{ userprof.user.email }}</a>
       </td>
       <td>
 	{% if userprof.is_acct_admin %}
@@ -32,7 +32,7 @@
       </td>    
       <td>
 	<div title="{% trans "Delete" %}">
-	  <a href="{% url 'wikipbxweb:user-delete' account.id,userprof.user.id %}">
+	  <a href="{% url 'wikipbxweb:user-delete' account.id userprof.user.id %}">
 	    <img src="{% static "icons/delete.png" %}"/>
 	  </a>  
 	</div>
