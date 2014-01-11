@@ -1,9 +1,9 @@
 {% extends "base.html" %}
-{% load i18n %}
+{% load i18n staticfiles %}
 
 {% block dashcontent %}
 
-<h2><img src="{{ MEDIA_URL }}icons/sound.png"/>{% trans "Soundclips" %}</h2>
+<h2><img src="{% static "icons/sound.png" %}"/>{% trans "Soundclips" %}</h2>
 
 {% if soundclips %}
 
@@ -23,12 +23,12 @@
       <td>{{ soundclip.desc }}</td>
       <td>
 	<a href="{{ SOUNDCLIPS_MEDIA_URL }}{{account.name }}/{{ soundclip.pk }}.wav">
-	  <img src="{{ MEDIA_URL }}icons/sound.png"/>
+	  <img src="{% static "icons/sound.png" %}"/>
 	</a>
       </td>
       <td>
-	<a href="{% url wikipbxweb:soundclip-delete soundclip.id %}">
-	  <img src="{{ MEDIA_URL }}icons/delete.png">
+	<a href="{% url 'wikipbxweb:soundclip-delete' soundclip.id %}">
+	  <img src="{% static "icons/delete.png" %}">
 	</a>
       </td>
     </tr>
@@ -38,7 +38,7 @@
 
 {% else %}
 
-<div><img src="{{ MEDIA_URL }}icons/tux.png">{% trans "No soundclips found" %}</div>
+<div><img src="{% static "icons/tux.png" %}">{% trans "No soundclips found" %}</div>
 
 {% endif %}
 
