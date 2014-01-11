@@ -84,12 +84,12 @@
 <div class="header">{% trans "Web Users" %}</div> 
 <div class="indent">            
   <div class="menu-entry">
-    <img src="{% static "icons/user_add.png" %}"/><a href="{% url 'wikipbxweb:user-add account.id' %}">{% trans "Add" %}</a>
+    <img src="{% static "icons/user_add.png" %}"/><a href="{% url 'wikipbxweb:user-add' account.id %}">{% trans "Add" %}</a>
    </div>
 </div> 
 <div class="indent">            
   <div class="menu-entry">
-    <img src="{% static "icons/group.png" %}"/><a href="{% url 'wikipbxweb:user-account account.id' %}">{% trans "Manage" %}</a>
+    <img src="{% static "icons/group.png" %}"/><a href="{% url 'wikipbxweb:user-account' account.id %}">{% trans "Manage" %}</a>
   </div>
 </div> 
 
