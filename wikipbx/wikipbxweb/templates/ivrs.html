@@ -25,7 +25,7 @@
     <tr>
       <td>
 	<img src="{% static "icons/script_edit.png" %}"/>
-	<a href="{% url wikipbxweb:ivr-xml-edit account_ivr.id %}">{{ account_ivr.name }}</a>
+	<a href="{% url 'wikipbxweb:ivr-xml-edit' account_ivr.id %}">{{ account_ivr.name }}</a>
       </td>
       <td>
 	<a href="{% url 'wikipbxweb:ivr-delete' account_ivr.id %}">
