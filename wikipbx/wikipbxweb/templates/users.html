@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% load i18n %}
+{% load i18n staticfiles %}
 
 {% block dashcontent %}
 {% if userprofs %}
@@ -16,24 +16,24 @@
     {% for userprof in userprofs %}
     <tr>
       <td>
-	<img src="{{ MEDIA_URL }}icons/user_edit.png"/>
+	<img src="{% static "icons/user_edit.png" %}"/>
 	<a href="{% url wikipbxweb:user-edit account.id, userprof.user.id %}">{{ userprof.user.email }}</a>
       </td>
       <td>
 	{% if userprof.is_acct_admin %}
 	<div title="{% trans "Account Administrator" %}">
-	  <img src="{{ MEDIA_URL }}icons/shield.png"/>
+	  <img src="{% static "icons/shield.png" %}"/>
 	</div>
 	{% else %}
 	<div title="{% trans "End-user (no admin privileges)" %}">
-	  <img src="{{ MEDIA_URL }}icons/shield_grey.png"/>
+	  <img src="{% static "icons/shield_grey.png" %}"/>
 	</div>
 	{% endif %}	
       </td>    
       <td>
 	<div title="{% trans "Delete" %}">
-	  <a href="{% url wikipbxweb:user-delete account.id,userprof.user.id %}">
-	    <img src="{{ MEDIA_URL }}icons/delete.png"/>
+	  <a href="{% url 'wikipbxweb:user-delete' account.id,userprof.user.id %}">
+	    <img src="{% static "icons/delete.png" %}"/>
 	  </a>  
 	</div>
       </td>     
@@ -42,6 +42,6 @@
   </tbody>
 </table>
 {% else %}
-<div><img src="{{ MEDIA_URL }}icons/tux.png"/>{% trans "No users found" %}</div>
+<div><img src="{% static "icons/tux.png" %}"/>{% trans "No users found" %}</div>
 {% endif %}
 {% endblock %}
