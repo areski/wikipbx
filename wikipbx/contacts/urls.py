@@ -1,7 +1,7 @@
 from django.conf.urls import *
 
 urlpatterns = patterns(
-    'contacts.views',
+    'wikipbx.contacts.views',
     url(r'^$', 'contacts', name='list'),
     url(r'^add/$', 'edit_contact', { 'contact_id': None }, name='add'),
     url(r'^(?P<contact_id>\d+)/$', 'edit_contact', name='edit'),
