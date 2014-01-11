@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% load i18n %}
+{% load i18n staticfile %}
 
 {% block bodytag %}
 <body onload="document.speakform.text2speak.focus()"> 
@@ -7,7 +7,7 @@
 
 {% block dashcontent %}
 <h2>
-  <img src="{{ MEDIA_URL }}icons/comment.png"/>
+  <img src="{% static "icons/comment.png" %}"/>
   {% blocktrans %}Convert text to speech and inject into <span title="{{ chan_uuid }}">channel</span>.{% endblocktrans %}
 </h2>
 <form id="speakform" name="speakform" method="POST">
@@ -31,7 +31,7 @@
 </form>
 
 <h2>
-  <img src="{{ MEDIA_URL }}icons/sound.png"/>
+  <img src="{% static "icons/sound.png" %}"/>
   {% blocktrans %}Choose Soundclip to inject into <span title="{{ chan_uuid }}">channel</span>.{% endblocktrans %}
 </h2>
 {% if soundclips %}
@@ -47,8 +47,8 @@
   <td>{{ soundclip.name }}</td>
   <td>{{ soundclip.desc }}</td>
   <td>
-    <a href="{% url wikipbxweb:channel-broadcast chan_uuid %}?action=soundclip&soundclip_id={{ soundclip.id }}">
-      <img src="{{ MEDIA_URL }}icons/sound.png"/>
+    <a href="{% url 'wikipbxweb:channel-broadcast' chan_uuid %}?action=soundclip&soundclip_id={{ soundclip.id }}">
+      <img src="{% static "icons/sound.png" %}"/>
     </a>
   </td>
 </tr>
@@ -57,7 +57,7 @@
 
 {% else %}
 <p>
-  <img src="{{ MEDIA_URL }}icons/tux.png"/>{% trans "No soundclips found." %}
+  <img src="{% static "icons/tux.png" %}"/>{% trans "No soundclips found." %}
 </p>
 {% endif %}
 {% endblock %}
