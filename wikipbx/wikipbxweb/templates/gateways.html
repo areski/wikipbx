@@ -1,10 +1,10 @@
 {% extends "base.html" %}
-{% load i18n %}
+{% load i18n staticfiles %}
 
 {% block dashcontent %}
 
 <h2>
-  <img src="{{ MEDIA_URL }}icons/world.png"/>{% trans "Gateways" %}
+  <img src="{% static "icons/world.png" %}"/>{% trans "Gateways" %}
 </h2>
 
 {% if gateways %}
@@ -20,12 +20,12 @@
     {% for gateway in gateways %}
     <tr>
       <td>
-	<img src="{{ MEDIA_URL }}icons/world_edit.png">
+	<img src="{% static "icons/world_edit.png" %}">
 	<a href="{% url wikipbxweb:gateway-edit gateway.id %}">{{ gateway.name }}</a>
       </td>
       <td>
-	<a href="{% url wikipbxweb:gateway-delete gateway.id %}">
-	  <img src="{{ MEDIA_URL }}icons/delete.png"/>
+	<a href="{% url 'wikipbxweb:gateway-delete' gateway.id %}">
+	  <img src="{% static "icons/delete.png" %}"/>
 	</a>
       </td>
     </tr>
@@ -35,7 +35,7 @@
 
 {% else %}
 
-<div><img src="{{ MEDIA_URL }}icons/tux.png"/>{% trans "No gateways defined" %}</div>
+<div><img src="{% static "icons/tux.png" %}"/>{% trans "No gateways defined" %}</div>
 
 {% endif %}
 
