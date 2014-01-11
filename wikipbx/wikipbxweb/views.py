@@ -37,7 +37,8 @@ from django.db import transaction
 from django.db.models import Q
 from django.shortcuts import get_object_or_404, render
 from django.utils.translation import ugettext as _
-from django.views.generic import simple, list_detail
+from django.utils.decorators import method_decorator
+from django.views.generic.list import ListView
 from pprint import pformat
 from wikipbx import logger, fsutil, utils, extensionutil, authutil
 from wikipbx import xmlconfig, cdrutil, mailutil, sofiautil, ttsutil, statics
@@ -84,7 +85,7 @@ def extensions(request):
         u"When an incoming call comes into the PBX, extensions are matched in "
         "the order they are shown here, from top to bottom.  Once a match is "
         "found it is executed.  Re-order extensions using the green arrows.")
-        return render(request, 'extension.html', {'exts': exts, 'blurb': blurb})
+    return render(request, 'extension.html', {'exts': exts, 'blurb': blurb})
 
 @decorators.require_admin
 def ext_priority(request, extension_id, action):
