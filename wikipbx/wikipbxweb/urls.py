@@ -98,11 +98,11 @@ urlpatterns = patterns(
     url(r'^calls/matched/$', 'completedcalls', name='calls-matched'),
 
     # Server settings/logs
-    url(r'^logs/$', 'server_logs', name='log-list'),
+    url(r'^logs/$', ServerLogsView.as_view(), name='log-list'),
     url(r'^root/add/$', 'add_root', name='root-add'),
 
     # Freeswitch control
-    url(r'^channels/$', ServerLogsView.as_view(), name='calls-live'),
+    url(r'^channels/$', 'livecalls', name='calls-live'),
     url(r'^channels/hangup/(?P<chan_uuid>\S+)/$', 'hangup_channels',
         name='channel-hangup'),
     url(r'^channels/hangup/$', 'hangup_channels', name='channel-hangup-all'),
