@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% load i18n %}
+{% load i18n staticfiles %}
 
 
 
@@ -39,8 +39,8 @@ function choose_ext_type_{{ af.prefix }}() {
 {{ af.template }}
 
 {% if af.action_obj.action.id %}
-<a href="{% url wikipbxweb:extension-action-delete af.action_obj.action.id %}">
-<img src="{{ MEDIA_URL }}icons/delete.png"/>
+<a href="{% url 'wikipbxweb:extension-action-delete' af.action_obj.action.id %}">
+<img src="{% static "icons/delete.png" %}"/>
 </a>
 {% endif %}
 
@@ -63,8 +63,8 @@ function choose_ext_type_{{ af.prefix }}() {
 <tr>
 <th></th>
 <td>
-<a href="{% url wikipbxweb:extension-action-add form.instance.id %}">
-<img src="{{ MEDIA_URL }}icons/add.png"/>{% trans "Add new action" %}
+<a href="{% url 'wikipbxweb:extension-action-add' form.instance.id %}">
+<img src="{% static "icons/add.png" %}"/>{% trans "Add new action" %}
 </a>
 </td>
 </tr>
