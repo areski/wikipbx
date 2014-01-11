@@ -1,12 +1,12 @@
 {% extends "base.html" %}
-{% load i18n %}
+{% load i18n staticfiles %}
 
 {% block dashcontent %}
 
-<h2><img src="{{ MEDIA_URL }}icons/email_go.png">{% trans "Test Mail" %}</h2>
+<h2><img src="{% static "icons/email_go.png" %}">{% trans "Test Mail" %}</h2>
 
 <div class="blurb">
-  <img src="{{ MEDIA_URL }}icons/tux.png"/>
+  <img src="{% static "icons/tux.png" %}"/>
   {% trans "Send an outgoing test mail to see if email server settings are correctly configured." %}
 </div>
 
