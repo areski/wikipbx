@@ -216,7 +216,7 @@
       "kind": 1, 
       "name": "Extension", 
       "default": "", 
-      "tag": "EXTESION", 
+      "tag": "EXTENSION", 
       "template": 2, 
       "variable_type": 0
     }
