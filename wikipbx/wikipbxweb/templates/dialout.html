@@ -15,6 +15,7 @@ MochiKit.DOM.addLoadEvent(joinMorePeople);
 
 {% block dashcontent %}
 <form method="post">
+{% csrf_token %}
 <h2><u>{% blocktrans %}Dialout from {{ dest_ext_app }}{% endblocktrans %}</u></h2>
 
 <p><img src="{% static "icons/tux.png" %}" border="0">{% blocktrans %}Choose the destination(s) that will be dialed out from {{ dest_ext_app }}. Calls will be placed in parallel.{% endblocktrans %}
