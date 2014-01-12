@@ -68,7 +68,7 @@ class AuthCallRenderer(django_widgets.RadioFieldRenderer):
         """Outputs a <span> for this set of radio fields."""
         return mark_safe(u'\n'.join(
             '<span><img src="%sicons/%s.png"/>%s</span>' % (
-                settings.MEDIA_URL,
+                settings.STATIC_URL,
                 ('lock' if w.choice_value == 'True' else 'lock_open'),
                 force_unicode(w))
             for w in self))
