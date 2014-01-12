@@ -12,7 +12,7 @@
     "pk": 2, 
     "model": "wikipbxweb.actiontemplate", 
     "fields": {
-      "xml_template": "<action application=\"transfer\" data=\"EXTESION\"/>\r\n", 
+      "xml_template": "<action application=\"transfer\" data=\"EXTENSION\"/>\r\n", 
       "name": "Transfer", 
       "description": "Transfer to another extension"
     }
