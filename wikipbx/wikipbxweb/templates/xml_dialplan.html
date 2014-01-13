@@ -4,6 +4,7 @@
 {% block dashcontent %}
 <h2>{% trans "Configuration" %}</h2>
 <form method="post">
+{% csrf_token %}
 <input type="hidden" NAME="section" value="configuration">
 <table>
   <tr>
