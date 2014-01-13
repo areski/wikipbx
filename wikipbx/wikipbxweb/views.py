@@ -1496,9 +1496,9 @@ def xml_dialplan(request):
             if not authutil.is_root(request):
                 msg = "You must be logged in as superuser"
                 return http.HttpResponseRedirect("/?urgentmsg=%s" % msg)
-            return simple.direct_to_template(
+            return render(
                 request, 'xml_dialplan.html',
-                extra_context={'blurb': _('Use this form to view the raw XML '
+                dictionary={'blurb': _('Use this form to view the raw XML '
                                          'returned to FreeSWITCH when '
                                          'requested')})
 
