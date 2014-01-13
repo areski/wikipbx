@@ -48,7 +48,7 @@
 <h2>Directory</h2>
 
 <form method="post">
-
+{% csrf_token %}
 <input type="hidden" NAME="section" value="directory">
 <!-- todo: should be pull down with all accounts -->
 <table>
