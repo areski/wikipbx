@@ -39,6 +39,7 @@ from django.shortcuts import get_object_or_404, render
 from django.utils.translation import ugettext as _
 from django.utils.decorators import method_decorator
 from django.views.generic.list import ListView
+from django.views.decorators.csrf import csrf_exempt
 from pprint import pformat
 from wikipbx import logger, fsutil, utils, extensionutil, authutil
 from wikipbx import xmlconfig, cdrutil, mailutil, sofiautil, ttsutil, statics
@@ -1464,7 +1465,8 @@ def add_cdr(request):
             logger.error("Error adding server log entry: %s" % str(e))
         raise e
     return http.HttpResponse("OK")
-    
+
+@csrf_exempt    
 def xml_dialplan(request):
     """
     This is called by freeswitch to get either configuration,
