@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% load i18n %}
+{% load i18n staticfiles %}
 
 {% block dashcontent %}
 {% if object_list %}
@@ -33,7 +33,7 @@
 
 {% else %}
 
-<div><img src="{{ MEDIA_URL }}/icons/tux.png"/>{% trans "No server logs found" %}</div>
+<div><img src="{% static "icons/tux.png" %}"/>{% trans "No server logs found" %}</div>
 
 {% endif %}
 {% endblock %}

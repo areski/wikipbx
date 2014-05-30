@@ -1,4 +1,4 @@
-{% load i18n %} 
+{% load i18n staticfiles %} 
 <html>
 <head>
     <title>{% block title %}{% trans "Wiki PBX - Open Source Web GUI front-end for FreeSWITCH" %}{% endblock %}</title>
@@ -26,8 +26,8 @@
 <tr> 
   <!-- top left logo -->
   <td width="160" rowspan="1" valign="top" style="padding-bottom: 1em"> 
-    <a href="{% url wikipbxweb:index %}">      
-      <img src="{{ MEDIA_URL }}images/wikipbxlogo4_sm.gif" align="left" vspace="0" alt="WikiPBX Logo" border="0" height="68"/>
+    <a href="{% url 'wikipbxweb:index' %}">      
+      <img src="{% static "images/wikipbxlogo4_sm.gif" %}" align="left" vspace="0" alt="WikiPBX Logo" border="0" height="68"/>
     </a>
   </td> 
 
@@ -35,7 +35,7 @@
 {% include "info_urgent_msgs.html" %}
 </td>   
 
-<td align="right" nowrap valign="top"><b>{{ user.username }}</b> |  <a href="{% url wikipbxweb:member-logout %}">{% trans "Sign out" %}</a></td>
+<td align="right" nowrap valign="top"><b>{{ user.username }}</b> |  <a href="{% url 'wikipbxweb:member-logout' %}">{% trans "Sign out" %}</a></td>
 </tr> 
 
 </table>   
@@ -85,7 +85,7 @@ Account: {{ user.get_profile.account.name }}
 {% block blurb %}
 {% if blurb %}
 <div class="blurb">
-  <img src="{{ MEDIA_URL }}icons/tux.png"/>
+  <img src="{% static "icons/tux.png" %}"/>
   {{ blurb }}
 </div>
 {% endif %}

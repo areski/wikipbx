@@ -1,12 +1,12 @@
 {% extends "base.html" %}
-{% load i18n %}
+{% load i18n staticfiles %}
 
 {% block bodytag %}
 <body>
 {% endblock %}
 
 {% block javascriptincludes %}
-<script type="text/javascript" src="{{ MEDIA_URL }}MochiKit/MochiKit.js"></script>
+<script type="text/javascript" src="{% static "MochiKit/MochiKit.js" %}"></script>
 {% endblock %}
 
 {% block inlinejavascript %}
@@ -15,14 +15,15 @@ MochiKit.DOM.addLoadEvent(joinMorePeople);
 
 {% block dashcontent %}
 <form method="post">
+{% csrf_token %}
 <h2><u>{% blocktrans %}Dialout from {{ dest_ext_app }}{% endblocktrans %}</u></h2>
 
-<p><img src="{{ MEDIA_URL }}icons/tux.png" border="0">{% blocktrans %}Choose the destination(s) that will be dialed out from {{ dest_ext_app }}. Calls will be placed in parallel.{% endblocktrans %}
+<p><img src="{% static "icons/tux.png" %}" border="0">{% blocktrans %}Choose the destination(s) that will be dialed out from {{ dest_ext_app }}. Calls will be placed in parallel.{% endblocktrans %}
 
 <!-- addtl extensions and sip urls -->
-<h2 style="padding-top: .7em;"><img src="{{ MEDIA_URL }}icons/brick.png" border="0">{% trans "Additional Extensions and SIP URL's." %}</h2>
+<h2 style="padding-top: .7em;"><img src="{% static "icons/brick.png" %}" border="0">{% trans "Additional Extensions and SIP URL's." %}</h2>
 
-<p><img src="{{ MEDIA_URL }}icons/tux.png" border="0">{% trans "Raw extensions can be entered (eg, 18005551212) or SIP urls can be entered (eg, 100@sip.foo.com:5065)." %}</p>
+<p><img src="{% static "icons/tux.png" %}" border="0">{% trans "Raw extensions can be entered (eg, 18005551212) or SIP urls can be entered (eg, 100@sip.foo.com:5065)." %}</p>
 
 <div style="padding-bottom: .5em">
   <a href="javascript: void(0);" onclick="javascript: joinMorePeople();" title="{% trans "Click here to add extra empty form elements." %}"><img src="{{ MEDIA_URL }}icons/add.png" style="padding-right: .5em" align="bottom" border="0">{% trans "Dial more" %}</a>
@@ -35,12 +36,12 @@ MochiKit.DOM.addLoadEvent(joinMorePeople);
 
 <!-- dialplan extensions -->
 <h2 style="padding-top: .7em;">
-  <img src="{{ MEDIA_URL }}icons/brick.png"/>
+  <img src="{% static "icons/brick.png" %}"/>
   {{ _("dialplan extensions")|capfirst }}
 </h2>
 {% if extensions %}
 
-<p><img src="{{ MEDIA_URL }}icons/tux.png"/>{% blocktrans %}Choose the dialplan extensions that will be dialed out from {{ dest_ext_app }}.  Multiple concurrent outgoing calls can be specified by the pull-down to the right of the checkbox.{% endblocktrans %}</p>
+<p><img src="{% static "icons/tux.png" %}"/>{% blocktrans %}Choose the dialplan extensions that will be dialed out from {{ dest_ext_app }}.  Multiple concurrent outgoing calls can be specified by the pull-down to the right of the checkbox.{% endblocktrans %}</p>
 
 <table>
   <thead>
@@ -75,7 +76,7 @@ MochiKit.DOM.addLoadEvent(joinMorePeople);
       </select>
     </td>
     <td>
-      <a href="{% url wikipbxweb:extension-edit ext.id %}">{{ ext.get_single_expansion }}</a>
+      <a href="{% url 'wikipbxweb:extension-edit' ext.id %}">{{ ext.get_single_expansion }}</a>
     </td>
     <td>
       <small>{{ ext.desc }}</small>
@@ -92,7 +93,7 @@ MochiKit.DOM.addLoadEvent(joinMorePeople);
   </tr>
 </table>
 {% else %}
-<p><img src="{{ MEDIA_URL }}icons/tux.png"/>{% trans "No dialplan extensions found." %}
+<p><img src="{% static "icons/tux.png" %}"/>{% trans "No dialplan extensions found." %}
 {% endif %}
 </form>
 

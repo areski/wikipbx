@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% load i18n %}
+{% load i18n staticfiles %}
 
 {% block inlinejavascript %}
 function showExtra(id) {
@@ -10,9 +10,9 @@ function showExtra(id) {
 {% block dashcontent %}
 
 <h2>
-  <img src="{{ MEDIA_URL }}icons/brick.png"/>
+  <img src="{% static "icons/brick.png" %}"/>
   {% if endpoint %}
-  {% trans "Extensions associated with SIP Endpoint" %} <a href="{% url wikipbxweb:endpoint-edit endpoint.id %}">{{ endpoint }}</a>
+  {% trans "Extensions associated with SIP Endpoint" %} <a href="{% url 'wikipbxweb:endpoint-edit' endpoint.id %}">{{ endpoint }}</a>
   {% else %}
   {% trans "Extensions (Dialplan)" %}
   {% endif %}
@@ -39,20 +39,20 @@ function showExtra(id) {
     {% for ext in exts %}
     <tr>
       <td>
-	<img src="{{ MEDIA_URL }}icons/brick_edit.png"/>
-	<a href="{% url wikipbxweb:extension-edit ext.id %}">{{ ext.dest_num }}</a>
+	<img src="{% static "icons/brick_edit.png" %}"/>
+	<a href="{% url 'wikipbxweb:extension-edit' ext.id %}">{{ ext.dest_num }}</a>
       </td>
       <td>
-	{% if ext.callerid_num %}<a href="{% url wikipbxweb:extension-edit ext.id %}">{{ ext.callerid_num }}</a>{% else %}&nbsp;{% endif %}
+	{% if ext.callerid_num %}<a href="{% url 'wikipbxweb:extension-edit' ext.id %}">{{ ext.callerid_num }}</a>{% else %}&nbsp;{% endif %}
       </td>
       <td>
 	{% if ext.auth_call %}
 	<div title="{% trans "Only authenticated endpoints / parties may dial this extension." %}">
-	  <img src="{{ MEDIA_URL }}icons/lock.png">
+	  <img src="{% static "icons/lock.png" %}">
 	</div>
 	{% else %}
 	<div title="{% trans "This is a public extension and no extra auth checking will be done (beyond what the SIP profile mandates)." %}">
-	  <img src="{{ MEDIA_URL }}icons/lock_open.png">
+	  <img src="{% static "icons/lock_open.png" %}">
 	</div>
 	{% endif %}
       </td>
@@ -65,37 +65,37 @@ function showExtra(id) {
       <td>
 	{% if ext.get_single_expansion %}
 	<div title="{% trans "Dialout from this extension to another extension or endpoint." %}">
-	  <a href="{% url wikipbxweb:dialout ext.get_single_expansion %}">
-	    <img src="{{ MEDIA_URL }}icons/phone_go.png"/>
+	  <a href="{% url 'wikipbxweb:dialout' ext.get_single_expansion %}">
+	    <img src="{% static "icons/phone_go.png" %}"/>
 	  </a>
 	</div>
 	{% else %}
-	<img src="{{ MEDIA_URL }}icons/phone_disabled.png">
+	<img src="{% static "icons/phone_disabled.png" %}">
 	{% endif %}
       </td>
       <td>
-	<a href="{% url wikipbxweb:extension-priority ext.id,"highest" %}">
-	  <img src="{{ MEDIA_URL }}icons/dbl_arrow_up.png"/>
+	<a href="{% url 'wikipbxweb:extension-priority' ext.id "highest" %}">
+	  <img src="{% static "icons/dbl_arrow_up.png" %}"/>
 	</a>
       </td>
       <td>
-	<a href="{% url wikipbxweb:extension-priority ext.id,"lowest" %}">
-	  <img src="{{ MEDIA_URL }}icons/dbl_arrow_down.png"/>
+	<a href="{% url 'wikipbxweb:extension-priority' ext.id "lowest" %}">
+	  <img src="{% static "icons/dbl_arrow_down.png" %}"/>
 	</a>
       </td>
       <td>
-	<a href="{% url wikipbxweb:extension-priority ext.id,"raise" %}">
-	  <img src="{{ MEDIA_URL }}icons/arrow_up.png"/>
+	<a href="{% url 'wikipbxweb:extension-priority' ext.id "raise" %}">
+	  <img src="{% static "icons/arrow_up.png" %}"/>
 	</a>
       </td>
       <td>
-	<a href="{% url wikipbxweb:extension-priority ext.id,"lower" %}">
-	  <img src="{{ MEDIA_URL }}icons/arrow_down.png"/>
+	<a href="{% url 'wikipbxweb:extension-priority' ext.id "lower" %}">
+	  <img src="{% static "icons/arrow_down.png" %}"/>
 	</a>
       </td>
       <td>
-	<a href="{% url wikipbxweb:extension-delete ext.id %}">
-	  <img src="{{ MEDIA_URL }}icons/delete.png"/>
+	<a href="{% url 'wikipbxweb:extension-delete' ext.id %}">
+	  <img src="{% static "icons/delete.png" %}"/>
 	</a>
       </td>
     </tr>
@@ -105,7 +105,7 @@ function showExtra(id) {
 
 {% else %}
 
-<div><img src="{{ MEDIA_URL }}icons/tux.png"/>{% trans "No extensions defined." %}</div>
+<div><img src="{% static "icons/tux.png" %}"/>{% trans "No extensions defined." %}</div>
 {% endif %}
 
 

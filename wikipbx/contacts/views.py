@@ -30,9 +30,8 @@ from django.template.loader import render_to_string
 from django.core import serializers
 from django.core.urlresolvers import reverse
 from django.db.models import Q
-from django.shortcuts import get_object_or_404
+from django.shortcuts import get_object_or_404, render
 from django.utils.translation import gettext as _
-from django.views.generic import simple
 from wikipbx.contacts import forms, statics
 from wikipbx.contacts.models import Contact
 from wikipbx.wikipbxweb import decorators
@@ -43,7 +42,7 @@ def contacts(request):
     account = request.user.get_profile().account
     contacts = Contact.objects.filter(account=account)
     export = forms.ExportContactForm()
-    return simple.direct_to_template(
+    return render(
         request, 'contacts.html', {'contacts': contacts, 'export': export })
 
 @decorators.require_admin
@@ -68,7 +67,7 @@ def edit_contact(request, contact_id):
     else:
         form = forms.ContactForm(instance=contact)
 
-    return simple.direct_to_template(
+    return render(
         request, 'edit_contact.html', {'form': form})
     
 @decorators.require_admin

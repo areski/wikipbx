@@ -1,9 +1,9 @@
 {% extends "base.html" %}
-{% load i18n %}
+{% load i18n staticfiles %}
 
 {% block dashcontent %}
 <h2>
-  <img src="{{ MEDIA_URL }}icons/telephone.png"/>
+  <img src="{% static "icons/telephone.png" %}"/>
   {{ _("SIP endpoints")|capfirst }}
 </h2>
 {% if endpoints %}
@@ -24,54 +24,54 @@
 <tr>
   <td>
     <div title="{% trans "Edit endpoint settings." %}">
-      <img src="{{ MEDIA_URL }}icons/telephone_edit.png"/>
-      <a href="{% url wikipbxweb:endpoint-edit endpoint.id %}">{{ endpoint.userid }}</a>
+      <img src="{% static "icons/telephone_edit.png" %}"/>
+      <a href="{% url 'wikipbxweb:endpoint-edit' endpoint.id %}">{{ endpoint.userid }}</a>
     </div>
   </td>
   <td>
     {% if endpoint.get_extensions %}
     <div title="{% trans "Modify Extension associated with this Endpoint." %}">
-      <img src="{{ MEDIA_URL }}icons/brick.png"/>
-      <a href="{% url wikipbxweb:endpoint-extension-list endpoint.id %}">{{ _("extensions")|capfirst }}</a>
+      <img src="{% static "icons/brick.png" %}"/>
+      <a href="{% url 'wikipbxweb:endpoint-extension-list' endpoint.id %}">{{ _("extensions")|capfirst }}</a>
     </div>
     {% else %}
     <div title="{% trans "No Extension associated with this Endpoint." %}">
-      <img src="{{ MEDIA_URL }}icons/brick_disabled.png"/>
-      {% trans "Extsensions" %}
+      <img src="{% static "icons/brick_disabled.png" %}"/>
+      {% trans "Extensions" %}
     </div>
     {% endif %}
   </td>
   <td>
     {% if endpoint.userprofile %}
-    <img src="{{ MEDIA_URL }}icons/user_edit.png"/>{{ endpoint.userprofile.user.email }}
+    <img src="{% static "icons/user_edit.png" %}"/>{{ endpoint.userprofile.user.email }}
     {% else %}
-    <img src="{{ MEDIA_URL }}icons/user_gray.png"/>{% trans "No user." %}
+    <img src="{% static "icons/user_gray.png" %}"/>{% trans "No user." %}
     {% endif %}
   </td>
   <td>
     <div title="{% trans "Place an echo test call." %}">
-      <a href="{% url wikipbxweb:outgoing-to-endpoint endpoint.id %}">
-	<img src="{{ MEDIA_URL }}icons/connect.png"/>
+      <a href="{% url 'wikipbxweb:outgoing-to-endpoint' endpoint.id %}">
+	<img src="{% static "icons/connect.png" %}"/>
       </a>
     </div>
   </td>
   <td>
     {% if endpoint.is_registered %}
     <div title="{% trans "Endpoint is online." %}">
-      <img src="{{ MEDIA_URL }}icons/status_online.png"/>
+      <img src="{% static "icons/status_online.png" %}"/>
       <font size="-2">{% trans "Online" %}</font>
     </div>
     {% else %}
     <div title="{% trans "Endpoint is offline (unregistered)." %}">
-      <img src="{{ MEDIA_URL }}icons/status_offline.png"/>
+      <img src="{% static "icons/status_offline.png" %}"/>
       <font size="-2">{% trans "Offline" %}</font>
     </div>
     {% endif %}
   </td>
   <td>
     <div title="{% trans "Delete this endpoint." %}">
-      <a href="{% url wikipbxweb:endpoint-delete endpoint.id %}">
-	<img src="{{ MEDIA_URL }}icons/delete.png"/>
+      <a href="{% url 'wikipbxweb:endpoint-delete' endpoint.id %}">
+	<img src="{% static "icons/delete.png" %}"/>
       </a>
     </div>
   </td>
@@ -82,7 +82,7 @@
 
 {% else %}
 
-<div><img src="{{ MEDIA_URL }}icons/tux.png">{% trans "No endpoints defined." %}</div>
+<div><img src="{% static "icons/tux.png" %}">{% trans "No endpoints defined." %}</div>
 {% endif %}
 
 {% endblock %}

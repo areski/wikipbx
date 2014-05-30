@@ -1,9 +1,9 @@
 {% extends "base.html" %}
-{% load i18n %}
+{% load i18n staticfiles %}
 
 {% block dashcontent %}
 <h2>
-  <img src="{{ MEDIA_URL }}icons/folder_user.png"/>{% trans "Contacts - This Account" %}
+  <img src="{% static "icons/folder_user.png" %}"/>{% trans "Contacts - This Account" %}
 </h2>
 
 {% if contacts %}
@@ -37,8 +37,8 @@
     {% for contact in contacts %}
     <tr>
       <td>
-	<img src="{{ MEDIA_URL }}icons/folder_user.png"/>
-	<a href="{% url contacts:edit contact.id %}">{{ contact }}</a>
+	<img src="{% static "icons/folder_user.png" %}"/>
+	<a href="{% url 'contacts:edit' contact.id %}">{{ contact }}</a>
       </td>
       <td>
         {{ contact.work|default:"&nbsp;" }}
@@ -56,8 +56,8 @@
         {{ contact.notes|default:"&nbsp;" }}
       </td>
       <td>
-	<a href="{% url contacts:delete contact.id %}">
-	  <img src="{{ MEDIA_URL }}icons/delete.png"/>
+	<a href="{% url 'contacts:delete' contact.id %}">
+	  <img src="{% static "icons/delete.png" %}"/>
 	</a>
       </td>
     </tr>

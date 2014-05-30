@@ -3,6 +3,7 @@
 
 {% block dashcontent %}
 <form method="post">
+{% csrf_token %}
 <table>
 {{ form }}
 <tr>

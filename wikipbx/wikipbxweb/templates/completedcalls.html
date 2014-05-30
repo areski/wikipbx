@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% load i18n %}
+{% load i18n staticfiles %}
 
 {% block inlinejavascript %}
 function showExtra(id) {
@@ -16,7 +16,7 @@ function showExtra(id) {
 
 {% block dashcontent %}
 <h2>
-  <img src="{{ MEDIA_URL }}icons/tick.png"/>
+  <img src="{% static "icons/tick.png" %}"/>
   {% blocktrans with calltype|capfirst as call_type %}{{ call_type }} calls.{% endblocktrans %}
 </h2>
 
@@ -57,7 +57,7 @@ function showExtra(id) {
 {% include "paginator.html" %}
 {% else %}
 <div>
-  <img src="{{ MEDIA_URL }}icons/tux.png"/>
+  <img src="{% static "icons/tux.png" %}"/>
   {% blocktrans %}No {{ calltype }} calls found.{% endblocktrans %}
 </div>
 {% endif %}

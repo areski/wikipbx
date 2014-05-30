@@ -1,12 +1,12 @@
 {% extends "base.html" %}
-{% load i18n %}
+{% load i18n staticfiles %}
 
 {% block bodytag %}
 <body>
 {% endblock %}
 
 {% block javascriptincludes %}
-<script type="text/javascript" src="{{ MEDIA_URL }}MochiKit/MochiKit.js"></script>
+<script type="text/javascript" src="{% static "MochiKit/MochiKit.js" %}"></script>
 {% endblock %}
 
 
@@ -21,7 +21,7 @@ MochiKit.DOM.addLoadEvent(joinMorePeople);
   <h2><u>{% trans "Transfer live channel" %}</u></h2>
   {% if extensions %}
   <div>
-    <img src="{{ MEDIA_URL }}icons/tux.png"/>
+    <img src="{% static "icons/tux.png" %}"/>
     {% trans "Choose the dialplan extension to transfer selected channel." %}
   </div>
 
@@ -41,7 +41,7 @@ MochiKit.DOM.addLoadEvent(joinMorePeople);
 	<input type="radio" name="dialplan_extension" value="{{ extension.pk }}"{% if forloop.first %} checked="checked"{% endif %}/>
       </td>
       <td>
-	<a href="{% url wikipbxweb:extension-edit extension.id %}">{{ extension.get_single_expansion }}</a>
+	<a href="{% url 'wikipbxweb:extension-edit' extension.id %}">{{ extension.get_single_expansion }}</a>
       </td>
       <td>
 	<small>{{ extension.desc }}</small>
@@ -61,7 +61,7 @@ MochiKit.DOM.addLoadEvent(joinMorePeople);
 
 {% else %}
 
-<div><img src="{{ MEDIA_URL }}icons/tux.png">{% trans "No dialplan extensions found" %}</div>
+<div><img src="{% static "icons/tux.png" %}">{% trans "No dialplan extensions found" %}</div>
 
 {% endif %}
 </form>

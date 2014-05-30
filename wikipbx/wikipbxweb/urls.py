@@ -1,5 +1,5 @@
-from django.conf.urls.defaults import *
-
+from django.conf.urls import *
+from wikipbx.wikipbxweb.views import ServerLogsView, UnmatchedCompletedCalls
 
 urlpatterns = patterns(
     'wikipbx.wikipbxweb.views',
@@ -93,12 +93,12 @@ urlpatterns = patterns(
 
     # CDRs
     url(r'^calls/records/add/$', 'add_cdr', name='cdr-add'),
-    url(r'^calls/unmatched/$', 'unmatched_completedcalls',
+    url(r'^calls/unmatched/$', UnmatchedCompletedCalls.as_view(),
         name='calls-unmatched'),
     url(r'^calls/matched/$', 'completedcalls', name='calls-matched'),
 
     # Server settings/logs
-    url(r'^logs/$', 'server_logs', name='log-list'),
+    url(r'^logs/$', ServerLogsView.as_view(), name='log-list'),
     url(r'^root/add/$', 'add_root', name='root-add'),
 
     # Freeswitch control

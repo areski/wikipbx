@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% load i18n %}
+{% load i18n staticfiles %}
 
 {% block dashcontent %}
 {% if sip_profiles %}
@@ -19,8 +19,8 @@
     {% for sip_profile in sip_profiles %}
     <tr>
       <td>
-	<img src="{{ MEDIA_URL }}icons/group_edit.png">
-	<a href="{% url wikipbxweb:profile-edit sip_profile.id %}">{{ sip_profile.name }}</a>
+	<img src="{% static "icons/group_edit.png" %}">
+	<a href="{% url 'wikipbxweb:profile-edit' sip_profile.id %}">{{ sip_profile.name }}</a>
       </td>
       <td>
 	{{ sip_profile.ext_sip_ip }}
@@ -43,8 +43,8 @@
 	{% endifequal %}
       </td>
       <td>
-	<a href="{% url wikipbxweb:profile-delete sip_profile.id %}">
-	  <img src="{{ MEDIA_URL }}icons/delete.png">
+	<a href="{% url 'wikipbxweb:profile-delete' sip_profile.id %}">
+	  <img src="{% static "icons/delete.png" %}">
 	</a>
       </td>
     </tr>
@@ -54,7 +54,7 @@
 
 {% else %}
 
-<div><img src="{{ MEDIA_URL }}icons/tux.png">{% trans "No SIP Profiles defined" %}</div>
+<div><img src="{% static "icons/tux.png" %}">{% trans "No SIP Profiles defined" %}</div>
 
 {% endif %}
 {% endblock %}
